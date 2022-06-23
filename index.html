@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Metadata -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- SEO data -->
+    <meta name="title" content="Tailboard">
+    <meta name="description" content="This is a HTML5 and TailwindCSS boilerplate.">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Credit & Technology Stacks -->
+    <link type="text/plain" rel="author" href="./humans.txt"/>
+
+    <!-- Facebook open graph data -->
+    <meta property="fb:app_id" content="123456789">
+    <meta property="og:url" content="https://www.example.com/path/to/page.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Tailboard">
+    <meta property="og:image" content="https://www.example.com/path/to/image.jpg">
+    <meta property="og:description" content="This is a HTML5 and TailwindCSS boilerplate.">
+    <meta property="og:site_name" content="Tailboard">
+
+    <!-- Twitter cards -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@site_account">
+    <meta name="twitter:creator" content="@individual_account">
+    <meta name="twitter:url" content="https://www.example.com/path/to/page.html">
+    <meta name="twitter:title" content="Tailboard">
+    <meta name="twitter:description" content="This is a HTML5 and TailwindCSS boilerplate.">
+    <meta name="twitter:image" content="https://www.example.com/path/to/image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="manifest" href="./site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./src/css/style.css">
+
+    <!-- 
+        Handle dark mode toggle when the page is loaded.
+
+        These codes below are called before app.js instead of being inside 
+        app.js to avoid FOUC should app.js type is defined as a module. 
+    -------------------------------------------------------------------------->
+    <script>
+        if (localStorage.theme === "light" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: light)").matches)) {
+            localStorage.theme = 'light';
+            document.documentElement.classList.remove("dark");
+        } else if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+            localStorage.theme = 'dark';
+            document.documentElement.classList.add("dark")
+        };
+    </script>
+
+    <!-- Scripts -->
+    <script src="./src/js/app.js"></script>
+
+    <title>Tailboard</title>
+</head>
+<body class="relative min-h-screen antialiased text-gray-900 dark:text-white dark:bg-gray-900">
+
+    <!-- Nav -->
+    <nav class="fixed flex items-center justify-between w-full p-4 transition">
+        <a href="#" class="font-bold hover:text-gray-500">Tailboard</a>
+        
+        <!-- Dark mode toggle -->
+        <button type="button" id="darkModeToggle" class="flex items-center" aria-label="Dark Mode Toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-gray-900 fill-gray-900 hover:stroke-gray-500 hover:fill-gray-500 dark:hidden" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="hidden stroke-white fill-white hover:stroke-gray-500 hover:fill-gray-500 dark:block" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <circle cx="12" cy="12" r="4" />
+                <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
+            </svg>
+        </button>
+    </nav>
+
+    <!-- Content -->
+    <main class="container px-4 py-16 mx-auto">
+        <section class="max-w-md mx-auto mt-48 text-center">
+            <h1 class="mb-2 text-6xl font-medium">Hello World</h1>
+            <h2 class="mb-8">Tailboard is a HTML5 and TailwindCSS boilerplate.</h2>
+            <a class="hover:text-gray-500" href="./README.md">View Readme</a>
+            <span class="mx-2">|</span>
+            <a class="hover:text-gray-500" href="./DIRECTORY.md">View Directory</a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="absolute bottom-0 w-full mb-1 text-center">
+        <p class="text-sm"><small>Tailboard © <span id="footerCurrentYear"></span></small><p>
+
+        <!-- This code below set current year on footer-->
+        <script>
+            const footerCurrentYear = document.getElementById("footerCurrentYear");
+            footerCurrentYear.innerHTML = new Date().getFullYear();
+        </script>
+    </footer>
+</body>
+</html>
