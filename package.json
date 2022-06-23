@@ -1,0 +1,16 @@
+{
+	"name": "",
+	"version": "0.0.1",
+	"description": "",
+	"keywords": [],
+	"author": "",
+	"license": "",
+	"scripts": {
+		"tailwind": "npx tailwindcss -i ./src/css/input.css -o ./src/css/style.css",
+		"tailwind-watch": "npx tailwindcss -i ./src/css/input.css -o ./src/css/style.css --watch",
+		"tailwind-build": "npx tailwindcss -i ./src/css/input.css -o ./src/css/style.min.css --minify"
+	},
+	"devDependencies": {
+		"tailwindcss": "^3.1.3"
+	}
+}

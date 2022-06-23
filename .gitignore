@@ -1,0 +1,11 @@
+# Prevent files from being pushed to git repository.
+# Extended .gitignore templates: https://github.com/github/gitignore
+
+# MacOS
+.DS_Store
+
+# Node modules
+node_modules
+
+# Cache files
+.cache

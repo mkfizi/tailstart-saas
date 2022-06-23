@@ -1,0 +1,15 @@
+# Credits & technology stack.
+
+# Team
+
+    <name> -- <role> -- <twitter>
+
+# Special Thanks
+
+    <name>
+
+# Technology Stack
+
+    HTML5
+    TailwindCSS
+    Native JS

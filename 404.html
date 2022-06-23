@@ -1,0 +1,47 @@
+<!-- Error page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Metadata -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="robots" content="noindex">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+    <link rel="manifest" href="./site.webmanifest">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./src/css/style.css">
+
+    <!-- 
+        Handle dark mode toggle when the page is loaded.
+
+        These codes below are called before app.js instead of being inside 
+        app.js to avoid FOUC should app.js type is defined as a module. 
+    -------------------------------------------------------------------------->
+    <script>
+        if (localStorage.theme === "light" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: light)").matches)) {
+            localStorage.theme = 'light';
+            document.documentElement.classList.remove("dark");
+        } else if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+            localStorage.theme = 'dark';
+            document.documentElement.classList.add("dark")
+        };
+    </script>
+
+    <title>Page Not Found</title>
+</head>
+<body class="relative min-h-screen antialiased text-gray-900 dark:text-white dark:bg-gray-900">
+    <main class="container px-4 py-16 mx-auto">
+        <section class="max-w-md mx-auto mt-48 text-center">
+            <h1 class="mb-2 text-6xl font-medium">Page Not Found</h1>
+            <p>The page you were trying to view does not exist.</p>
+        </section>
+    </main>
+</body>
+</html>
