@@ -61,7 +61,7 @@
     </script>
 
     <!-- Scripts -->
-    <script src="./src/js/app.js"></script>
+    <script type="module" src="./src/js/app.js"></script>
 
     <title>Tailboard</title>
 </head>
@@ -72,7 +72,7 @@
         <a href="#" class="font-bold hover:text-gray-500">Tailboard</a>
         
         <!-- Dark mode toggle -->
-        <button type="button" id="darkModeToggle" class="flex items-center" aria-label="Dark Mode Toggle">
+        <button type="button" data-component="darkMode" class="flex items-center" aria-label="Dark Mode Toggle">
             <svg xmlns="http://www.w3.org/2000/svg" class="stroke-gray-900 fill-gray-900 hover:stroke-gray-500 hover:fill-gray-500 dark:hidden" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                 <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
