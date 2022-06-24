@@ -9,7 +9,7 @@ export let app = {
         ];
 
         for (let i = 0; i < initialize.length; i++) {
-            initialize[i];
+            initialize[i]();
         }
     },
 };

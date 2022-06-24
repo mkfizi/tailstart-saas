@@ -20,12 +20,9 @@ class DarkMode {
     }
 }
 
-const initialize = () => {
+export default () => {
     let components = document.querySelectorAll("[data-component='darkMode']");
-
     for (let i = 0; i < components.length; i++){
         new DarkMode(components[i]);
     }
 }
-
-export default initialize;
