@@ -1,7 +1,8 @@
 class Navbar {
     constructor(element) {
-        window.onscroll = () => {this.toggle(element)};
-        this.toggle(element)
+        this.container = element;
+        this.toggle(this.container)
+        window.onscroll = () => {this.toggle(this.container)};
     }
 
     toggle(element) {
