@@ -1,16 +1,16 @@
-import darkMode from "./components/dark-mode.js";
+import DarkMode from "./components/dark-mode.js";
 
 "use strict";
 
 export let app = {
     init: () => {
-        let components = {
-            darkMode,
-        };
+        let initialize = [
+            DarkMode,
+        ];
 
-        Object.values(components).forEach(component => {
-            if (component.initialize != null) component.initialize();
-        });
+        for (let i = 0; i < initialize.length; i++) {
+            initialize[i];
+        }
     },
 };
 
