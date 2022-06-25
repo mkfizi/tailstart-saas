@@ -65,46 +65,66 @@
 
     <title>Tailboard</title>
 </head>
-<body class="relative min-h-screen antialiased text-gray-900 dark:text-white dark:bg-gray-900">
-
-    <!-- Nav -->
-    <nav class="fixed flex items-center justify-between w-full p-4 transition">
-        <a href="#" class="font-bold hover:text-gray-500">Tailboard</a>
+<body class="relative flex min-h-screen antialiased text-gray-900 dark:text-white dark:bg-gray-900">
+    <aside id="dashboard" data-component="Sidebar" class="fixed top-0 z-20 h-screen overflow-y-auto transition -translate-x-full bg-white shadow-2xl dark:bg-gray-800 lg:border-r lg:border-gray-100 lg:dark:border-gray-900 lg:shadow-none lg:sticky w-60 shrink-0 lg:translate-x-0 lg:transition-none">
+        <div class="sticky top-0 flex items-center justify-between px-4 py-3 bg-white dark:bg-gray-800">
+            <a href="#" class="block mb-1 text-xl font-bold text-indigo-700 dark:text-indigo-300 hover:text-indigo-500 dark:hover:text-indigo-500">Tailboard</a>
+            <button type="button" data-target="dashboard" data-event="hide" class="lg:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x stroke-indigo-700 dark:stroke-indigo-300 hover:stroke-indigo-500 dark:hover:stroke-indigo-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+            </button>
+        </div>
         
-        <!-- Dark mode toggle -->
-        <button type="button" data-component="darkMode" class="flex items-center" aria-label="Dark Mode Toggle">
-            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-gray-900 fill-gray-900 hover:stroke-gray-500 hover:fill-gray-500 dark:hidden" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" class="hidden stroke-white fill-white hover:stroke-gray-500 hover:fill-gray-500 dark:block" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <circle cx="12" cy="12" r="4" />
-                <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
-            </svg>
-        </button>
-    </nav>
+    </aside>
 
-    <!-- Content -->
-    <main class="container px-4 py-16 mx-auto">
-        <section class="max-w-md mx-auto mt-48 text-center">
-            <h1 class="mb-2 text-6xl font-medium">Hello World</h1>
-            <h2 class="mb-8">Tailboard is a HTML5 and TailwindCSS boilerplate.</h2>
-            <a class="hover:text-gray-500" href="./README.md">View Readme</a>
-            <span class="mx-2">|</span>
-            <a class="hover:text-gray-500" href="./DIRECTORY.md">View Directory</a>
-        </section>
-    </main>
+    <div class="flex-auto w-full">
+        <!-- Nav -->
+        <nav class="sticky top-0 flex justify-between w-full p-4 bg-white shadow items-between dark:bg-gray-800">
+            <div class="flex items-center">
+                <button type="button" data-target="dashboard" data-event="show" class="lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2 stroke-indigo-700 dark:stroke-indigo-300 hover:stroke-indigo-500 dark:hover:stroke-indigo-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <line x1="4" y1="6" x2="20" y2="6" />
+                        <line x1="4" y1="12" x2="20" y2="12" />
+                        <line x1="4" y1="18" x2="20" y2="18" />
+                    </svg>
+                </button>
+            </div>
 
-    <!-- Footer -->
-    <footer class="absolute bottom-0 w-full mb-1 text-center">
-        <p class="text-sm"><small>Tailboard © <span id="footerCurrentYear"></span></small><p>
+            <!-- Dark mode toggle -->
+            <button type="button" data-util="DarkMode" class="flex items-center" aria-label="Dark Mode Toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="stroke-indigo-700 fill-indigo-700 hover:stroke-indigo-500 hover:fill-indigo-500 dark:hidden" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="hidden stroke-indigo-300 fill-indigo-300 hover:stroke-indigo-500 hover:fill-indigo-500 dark:block" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <circle cx="12" cy="12" r="4" />
+                    <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
+                </svg>
+            </button>
+        </nav>
 
-        <!-- This code below set current year on footer-->
-        <script>
-            const footerCurrentYear = document.getElementById("footerCurrentYear");
-            footerCurrentYear.innerHTML = new Date().getFullYear();
-        </script>
-    </footer>
+        <!-- Content -->
+        <main class="container p-4 mx-auto">
+            <section class="mt-4">
+                <p class="mb-8 text-xl font-bold text-indigo-500">Dashboard</p>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="absolute bottom-0 w-full mb-1 text-center lg:w-auto lg:right-4">
+            <p class="text-sm"><small>Tailboard © <span id="footerCurrentYear"></span></small><p>
+
+            <!-- This code below set current year on footer-->
+            <script>
+                const footerCurrentYear = document.getElementById("footerCurrentYear");
+                footerCurrentYear.innerHTML = new Date().getFullYear();
+            </script>
+        </footer>
+    </div>
 </body>
 </html>
