@@ -1,6 +1,6 @@
 class DarkMode {
     constructor(element) {
-        element.addEventListener("click", () => this.toggle());
+        element.addEventListener("click", this.toggle);
     }
 
     toggle() {
@@ -20,9 +20,11 @@ class DarkMode {
     }
 }
 
-export default () => {
-    let components = document.querySelectorAll("[data-util='DarkMode']");
-    for (let i = 0; i < components.length; i++){
-        new DarkMode(components[i]);
+window.onload = () => {
+    let element = document.querySelectorAll("[data-util='DarkMode']");
+    for (let i = 0; i < element.length; i++) {
+        new DarkMode(element[i]);
     }
 }
+
+export default DarkMode;
