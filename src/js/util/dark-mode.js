@@ -21,7 +21,7 @@ class DarkMode {
 }
 
 export default () => {
-    let components = document.querySelectorAll("[data-component='DarkMode']");
+    let components = document.querySelectorAll("[data-util='DarkMode']");
     for (let i = 0; i < components.length; i++){
         new DarkMode(components[i]);
     }
