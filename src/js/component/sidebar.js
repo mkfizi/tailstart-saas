@@ -1,5 +1,7 @@
 import {initializeObjectByQuery} from "../config.js";
 
+import FocusTrap from "../util/focus-trap.js";
+
 class Sidebar {
     constructor(element) {
         this.container = element;
@@ -24,13 +26,15 @@ class Sidebar {
         if (this.container.classList.contains("translate-x-full")) this.position = "translate-x-full";
 
         this.container.classList.remove(this.position);
-        // FocusTrap(this.container);
+
+        FocusTrap.trigger(this.container);
         // Backdrop(this.container);
     }
 
     hide() {
         this.container.classList.add(this.position);
-        // FocusTrap();
+        
+        FocusTrap.deactivate();
     }
 }
 
