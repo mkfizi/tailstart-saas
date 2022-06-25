@@ -1,3 +1,5 @@
+import {initializeObjectByQuery} from "../config.js";
+
 class DarkMode {
     constructor(element) {
         element.addEventListener("click", this.toggle);
@@ -20,11 +22,9 @@ class DarkMode {
     }
 }
 
-window.onload = () => {
-    let element = document.querySelectorAll("[data-util='DarkMode']");
-    for (let i = 0; i < element.length; i++) {
-        new DarkMode(element[i]);
-    }
-}
+const QUERY = "[data-util='DarkMode']";
+const OBJECT = DarkMode;
+
+initializeObjectByQuery(QUERY, OBJECT);
 
 export default DarkMode;
