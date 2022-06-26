@@ -2,6 +2,10 @@ import {initializeObjectByQuery} from "../config.js";
 
 class DarkMode {
     constructor(element) {
+        this.activate(element);
+    }
+
+    activate(element) {
         element.addEventListener("click", this.toggle);
     }
 
