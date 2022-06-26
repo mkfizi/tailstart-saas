@@ -1,21 +1,23 @@
-class FocusTrap {
-    constructor(element) {
-        element.setAttribute("tabindex", 0);
-        setTimeout(() => { element.removeAttribute("tabindex"); }, 1000);
-        element.focus();
+class FocusTrap{
+    constructor(container) {
+        this.container = container;
 
-        let focusableElements = element.querySelectorAll("a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, [tabindex=\"0\"], [contenteditable]");
-        
+        this.container.setAttribute("tabindex", 0);
+        setTimeout(() => { this.container.removeAttribute("tabindex"); }, 1000);
+        this.container.focus();
+
+        let focusableElements = this.container.querySelectorAll("a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, [tabindex=\"0\"], [contenteditable]"); 
         this.firstElement = focusableElements[0];
         this.lastElement = focusableElements[focusableElements.length - 1];
-        this.activate();
+
+        this.initialize();
     }
 
-    activate() {
+    initialize() {
         document.addEventListener("keydown", this);
     }
 
-    deactivate() {
+    destroy() {
         document.removeEventListener("keydown", this);
     }
 
