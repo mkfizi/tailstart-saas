@@ -1,10 +1,10 @@
-const initializeObjectById = (id, object) => {
-    let element = document.getElementById(id);
+const initializeObjectById = (selector, object) => {
+    let element = document.getElementById(selector);
     if (element != null) new object(element);
 }
 
-const initializeObjectByQuery = (query, object) => {
-    let element = document.querySelectorAll(query);
+const initializeObjectByQuery = (selector, object) => {
+    let element = document.querySelectorAll(selector);
     for (let i = 0; i < element.length; i++) {
         new object(element[i]);
     }
