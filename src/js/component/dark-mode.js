@@ -1,12 +1,13 @@
 import {initializeObjectByQuery} from "../config.js";
 
 class DarkMode {
-    constructor(element) {
-        this.activate(element);
+    constructor(container) {
+        this.container = container;
+        this.initialize();
     }
 
-    activate(element) {
-        element.addEventListener("click", this);
+    initialize() {
+        this.container.addEventListener("click", this);
     }
 
     handleEvent() {
@@ -34,9 +35,9 @@ class DarkMode {
     }
 }
 
-const QUERY = "[data-component='DarkMode']";
-const OBJECT = DarkMode;
+const selector = "[data-component='DarkMode']";
+const object = DarkMode;
 
-initializeObjectByQuery(QUERY, OBJECT);
+initializeObjectByQuery(selector, object);
 
 export default DarkMode;
