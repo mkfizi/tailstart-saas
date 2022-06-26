@@ -1,46 +1,53 @@
 import {initializeObjectByQuery} from "../config.js";
 
+import Backdrop from "../util/backdrop.js";
 import FocusTrap from "../util/focus-trap.js";
 
-class Sidebar {
-    constructor(element) {
-        this.container = element;
+class Sidebar{
+    constructor(container) {
+        this.container = container;
+        if (this.container.classList.contains("-translate-x-full")) this.position = "-translate-x-full";
+        if (this.container.classList.contains("translate-x-full")) this.position = "translate-x-full";
+        this.initialize();
+    }
 
-        if (element.getAttribute("id") == null) return;
+    initialize() {
+        if (this.container.getAttribute("id") == null) return null;
 
-        this.id = element.getAttribute("id");
-
-        let buttons = document.querySelectorAll("[data-target='"+this.id+"']");
+        let id = this.container.getAttribute("id");
+        let buttons = document.querySelectorAll("[data-target='"+id+"']");
+        
         for (let i = 0; i < buttons.length; i++){
-            if (buttons[i].dataset.event == null) return;
-            if (buttons[i].dataset.event == "show") this.buttonShow = buttons[i];
-            if (buttons[i].dataset.event == "hide") this.buttonHide = buttons[i];
+            buttons[i].addEventListener("click", this);
         }
+    }
 
-        if (this.buttonShow != null) this.buttonShow.addEventListener("click", () => this.show())
-        if (this.buttonHide != null) this.buttonHide.addEventListener("click", () => this.hide())
+    handleEvent(event) {
+        let toggle = event.currentTarget.dataset.toggle;
+        if (toggle == null) return null;
+        if (toggle == "show") this.show();
+        if (toggle == "hide") this.hide();
     }
 
     show() {
-        if (this.container.classList.contains("-translate-x-full")) this.position = "-translate-x-full";
-        if (this.container.classList.contains("translate-x-full")) this.position = "translate-x-full";
-
         this.container.classList.remove(this.position);
 
-        FocusTrap.trigger(this.container);
-        // Backdrop(this.container);
+        this.focusTrap = new FocusTrap(this.container);
+        this.backdrop = new Backdrop(this);
     }
 
     hide() {
         this.container.classList.add(this.position);
         
-        FocusTrap.deactivate();
+        this.focusTrap.destroy();
+        this.focusTrap = null;
+        this.backdrop = null;
     }
 }
 
-const QUERY = "[data-component='Sidebar']";
-const OBJECT = Sidebar;
+const selector = "[data-component='Sidebar']";
+const object = Sidebar;
 
-initializeObjectByQuery(QUERY, OBJECT);
+initializeObjectByQuery(selector, object);
 
 export default Sidebar;
