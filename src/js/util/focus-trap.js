@@ -11,6 +11,14 @@ class FocusTrap {
         this.activate();
     }
 
+    activate() {
+        document.addEventListener("keydown", this);
+    }
+
+    deactivate() {
+        document.removeEventListener("keydown", this);
+    }
+
     handleEvent(event) {
         if (event.keyCode === 9) {
             if (event.shiftKey && document.activeElement === this.firstElement) {
@@ -21,14 +29,6 @@ class FocusTrap {
                 this.firstElement.focus();
             }
         }
-    }
-
-    activate() {
-        document.addEventListener("keydown", this);
-    }
-
-    deactivate() {
-        document.removeEventListener("keydown", this);
     }
 }
 
