@@ -1,41 +1,35 @@
 class FocusTrap {
-    constructor() {}
+    constructor(element) {
+        element.setAttribute("tabindex", 0);
+        setTimeout(() => { element.removeAttribute("tabindex"); }, 1000);
+        element.focus();
 
-    static trigger(element) {
-        this.trapElement = element;
-        this.focusableElements = this.trapElement.querySelectorAll("a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, [tabindex=\"0\"], [contenteditable]");
-        this.firstFocusableElement = this.focusableElements[0];
-        this.lastFocusableElement = this.focusableElements[this.focusableElements.length - 1];  
-        this.trapElement.setAttribute("tabindex", 0);
-        setTimeout(() => { this.trapElement.removeAttribute("tabindex"); }, 1000);
-        this.trapElement.focus();
+        let focusableElements = element.querySelectorAll("a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, [tabindex=\"0\"], [contenteditable]");
+        
+        this.firstElement = focusableElements[0];
+        this.lastElement = focusableElements[focusableElements.length - 1];
         this.activate();
     }
 
-
-    static activate() {
-        document.addEventListener("keydown", eventHandler);
-    }
-
-    static deactivate() {
-        document.removeEventListener("keydown", eventHandler);
-    }
-}
-
-
-
-const eventHandler = (event) => {
-    if (event.keyCode === 9) {
-        if (event.shiftKey && document.activeElement === FocusTrap.firstFocusableElement) {
-            event.preventDefault();
-            FocusTrap.lastFocusableElement.focus();
-        } else if (!event.shiftKey && document.activeElement === FocusTrap.lastFocusableElement) {
-            event.preventDefault();
-            FocusTrap.firstFocusableElement.focus();
+    handleEvent(event) {
+        if (event.keyCode === 9) {
+            if (event.shiftKey && document.activeElement === this.firstElement) {
+                event.preventDefault();
+                this.lastElement.focus();
+            } else if (!event.shiftKey && document.activeElement === this.lastElement) {
+                event.preventDefault();
+                this.firstElement.focus();
+            }
         }
     }
-}
 
-new FocusTrap();
+    activate() {
+        document.addEventListener("keydown", this);
+    }
+
+    deactivate() {
+        document.removeEventListener("keydown", this);
+    }
+}
 
 export default FocusTrap;
