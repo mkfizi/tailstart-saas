@@ -3,12 +3,16 @@ import {initializeObjectById} from "../config.js";
 class Dashboard {
     constructor(element) {
         this.container = element;
+        this.activate()
+    }
 
-        window.onresize = () => {
-            this.container.classList.add("transition-none");
-            setTimeout(() => { this.container.classList.remove("transition-none"); }, 1000);
-            // if (window.innerWidth >= 1024) _offcanvas.hide();
-        };
+    activate() {
+        window.addEventListener("resize", this);
+    }
+
+    handleEvent() {
+        this.container.classList.add("transition-none");
+        setTimeout(() => { this.container.classList.remove("transition-none"); }, 1000);
     }
 }
 
