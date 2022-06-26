@@ -26,7 +26,7 @@ class DarkMode {
     }
 }
 
-const QUERY = "[data-util='DarkMode']";
+const QUERY = "[data-component='DarkMode']";
 const OBJECT = DarkMode;
 
 initializeObjectByQuery(QUERY, OBJECT);
