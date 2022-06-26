@@ -6,10 +6,10 @@ class DarkMode {
     }
 
     activate(element) {
-        element.addEventListener("click", this.toggle);
+        element.addEventListener("click", this);
     }
 
-    toggle() {
+    handleEvent() {
         let transitions = document.querySelectorAll(".transition, .transition-all, .transition-colors, .transition-opacity, .transition-shadow, .transition-transform");
         for (let i = 0; i < transitions.length; i++) {
             transitions[i].classList.add("transition-none");
