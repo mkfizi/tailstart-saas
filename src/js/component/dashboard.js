@@ -1,12 +1,12 @@
 import {initializeObjectById} from "../config.js";
 
 class Dashboard {
-    constructor(element) {
-        this.container = element;
-        this.activate()
+    constructor(container) {
+        this.container = container;
+        this.initialize();
     }
 
-    activate() {
+    initialize() {
         window.addEventListener("resize", this);
     }
 
@@ -16,9 +16,9 @@ class Dashboard {
     }
 }
 
-const ID = "dashboard";
-const OBJECT = Dashboard;
+const selector = "dashboard";
+const object = Dashboard;
 
-initializeObjectById(ID, OBJECT);
+initializeObjectById(selector, object);
 
 export default Dashboard;
