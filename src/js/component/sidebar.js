@@ -32,7 +32,7 @@ class Sidebar{
     show() {
         this.container.classList.remove(this.position);
 
-        this.focusTrap = new FocusTrap(this.container);
+        this.focusTrap = new FocusTrap(this);
         this.backdrop = new Backdrop(this);
     }
 
@@ -41,6 +41,7 @@ class Sidebar{
         
         this.focusTrap.destroy();
         this.focusTrap = null;
+        this.backdrop.destroy();
         this.backdrop = null;
     }
 }
