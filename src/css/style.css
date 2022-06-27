@@ -969,6 +969,10 @@ select {
   fill: #67e8f9;
 }
 
+.fill-white {
+  fill: #fff;
+}
+
 .stroke-cyan-700 {
   stroke: #0e7490;
 }
