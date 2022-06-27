@@ -14,6 +14,10 @@ class Backdrop {
         this.container.addEventListener("click", this)
     }
 
+    destroy() {
+        this.container.remove();
+    }
+
     handleEvent() {
         this.hide();
     }
@@ -23,7 +27,6 @@ class Backdrop {
     }
 
     hide() {
-        this.container.remove();
         this.activeObject.hide();
     }
 }
