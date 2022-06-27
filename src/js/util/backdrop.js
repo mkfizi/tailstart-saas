@@ -10,11 +10,13 @@ class Backdrop {
     }
 
     initialize() {
+        if (this.activeObject != null) this.hide();
         this.show();
         this.container.addEventListener("click", this)
     }
 
     destroy() {
+        this.activeObject = null;
         this.container.remove();
     }
 
