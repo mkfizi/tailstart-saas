@@ -1,5 +1,6 @@
 class Backdrop {
     constructor(object) {
+        if (this.activeObject != null) this.hide();
         this.activeObject = object;
         
         let container = document.createElement("div");
@@ -10,7 +11,6 @@ class Backdrop {
     }
 
     initialize() {
-        if (this.activeObject != null) this.hide();
         this.show();
         this.container.addEventListener("click", this)
     }
