@@ -23,10 +23,10 @@ class Sidebar{
     }
 
     handleEvent(event) {
-        let toggle = event.currentTarget.dataset.toggle;
-        if (toggle == null) return null;
-        if (toggle == "show") this.show();
-        if (toggle == "hide") this.hide();
+        let action = event.currentTarget.dataset.action;
+        if (action == null) return null;
+        if (action == "show") this.show();
+        if (action == "hide") this.hide();
     }
 
     show() {
