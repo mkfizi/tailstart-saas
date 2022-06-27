@@ -1,18 +1,21 @@
 import {initializeObjectById} from "../config.js";
 
-class Dashboard {
+import Sidebar from "./sidebar.js";
+
+class Dashboard extends Sidebar{
     constructor(container) {
-        this.container = container;
-        this.initialize();
+        super(container);
+        this.initializeWindow();
     }
 
-    initialize() {
-        window.addEventListener("resize", this);
+    initializeWindow() {
+        window.addEventListener("resize", this.handleWindow.bind(this));
     }
 
-    handleEvent() {
+    handleWindow() {
         this.container.classList.add("transition-none");
         setTimeout(() => { this.container.classList.remove("transition-none"); }, 1000);
+        if (window.innerWidth >= 1024) this.hide();
     }
 }
 

@@ -38,7 +38,7 @@ class Sidebar{
 
     hide() {
         this.container.classList.add(this.position);
-        
+        if (this.focusTrap == null && this.backdrop == null) return null;
         this.focusTrap.destroy();
         this.focusTrap = null;
         this.backdrop.destroy();
