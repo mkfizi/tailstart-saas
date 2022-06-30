@@ -1,4 +1,4 @@
-import {initializeObjectByQuery} from "../config.js";
+import {initializeObjectByQuery} from "../util/config.js";
 
 class Collapse {
     constructor(container) {

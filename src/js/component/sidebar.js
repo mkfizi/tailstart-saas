@@ -1,4 +1,4 @@
-import {initializeObjectByQuery} from "../config.js";
+import {initializeObjectByQuery} from "../util/config.js";
 
 import Backdrop from "../util/backdrop.js";
 import FocusTrap from "../util/focus-trap.js";
