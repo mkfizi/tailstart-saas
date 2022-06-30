@@ -1,4 +1,4 @@
-import {initializeObjectById} from "../config.js";
+import {initializeObjectById} from "../util/config.js";
 
 import Sidebar from "./sidebar.js";
 
