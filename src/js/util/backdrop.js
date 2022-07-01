@@ -4,10 +4,11 @@ class Backdrop {
 
     /**
      * Backdrop constructor
+     * @params (class) activeObject
      */
-    constructor(object) {
+    constructor(activeObject) {
         if (this.activeObject != null) this.hide();
-        this.activeObject = object;
+        this.activeObject = activeObject;
         
         let container = document.createElement("div");
 
