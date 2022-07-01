@@ -10,26 +10,7 @@ const initializeObjectByQuery = (selector, object) => {
     }
 }
 
-/**
-* Handle viewport issues for mobile browsers.
-* # Refer https://stackoverflow.com/questions/37112218/css3-100vh-not-constant-in-mobile-browser
-*/
-const handleViewport = () => {
-    const viewportHeight = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty("--vh", viewportHeight + "px");
-}
-
-/**
- * Set footer current year.
- */
-const setFooterCurrentYear = () => {
-    const element = document.getElementById("footerCurrentYear");
-    element.innerHTML = new Date().getFullYear();
-}
-
 export {
     initializeObjectById,
     initializeObjectByQuery,
-    handleViewport,
-    setFooterCurrentYear,
 }
