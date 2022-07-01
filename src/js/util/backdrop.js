@@ -3,24 +3,20 @@ class Backdrop {
     activeObject = null;    // Object which triggers backdrop 
 
     /**
-     * Backdrop constructor
+     * Backdrop constructor.
      * @params (class) activeObject
      */
     constructor(activeObject) {
         if (this.activeObject != null) this.hide();
         this.activeObject = activeObject;
-        
-        let container = document.createElement("div");
 
-        this.container = container;
-        this.container.setAttribute("class", "fixed w-screen h-screen bg-neutral-900 opacity-50 z-10 transition top-0 left-0");
-        this.container.addEventListener("click", this)
+        this.initializeContainer();
 
         this.show();
     }
 
     /**
-     * Backdrop destructor
+     * Backdrop destructor.
      */
     destructor() {
         this.activeObject = null;
@@ -28,7 +24,7 @@ class Backdrop {
     }
     
     /**
-     * Handle event
+     * Handle event.
      * @params (object) event
      */
     handleEvent(event) {
@@ -43,10 +39,20 @@ class Backdrop {
     }
 
     /**
-     * Hide backdrop.
+     * Hide backdrop where it trigger hide method on current active object.
      */
     hide() {
         this.activeObject.hide();
+    }
+
+    /**
+     * Initialize container for backdrop.
+     */
+    initializeContainer() {
+        let container = document.createElement("div");
+        this.container = container;
+        this.container.setAttribute("class", "fixed w-screen h-screen bg-neutral-900 opacity-50 z-10 transition top-0 left-0");
+        this.container.addEventListener("click", this)
     }
 }
 
