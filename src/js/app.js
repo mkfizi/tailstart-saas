@@ -2,10 +2,13 @@
 
 // import Collapse from "./component/collapse.js"
 // import DarkMode from "./component/dark-mode.js"
-// import Dashboard from "./component/dashboard.js"
-// import Sidebar from "./component/sidebar.js"
+import Dashboard from "./component/dashboard.js"
+import Sidebar from "./component/sidebar.js"
 
 class App {
+    /**
+     * App constructor
+     */
     constructor() {
         window.addEventListener("load", this);
         window.addEventListener("resize", this);
@@ -13,18 +16,16 @@ class App {
 
     /**
      * Handle event
+     * @params (object) event
      */
     handleEvent(event) {
-        this.setViewport();
-        switch (event.type) {
-            case "load":
-                this.setFooterCurrentYear();      
-        }
+        if (event.type == "load") this.setFooterCurrentYear();  
+        this.setViewport();    
     }
 
     /**
      * Handle viewport issues for mobile browsers.
-     * # Refer https://stackoverflow.com/questions/37112218/css3-100vh-not-constant-in-mobile-browser
+     * - Refer https://stackoverflow.com/questions/37112218/css3-100vh-not-constant-in-mobile-browser
      */
     setViewport() {
         const viewportHeight = window.innerHeight * 0.01;
