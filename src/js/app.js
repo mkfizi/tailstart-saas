@@ -7,7 +7,7 @@ import Sidebar from "./component/sidebar.js"
 
 class App {
     /**
-     * App constructor
+     * App constructor.
      */
     constructor() {
         window.addEventListener("load", this);
@@ -15,7 +15,7 @@ class App {
     }
 
     /**
-     * App event handler
+     * App event handler.
      * @params (object) event
      */
     handleEvent(event) {
