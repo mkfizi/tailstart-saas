@@ -15,7 +15,7 @@ class App {
     }
 
     /**
-     * Handle event
+     * App event handler
      * @params (object) event
      */
     handleEvent(event) {
