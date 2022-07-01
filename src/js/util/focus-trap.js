@@ -1,28 +1,34 @@
 class FocusTrap{
-    constructor(object) {
-        this.activeObject = object;
+    activeObject = null;    // Object which triggers backdrop 
+    firstElement = null;    // First focusable element
+    lastElement = null;     // Last focusable element
 
-        this.activeObject.container.setAttribute("tabindex", 0);
-        setTimeout(() => { this.activeObject.container.removeAttribute("tabindex"); }, 1000);
-        this.activeObject.container.focus();
+    /**
+     * FocusTrap constructor.
+     * @params (class) activeObject
+     */
+    constructor(activeObject) {
+        this.activeObject = activeObject;
 
-        let focusableElements = this.activeObject.container.querySelectorAll("a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, [tabindex=\"0\"], [contenteditable]"); 
-        this.firstElement = focusableElements[0];
-        this.lastElement = focusableElements[focusableElements.length - 1];
+        this.initializeActiveObject()
+        this.initializeFocusableElement()
 
-        this.initialize();
-    }
-
-    initialize() {
         document.addEventListener("keydown", this);
     }
-
-    destroy() {
+    
+    /**
+     * FocusTrap destructor.
+     */
+    destructor() {
         document.removeEventListener("keydown", this);
     }
 
+    /**
+     * FocusTrap event handler.
+     * @params (object) event
+     */
     handleEvent(event) {
-        if (event.keyCode === 9) {
+        if (event.type === "keydown" && event.keyCode === 9) {
             if (event.shiftKey && document.activeElement === this.firstElement) {
                 event.preventDefault();
                 this.lastElement.focus();
@@ -31,6 +37,24 @@ class FocusTrap{
                 this.firstElement.focus();
             }
         }
+    }
+    
+    /**
+     * Initialize active object attributes.
+     */
+    initializeActiveObject() {
+        this.activeObject.container.setAttribute("tabindex", 0);
+        this.activeObject.container.focus();
+        setTimeout(() => { this.activeObject.container.removeAttribute("tabindex"); }, 1000);
+    }
+    
+    /**
+     * Initialize focusable elements.
+     */
+    initializeFocusableElement() {
+        let focusableElements = this.activeObject.container.querySelectorAll("a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, [tabindex=\"0\"], [contenteditable]"); 
+        this.firstElement = focusableElements[0];
+        this.lastElement = focusableElements[focusableElements.length - 1];
     }
 }
 
