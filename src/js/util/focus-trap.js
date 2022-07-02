@@ -8,10 +8,8 @@ class FocusTrap{
      * @params (class) activeObject
      */
     constructor(activeObject) {
-        this.activeObject = activeObject;
-
-        this.setActiveObject()
-        this.setFocusableElement()
+        this.setActiveObject(activeObject);
+        this.setFocusableElement();
 
         document.addEventListener("keydown", this);
     }
@@ -41,18 +39,20 @@ class FocusTrap{
     
     /**
      * Set active object attributes.
+     * @oarans (object) activeObject
      */
-    setActiveObject() {
-        this.activeObject.container.setAttribute("tabindex", 0);
-        this.activeObject.container.focus();
-        setTimeout(() => { this.activeObject.container.removeAttribute("tabindex"); }, 1000);
+    setActiveObject(activeObject) {
+        this.activeObject = activeObject;
+        this.activeObject.element.setAttribute("tabindex", 0);
+        this.activeObject.element.focus();
+        setTimeout(() => { this.activeObject.element.removeAttribute("tabindex"); }, 1000);
     }
     
     /**
      * Set focusable elements.
      */
     setFocusableElement() {
-        let focusableElements = this.activeObject.container.querySelectorAll("a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, [tabindex=\"0\"], [contenteditable]"); 
+        let focusableElements = this.activeObject.element.querySelectorAll("a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, [tabindex=\"0\"], [contenteditable]"); 
         this.firstElement = focusableElements[0];
         this.lastElement = focusableElements[focusableElements.length - 1];
     }
