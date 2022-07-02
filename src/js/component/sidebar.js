@@ -9,7 +9,7 @@ class Sidebar{
 
     /**
      * Sidebar constructor.
-     * @params (HTMLDom) container
+     * @params (HTMLDom) element
      */
     constructor(element) {
         this.element = element;
