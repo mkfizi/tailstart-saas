@@ -47,7 +47,7 @@ class Backdrop {
     /**
      * Set element for backdrop.
      */
-    initializeelement() {
+    setElement() {
         let element = document.createElement("div");
         this.element = element;
         this.element.setAttribute("class", "fixed w-screen h-screen bg-neutral-900 opacity-50 z-10 transition top-0 left-0");
