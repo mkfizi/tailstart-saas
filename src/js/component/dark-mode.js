@@ -1,4 +1,4 @@
-import {setObjectByQuery} from "../util/config.js";
+import {setObjectByQuery, toggleAllTranstition} from "../util/config.js";
 
 class DarkMode {
     element = null; // Dark mode element
@@ -17,7 +17,7 @@ class DarkMode {
      */
     handleEvent(event) {
         if (event.type == "click") {
-            this.toggleTranstition();
+            toggleAllTranstition();
             this.toggle();
         }
     }
@@ -56,17 +56,6 @@ class DarkMode {
     setElement(element) {
         this.element = element;
         this.element.addEventListener("click", this);
-    }
-
-    /**
-     * Toggle "transition-none" class to all elements with transition classes.
-     */
-    toggleTranstition() {
-        let transitions = document.querySelectorAll(".transition, .transition-all, .transition-colors, .transition-opacity, .transition-shadow, .transition-transform");
-        for (let i = 0; i < transitions.length; i++) {
-            transitions[i].classList.add("transition-none");
-            setTimeout(() => { transitions[i].classList.remove("transition-none"); }, 1000);
-        }
     }
 }
 

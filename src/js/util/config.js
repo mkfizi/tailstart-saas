@@ -20,7 +20,19 @@ const setObjectByQuery = (selector, object) => {
     }
 }
 
+/**
+ * Toggle "transition-none" class to all elements with transition classes.
+ */
+const toggleAllTranstition = () => {
+    let transitions = document.querySelectorAll(".transition, .transition-all, .transition-colors, .transition-opacity, .transition-shadow, .transition-transform");
+    for (let i = 0; i < transitions.length; i++) {
+        transitions[i].classList.add("transition-none");
+        setTimeout(() => { transitions[i].classList.remove("transition-none"); }, 1000);
+    }
+}
+
 export {
     setObjectById,
     setObjectByQuery,
+    toggleAllTranstition,
 }
