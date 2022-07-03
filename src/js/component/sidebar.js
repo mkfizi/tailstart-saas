@@ -1,4 +1,4 @@
-import {initializeObjectByQuery} from "../util/config.js";
+import {setObjectByQuery} from "../util/config.js";
 
 import Backdrop from "../util/backdrop.js";
 import FocusTrap from "../util/focus-trap.js";
@@ -23,8 +23,10 @@ class Sidebar{
      * @params (object) event
      */
     handleEvent(event) {
-        if (event.currentTarget.dataset.action == "show" && event.type == "click") this.show();
-        if (event.currentTarget.dataset.action == "hide" && event.type == "click") this.hide();
+        if (event.currentTarget.dataset.action != null) {
+            if (event.currentTarget.dataset.action == "show" && event.type == "click") this.show();
+            if (event.currentTarget.dataset.action == "hide" && event.type == "click") this.hide();
+        }
     }
     
     /**
@@ -74,6 +76,6 @@ class Sidebar{
 const selector = "[data-component='Sidebar']";
 const object = Sidebar;
 
-initializeObjectByQuery(selector, object);
+setObjectByQuery(selector, object);
 
 export default Sidebar;
