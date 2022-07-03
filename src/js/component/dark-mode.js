@@ -1,4 +1,4 @@
-import {setObjectByQuery, toggleAllTranstition} from "../util/config.js";
+import {setObjectByQuery, toggleAllTransition} from "../util/config.js";
 
 class DarkMode {
     element = null; // Dark mode element
@@ -17,7 +17,7 @@ class DarkMode {
      */
     handleEvent(event) {
         if (event.type == "click") {
-            toggleAllTranstition();
+            toggleAllTransition();
             this.toggle();
         }
     }
