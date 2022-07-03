@@ -22,9 +22,9 @@ class Sidebar{
      * @params (object) event
      */
     handleEvent(event) {
-        if (event.currentTarget.dataset.action != null) {
-            if (event.currentTarget.dataset.action == "show" && event.type == "click") this.show();
-            if (event.currentTarget.dataset.action == "hide" && event.type == "click") this.hide();
+        if (event.type == "click") {
+            if (event.currentTarget.dataset.action == "show") this.show();
+            if (event.currentTarget.dataset.action == "hide") this.hide();
         }
     }
     

@@ -18,7 +18,7 @@ class Dashboard extends Sidebar{
      */
     handleEvent(event) {
         super.handleEvent(event);
-        if (event.currentTarget == window && event.type == "click") {
+        if (event.type == "resize") {
             toggleTransition(this.element);
             if (window.innerWidth >= 1024) this.hide();
         }
