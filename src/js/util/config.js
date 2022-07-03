@@ -21,6 +21,15 @@ const setObjectByQuery = (selector, object) => {
 }
 
 /**
+ * Toggle "transition-none" class to target element.
+ * @params (HTMLDom) element
+ */
+const toggleTransition = element => {
+    element.classList.add("transition-none");
+    setTimeout(() => { element.classList.remove("transition-none"); }, 1000);       
+}
+
+/**
  * Toggle "transition-none" class to all elements with transition classes.
  */
 const toggleAllTransition = () => {
@@ -34,5 +43,6 @@ const toggleAllTransition = () => {
 export {
     setObjectById,
     setObjectByQuery,
+    toggleTransition,
     toggleAllTransition,
 }

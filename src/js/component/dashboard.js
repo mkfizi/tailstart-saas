@@ -1,4 +1,4 @@
-import {setObjectById} from "../util/config.js";
+import {setObjectById, toggleTransition} from "../util/config.js";
 
 import Sidebar from "./sidebar.js";
 
@@ -19,8 +19,7 @@ class Dashboard extends Sidebar{
     handleEvent(event) {
         super.handleEvent(event);
         if (event.currentTarget == window && event.type == "click") {
-            this.element.classList.add("transition-none");
-            setTimeout(() => { this.element.classList.remove("transition-none"); }, 1000);
+            toggleTransition(this.element);
             if (window.innerWidth >= 1024) this.hide();
         }
     }
