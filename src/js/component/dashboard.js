@@ -26,9 +26,11 @@ class Dashboard extends Sidebar{
      */
     handleEvent(event) {
         super.handleEvent(event);
-        this.element.classList.add("transition-none");
-        setTimeout(() => { this.element.classList.remove("transition-none"); }, 1000);
-        if (window.innerWidth >= 1024) this.hide();
+        if (event.currentTarget == window && event.type == "click") {
+            this.element.classList.add("transition-none");
+            setTimeout(() => { this.element.classList.remove("transition-none"); }, 1000);
+            if (window.innerWidth >= 1024) this.hide();
+        }
     }
 }
 
