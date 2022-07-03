@@ -331,8 +331,8 @@
                             <line x1="15" y1="8" x2="19" y2="12" />
                         </svg>
                     </span>
-                    <span class="flex space-x-2">
-                        <span id="githubStars"></span>
+                    <span id="githubStars" class="hidden space-x-2">
+                        <span id="githubStarsText"></span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-star fill-white" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                             <path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" />
@@ -341,9 +341,18 @@
                     
                     <script>
                         fetch('https://api.github.com/repos/mkfizi/tailboard')
-                            .then(response => response.json())
+                            .then(response =>{
+                                if (!response.ok) {
+                                    throw new Error('Network response was not OK');
+                                } 
+                                return response.json();
+                            })
                             .then(data => {
-                                document.getElementById("githubStars").innerHTML = data.stargazers_count;
+                                document.getElementById("githubStars").classList.remove("hidden");
+                                document.getElementById("githubStars").classList.add("flex");
+                                document.getElementById("githubStarsText").innerHTML = data.stargazers_count;
+                            }).catch(error => {
+                                console.error('There has been a problem with your fetch operation:', error);
                             });
                     </script>
                 </a>
