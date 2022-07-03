@@ -1,9 +1,19 @@
-const initializeObjectById = (selector, object) => {
+/**
+ * Set object by id.
+ * @params (string) selector
+ * @params (object) object
+ */
+const setObjectById = (selector, object) => {
     let element = document.getElementById(selector);
     if (element != null) new object(element);
 }
 
-const initializeObjectByQuery = (selector, object) => {
+/**
+ * Set object by query.
+ * @params (string) selector
+ * @params (object) object
+ */
+const setObjectByQuery = (selector, object) => {
     let element = document.querySelectorAll(selector);
     for (let i = 0; i < element.length; i++) {
         new object(element[i]);
@@ -11,6 +21,6 @@ const initializeObjectByQuery = (selector, object) => {
 }
 
 export {
-    initializeObjectById,
-    initializeObjectByQuery,
+    setObjectById,
+    setObjectByQuery,
 }
