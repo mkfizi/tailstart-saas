@@ -4,7 +4,7 @@ import Backdrop from "../util/backdrop.js";
 import FocusTrap from "../util/focus-trap.js";
 
 class Sidebar{
-    element = null;   // Sidebar element
+    element = null;     // Sidebar element
     position = null;    // Sidebar position
 
     /**
