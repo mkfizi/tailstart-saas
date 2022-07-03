@@ -13,14 +13,6 @@ class Dashboard extends Sidebar{
     }
 
     /**
-     * Set window.
-     * @params (HTMLDom) element
-     */
-    setWindow() {
-        window.addEventListener("resize", this);
-    }
-
-    /**
      * Handle event.
      * @params (object) event
      */
@@ -31,6 +23,14 @@ class Dashboard extends Sidebar{
             setTimeout(() => { this.element.classList.remove("transition-none"); }, 1000);
             if (window.innerWidth >= 1024) this.hide();
         }
+    }
+
+    /**
+     * Set window.
+     * @params (HTMLDom) element
+     */
+    setWindow() {
+        window.addEventListener("resize", this);
     }
 }
 
