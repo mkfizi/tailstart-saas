@@ -12,8 +12,7 @@ class Sidebar{
      * @params (HTMLDom) element
      */
     constructor(element) {
-        this.element = element;
-
+        this.setElement(element);
         this.setPosition();
         this.setButton();
     }
@@ -49,6 +48,15 @@ class Sidebar{
             this.focusTrap = null;
             this.backdrop = null;
         }
+    }
+    
+    /**
+     * Set sidebar element.
+     * @params (HTMLDom) element
+     */
+    setElement(element) {
+        this.element = element;
+        this.element.addEventListener("click", this);
     }
 
     /**
