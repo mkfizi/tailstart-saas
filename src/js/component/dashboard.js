@@ -1,20 +1,33 @@
-import {initializeObjectById} from "../util/config.js";
+import {setObjectById} from "../util/config.js";
 
 import Sidebar from "./sidebar.js";
 
 class Dashboard extends Sidebar{
-    constructor(container) {
-        super(container);
-        this.initializeWindow();
+    /**
+     * Sidebar constructor.
+     * @params (HTMLDom) element
+     */
+    constructor(element) {
+        super(element);
+        this.setWindow();
     }
 
-    initializeWindow() {
-        window.addEventListener("resize", this.handleWindow.bind(this));
+    /**
+     * Set window.
+     * @params (HTMLDom) element
+     */
+    setWindow() {
+        window.addEventListener("resize", this);
     }
 
-    handleWindow() {
-        this.container.classList.add("transition-none");
-        setTimeout(() => { this.container.classList.remove("transition-none"); }, 1000);
+    /**
+     * Handle event.
+     * @params (object) event
+     */
+    handleEvent(event) {
+        super.handleEvent(event);
+        this.element.classList.add("transition-none");
+        setTimeout(() => { this.element.classList.remove("transition-none"); }, 1000);
         if (window.innerWidth >= 1024) this.hide();
     }
 }
@@ -22,6 +35,6 @@ class Dashboard extends Sidebar{
 const selector = "dashboard";
 const object = Dashboard;
 
-initializeObjectById(selector, object);
+setObjectById(selector, object);
 
 export default Dashboard;
