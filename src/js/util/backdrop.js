@@ -7,9 +7,7 @@ class Backdrop {
      * @params (class) activeObject
      */
     constructor(activeObject) {
-        if (this.activeObject != null) this.hide();
-        this.activeObject = activeObject;
-
+        this.setActiveObject(activeObject);
         this.setElement();
         this.show();
     }
@@ -42,6 +40,15 @@ class Backdrop {
      */
     hide() {
         this.activeObject.hide();
+    }
+    
+    /**
+     * Destruct current active object and set new active object.
+     * @oarans (object) activeObject
+     */
+    setActiveObject(activeObject) {
+        if (this.activeObject != null) this.hide();
+        this.activeObject = activeObject;
     }
 
     /**
