@@ -34,5 +34,5 @@ const toggleAllTransition = () => {
 export {
     setObjectById,
     setObjectByQuery,
-    toggleAllTranstition,
+    toggleAllTransition,
 }
