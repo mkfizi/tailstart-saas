@@ -67,7 +67,11 @@ class Dropdown {
         this.clickOutside.destructor();
         this.clickOutside = null;
     }
-
+    
+    /**
+     * Check if drop is actove or not.
+     * @return (boolean) isDropdownActive
+     */
     isDropdownActive() {
         let isDropdownActive = false;
         if(! this.element.classList.contains("scale-0", "opacity-0")) isDropdownActive = true;

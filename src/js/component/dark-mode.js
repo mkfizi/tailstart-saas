@@ -56,7 +56,7 @@ class DarkMode {
     }
 
     /**
-     * Check if dark mode is enabled or note.
+     * Check if dark mode is enabled or not.
      * @return (boolean) isDarkModeEnabled
      */
     isDarkModeEnabled() {
