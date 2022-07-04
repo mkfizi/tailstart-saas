@@ -27,17 +27,16 @@ class ClickOutside{
         }
     }
 
-    
     /**
      * Set target object property.
      * @parans (object) targetObject
      */
-     setTargetObject(targetObject) {
+    setTargetObject(targetObject) {
         this.targetObject = targetObject;
 
         document.addEventListener("click", this);
     }
-    
+
     /**
      * Check if click target is outside of component or component trigger.
      * @params (object) event

@@ -15,26 +15,12 @@ class Dropdown {
     constructor(element) {
         this.setComponent(element);
     }
-    
-    /**
-     * Set dropdown component.
-     * @params (HTMLDom) element
-     */
-    setComponent(element) {
-        this.element = element;
-        this.id = this.element.getAttribute("id");
-
-        this.buttons = document.querySelectorAll(`[data-target="${this.id}"][data-trigger="dropdown"]`);
-        for (let i = 0; i < this.buttons.length; i++){
-            this.buttons[i].addEventListener("click", this);
-        }
-    }
 
     /**
      * Handle evenet.
      * @params (object) event
      */
-     handleEvent(event) {
+    handleEvent(event) {
         if (event.type == "click" && event.currentTarget.dataset.action == "toggle") this.toggle();
     }
     
@@ -67,6 +53,20 @@ class Dropdown {
         this.clickOutside = null;
     }
     
+    /**
+     * Set dropdown component.
+     * @params (HTMLDom) element
+     */
+    setComponent(element) {
+        this.element = element;
+        this.id = this.element.getAttribute("id");
+
+        this.buttons = document.querySelectorAll(`[data-target="${this.id}"][data-trigger="dropdown"]`);
+        for (let i = 0; i < this.buttons.length; i++){
+            this.buttons[i].addEventListener("click", this);
+        }
+    }
+
     /**
      * Check if dropdown is active or not.
      * @return (boolean) isDropdownActive
