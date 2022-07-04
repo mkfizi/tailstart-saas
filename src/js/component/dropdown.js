@@ -15,6 +15,21 @@ class Dropdown {
     constructor(element) {
         this.setComponent(element);
     }
+    
+    /**
+     * Set dropdown element.
+     * @params (HTMLDom) element
+     */
+    setComponent(element) {
+        this.element = element;
+        this.id = this.element.getAttribute("id");
+
+        this.buttons = document.querySelectorAll(`[data-trigger="dropdown"][data-target="${this.id}"]`);
+        
+        for (let i = 0; i < this.buttons.length; i++){
+            this.buttons[i].addEventListener("click", this);
+        }
+    }
 
     /**
      * Handle evenet.
@@ -51,21 +66,6 @@ class Dropdown {
 
         this.clickOutside.destructor();
         this.clickOutside = null;
-    }
-    
-    /**
-     * Set dropdown element.
-     * @params (HTMLDom) element
-     */
-    setComponent(element) {
-        this.element = element;
-        this.id = this.element.getAttribute("id");
-
-        this.buttons = document.querySelectorAll(`[data-trigger="dropdown"][data-target="${this.id}"]`);
-        
-        for (let i = 0; i < this.buttons.length; i++){
-            this.buttons[i].addEventListener("click", this);
-        }
     }
 }
 
