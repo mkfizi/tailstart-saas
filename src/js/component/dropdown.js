@@ -24,7 +24,7 @@ class Dropdown {
         this.element = element;
         this.id = this.element.getAttribute("id");
 
-        this.buttons = document.querySelectorAll(`[data-trigger="dropdown"][data-target="${this.id}"]`);
+        this.buttons = document.querySelectorAll(`[data-target="${this.id}"][data-trigger="dropdown"]`);
         
         for (let i = 0; i < this.buttons.length; i++){
             this.buttons[i].addEventListener("click", this);
