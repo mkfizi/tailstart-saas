@@ -69,7 +69,7 @@ class Dropdown {
     }
     
     /**
-     * Check if dropdown is actove or not.
+     * Check if dropdown is active or not.
      * @return (boolean) isDropdownActive
      */
     isDropdownActive() {
