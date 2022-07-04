@@ -303,18 +303,32 @@
                 </button>
             </div>
 
-            <!-- Dark mode toggle -->
-            <button type="button" data-component="DarkMode" class="flex items-center" aria-label="Dark Mode Toggle">
-                <svg xmlns="http://www.w3.org/2000/svg" class="stroke-cyan-700 fill-cyan-700 hover:stroke-cyan-500 hover:fill-cyan-500 dark:hidden" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
-                </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" class="hidden stroke-cyan-300 fill-cyan-300 hover:stroke-cyan-500 hover:fill-cyan-500 dark:block" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="12" cy="12" r="4" />
-                    <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
-                </svg>
-            </button>
+            <span class="flex items-center justify-between space-x-3">
+                <!-- Dark mode toggle -->
+                <button type="button" data-component="DarkMode" class="flex items-center" aria-label="Dark Mode Toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="stroke-cyan-700 fill-cyan-700 hover:stroke-cyan-500 hover:fill-cyan-500 dark:hidden" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="hidden stroke-cyan-300 fill-cyan-300 hover:stroke-cyan-500 hover:fill-cyan-500 dark:block" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <circle cx="12" cy="12" r="4" />
+                        <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
+                    </svg>
+                </button>
+
+                <!-- Account Dropdown -->
+                <div class="relative flex items-center">
+                    <button data-trigger="dropdown" data-action="toggle" data-target="menuDropdown" class="w-8 h-8 border-2 rounded-full border-cyan-700 dark:border-cyan-300 hover:border-cyan-500 dark:hover:border-cyan-500">
+                        <img src="./src/img/avatar.png" class="rounded-full" alt="">
+                    </button>
+                    <ul id="menuDropdown" data-component="dropdown" class="absolute right-0 z-10 w-32 py-2 overflow-y-auto transition origin-top-right scale-0 bg-white rounded-md shadow opacity-0 dark:bg-gray-800 top-16 max-h-96">
+                        <li><a href="#" class="block px-4 py-2 text-sm font-medium hover:text-cyan-500">Profile</a></li>
+                        <li><a href="#" class="block px-4 py-2 text-sm font-medium hover:text-cyan-500">Settings</a></li>
+                        <li><a href="#" class="block px-4 py-2 text-sm font-medium hover:text-cyan-500">Logout</a></li>
+                    </ul>
+                </div>
+            </span>
         </nav>
 
         <!-- Content -->
