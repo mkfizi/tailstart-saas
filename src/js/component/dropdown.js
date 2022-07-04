@@ -21,9 +21,7 @@ class Dropdown {
      * @params (object) event
      */
      handleEvent(event) {
-        if (event.type == "click") {
-            if (event.currentTarget.dataset.action == "toggle") this.toggle();
-        }   
+        if (event.type == "click" && event.currentTarget.dataset.action == "toggle") this.toggle();
     }
     
     /**
