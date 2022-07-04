@@ -1,5 +1,6 @@
-import ClickOutside from "../util/click-outside.js";
 import {setComponentObjectByQuery} from "../util/config.js";
+
+import ClickOutside from "../util/click-outside.js";
 
 class Dropdown {
     clickOutside = null;    // Dropdown click outside
