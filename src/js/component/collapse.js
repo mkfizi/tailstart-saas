@@ -1,4 +1,4 @@
-import {setObjectByQuery} from "../util/config.js";
+import {setComponentObjectByQuery} from "../util/config.js";
 
 class Collapse {
     element = null;     // Collapse element
@@ -8,7 +8,7 @@ class Collapse {
      * @params (HTMLDom) element
      */
      constructor(element) {
-        this.setElement(element);
+        this.setComponent(element);
     }
 
     /**
@@ -16,37 +16,31 @@ class Collapse {
      * @params (object) event
      */
     handleEvent(event) {
-        if (event.type == "click") {
-            if (event.currentTarget.dataset.action == "toggle") this.toggle(event.currentTarget);
-        }
+        if (event.type == "click" && event.currentTarget.dataset.action == "toggle") this.toggle();
     }
 
     /**
      * Toggle collapse.
-     * @params (HTMLDom) currentTarget
      */
-    toggle(currentTarget) {
-        let content = this.element.querySelector(`[id="${currentTarget.dataset.target}"]`);
-        let icon = this.element.querySelector(`[data-icon="${currentTarget.dataset.target}"]`);
-        content.classList.contains("h-0")
-            ? this.show(content, icon)
-            : this.hide(content, icon);
+    toggle() {
+        this.isCollapseActive()
+            ? this.hide()
+            : this.show();
     }
 
     /**
      * Show collapse.
-     * @params (element) content
-     * @params (element) icon
      */
-    show(content, icon) {
-        icon.classList.add("rotate-180");
-        content.classList.remove("h-0");
+    show() {
+        this.element.classList.remove("h-0");
 
-        let containerHeight = content.clientHeight + "px";
+        let containerHeight = this.element.clientHeight + "px";
 
-        content.style.height = "0";
-        setTimeout(() => content.style.height = containerHeight, 50);
-        setTimeout(() => content.removeAttribute("style"), 500);
+        this.element.style.height = "0";
+        setTimeout(() => this.element.style.height = containerHeight, 50);
+        setTimeout(() => this.element.removeAttribute("style"), 500);
+
+        this.toggleCollapseIcon();
     }
 
     /**
@@ -54,34 +48,54 @@ class Collapse {
      * @params (element) content
      * @params (element) icon
      */
-    hide(content, icon) {
-        icon.classList.remove("rotate-180");
+    hide() {
+        let containerHeight = this.element.clientHeight + "px";
 
-        let containerHeight = content.clientHeight + "px";
+        this.element.style.height = containerHeight;
+        setTimeout(() => this.element.style.height = "0", 50);
+        setTimeout(() => this.element.removeAttribute("style"), 500);
+        this.element.classList.add("h-0");
 
-        content.style.height = containerHeight;
-        setTimeout(() => content.style.height = "0", 50);
-        setTimeout(() => content.removeAttribute("style"), 500);
-        content.classList.add("h-0")
+        this.toggleCollapseIcon();
     }
 
-
     /**
-     * Set sidebar element.
+     * Set sidebar component.
      * @params (HTMLDom) element
      */
-     setElement(element) {
+    setComponent(element) {
         this.element = element;
-        let buttons = this.element.querySelectorAll("[data-target]");
+        this.id = this.element.getAttribute("id");
+        
+        let buttons = document.querySelectorAll(`[data-target="${this.id}"][data-trigger="collapse"]`);
         for (let i = 0; i < buttons.length; i++){
             buttons[i].addEventListener("click", this);
         }
     }
+
+     /**
+     * Check if collapse is active or not.
+     * @return (boolean) isDropdownActive
+     */
+    isCollapseActive() {
+        let isCollapseActive = false;
+        if (! this.element.classList.contains("h-0")) return true;
+        return isCollapseActive;
+    }
+
+    toggleCollapseIcon() {
+        let icons = document.querySelectorAll(`[data-icon="${this.id}"]`);
+        for (let i = 0; i < icons.length; i++){
+            this.isCollapseActive()
+                ? icons[i].classList.add("rotate-180")
+                : icons[i].classList.remove("rotate-180")
+        }
+    }
 }
 
-const selector = "[data-component='Collapse']";
-const object = Collapse;
+const componentSelector = "[data-component='collapse']";
+const componentObject = Collapse;
 
-setObjectByQuery(selector, object);
+setComponentObjectByQuery(componentSelector, componentObject);
 
 export default Collapse;
