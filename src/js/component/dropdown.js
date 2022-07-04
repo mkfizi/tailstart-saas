@@ -17,7 +17,7 @@ class Dropdown {
     }
     
     /**
-     * Set dropdown element.
+     * Set dropdown component.
      * @params (HTMLDom) element
      */
     setComponent(element) {

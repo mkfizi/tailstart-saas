@@ -13,7 +13,7 @@ class DarkMode {
     }
 
     /**
-     * Set dark mode element.
+     * Set dark mode component.
      * @params (HTMLDom) element
      */
     setComponent(element) {
