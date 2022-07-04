@@ -44,9 +44,9 @@ class Dropdown {
      * @params (HTMLDom) currentTarget
      */
     toggle() {
-        this.element.classList.contains("scale-0", "opacity-0")
-            ? this.show()
-            : this.hide();
+        this.isDropdownActive()
+            ? this.hide()
+            : this.show();
     }
 
     /**
@@ -66,6 +66,12 @@ class Dropdown {
 
         this.clickOutside.destructor();
         this.clickOutside = null;
+    }
+
+    isDropdownActive() {
+        let isDropdownActive = false;
+        if(! this.element.classList.contains("scale-0", "opacity-0")) isDropdownActive = true;
+        return isDropdownActive;
     }
 }
 
