@@ -1,4 +1,5 @@
-import {setObjectByQuery, toggleAllTransition} from "../util/config.js";
+import {setComponentObjectByQuery} from "../util/config.js";
+import {toggleAllTransition} from "../util/config.js";
 
 class DarkMode {
     element = null; // Dark mode element
@@ -8,7 +9,16 @@ class DarkMode {
      * @params (HTMLDom) element
      */
     constructor(element) {
-        this.setElement(element);
+        this.setComponent(element);
+    }
+
+    /**
+     * Set dark mode element.
+     * @params (HTMLDom) element
+     */
+    setComponent(element) {
+        this.element = element;
+        this.element.addEventListener("click", this);
     }
 
     /**
@@ -16,21 +26,17 @@ class DarkMode {
      * @params (object) event
      */
     handleEvent(event) {
-        if (event.type == "click") {
-            toggleAllTransition();
-            this.toggle();
-        }
+        if (event.type == "click" && event.currentTarget.dataset.action == "toggle") this.toggle();
     }
 
     /**
      * Toggle dark mode.
      */
     toggle() {
-        if (localStorage.theme === "light" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: light)").matches)) {
-            this.show();
-        } else if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
-            this.hide();
-        }; 
+        toggleAllTransition();
+        this.isDarkModeEnabled()
+            ? this.hide()
+            : this.show();
     }
 
     /**
@@ -50,18 +56,19 @@ class DarkMode {
     }
 
     /**
-     * Set dark mode element.
-     * @params (HTMLDom) element
+     * Check if dark mode is enabled or note.
+     * @return (boolean) isDarkModeEnabled
      */
-    setElement(element) {
-        this.element = element;
-        this.element.addEventListener("click", this);
+    isDarkModeEnabled() {
+        let isDarkModeEnabled = false;
+        if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) isDarkModeEnabled = true;
+        return isDarkModeEnabled;
     }
 }
 
-const selector = "[data-component='DarkMode']";
-const object = DarkMode;
-
-setObjectByQuery(selector, object);
+const componentSelector = "[data-component='darkmode']";
+const componentObject = DarkMode;
+        
+setComponentObjectByQuery(componentSelector, componentObject);
 
 export default DarkMode;

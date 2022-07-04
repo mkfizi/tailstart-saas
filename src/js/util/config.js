@@ -1,15 +1,15 @@
 /**
- * Set object by id.
+ * Set component object by id.
  * @params (string) componentSelector
- * @params (object) object
+ * @params (object) componentObject
  */
-const setObjectById = (componentSelector, componentObject) => {
+const setComponentObjectById = (componentSelector, componentObject) => {
     let element = document.getElementById(componentSelector);
     if (element != null) new componentObject(element);
 }
 
 /**
- * Set object by query.
+ * Set component object by query.
  * @params (string) componentSelector
  * @params (object) componentObject
  */
@@ -42,7 +42,7 @@ const toggleAllTransition = () => {
 }
 
 export {
-    setObjectById,
+    setComponentObjectById,
     setComponentObjectByQuery,
     toggleTransition,
     toggleAllTransition,
