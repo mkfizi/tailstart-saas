@@ -23,7 +23,7 @@ class ClickOutside{
      */
     handleEvent(event) {
         if (event.type == "click") {
-            if (this.isTargetIsOutside(event)) this.targetObject.hide();
+            if (this.isTargetOutside(event)) this.targetObject.hide();
         }
     }
 
