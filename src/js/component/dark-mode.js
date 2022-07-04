@@ -13,15 +13,6 @@ class DarkMode {
     }
 
     /**
-     * Set dark mode component.
-     * @params (HTMLDom) element
-     */
-    setComponent(element) {
-        this.element = element;
-        this.element.addEventListener("click", this);
-    }
-
-    /**
      * handle event.
      * @params (object) event
      */
@@ -53,6 +44,15 @@ class DarkMode {
     hide() {
         localStorage.theme = "light";
         document.documentElement.classList.remove("dark")
+    }
+
+    /**
+     * Set dark mode component.
+     * @params (HTMLDom) element
+     */
+    setComponent(element) {
+        this.element = element;
+        this.element.addEventListener("click", this);
     }
 
     /**
