@@ -67,12 +67,14 @@
 </head>
 <body class="relative flex min-h-screen antialiased text-gray-900 dark:text-white bg-gray-50 dark:bg-gray-900">
     <!-- Dashboard Menu -->
-    <aside id="dashboard" class="fixed top-0 z-20 flex flex-col w-64 h-screen overflow-y-auto transition -translate-x-full bg-white shadow-2xl dark:bg-gray-800 lg:border-r lg:border-gray-100 lg:dark:border-gray-900 lg:shadow-none lg:sticky shrink-0 lg:translate-x-0 lg:transition-none">
+    <aside id="dashboard" data-component="Sidebar" class="fixed top-0 z-20 flex flex-col w-64 h-screen overflow-y-auto transition -translate-x-full bg-white shadow-2xl dark:bg-gray-800 lg:border-r lg:border-gray-100 lg:dark:border-gray-900 lg:shadow-none lg:sticky shrink-0 lg:translate-x-0 lg:transition-none">
 
-        <!-- Title -->
         <div class="flex items-center justify-between px-4 py-4 lg:pl-6">
+            <!-- Title -->
             <a href="#" class="block text-xl font-bold text-cyan-700 dark:text-cyan-300">Tailboard</a>
-            <button type="button" data-target="dashboard" data-action="hide" class="lg:hidden">
+
+            <!-- Dashboard Hide Button -->
+            <button type="button" data-target="dashboard" data-trigger="Sidebar" data-action="hide" class="lg:hidden">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x stroke-cyan-700 dark:stroke-cyan-300 hover:stroke-cyan-500 dark:hover:stroke-cyan-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <line x1="18" y1="6" x2="6" y2="18" />
@@ -135,7 +137,7 @@
             </a>
 
             <!-- Components Button -->
-            <button data-target="componentCollapse" data-trigger="collapse" data-action="toggle" class="flex justify-between w-full py-4 pl-6 pr-4 transition">
+            <button data-target="componentCollapse" data-trigger="Collapse" data-action="toggle" class="flex justify-between w-full py-4 pl-6 pr-4 transition">
                 <span class="flex space-x-3">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-layout-grid" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -147,7 +149,7 @@
                     <p class="text-sm font-semibold">Components</p>
                 </span>
                 <div data-icon="componentCollapse" class="transition-transform">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="transition -collapse-icon icon icon-tabler icon-tabler-chevron-down" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="transition icon icon-tabler icon-tabler-chevron-down" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <polyline points="6 9 12 15 18 9" />
                     </svg>
@@ -155,7 +157,7 @@
             </button>
 
             <!-- Components Collapse -->
-            <div id="componentCollapse" data-component="collapse" data-accordion="accodion" class="h-0 overflow-hidden transition-all bg-gray-100 dark:bg-gray-700">
+            <div id="componentCollapse" data-component="Collapse" data-accordion="accodion" class="h-0 overflow-hidden transition-all bg-gray-100 dark:bg-gray-700">
                 <!-- Alerts Link -->
                 <a href="#" class="flex w-full py-3 pl-8 pr-4 space-x-3 transition hover:text-cyan-500">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-notification" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -228,7 +230,7 @@
             </button>
 
             <!-- Page Collapse -->
-            <div id="pageCollapse" data-component="collapse" data-accordion="accodion" class="h-0 overflow-hidden transition-all bg-gray-100 dark:bg-gray-700">
+            <div id="pageCollapse" data-component="Collapse" data-accordion="accodion" class="h-0 overflow-hidden transition-all bg-gray-100 dark:bg-gray-700">
                 <!-- Login Link -->
                 <a href="#" class="flex w-full py-3 pl-8 pr-4 space-x-3 transition hover:text-cyan-500">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-login" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -290,7 +292,8 @@
         <!-- Nav -->
         <nav class="sticky top-0 flex justify-between w-full px-4 py-5 bg-white shadow lg:pr-6 items-between dark:bg-gray-800">
             <div class="flex items-center">
-                <button type="button" data-target="dashboard" data-action="show" class="lg:hidden">
+                <!-- Dashboard Show Button -->
+                <button type="button" data-target="dashboard" data-trigger="Sidebar" data-action="show" class="lg:hidden">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2 stroke-cyan-700 fill-cyan-700 dark:stroke-cyan-300 dark:fill-cyan-300 hover:stroke-cyan-500 hover:fill-cyan-500 " width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <line x1="4" y1="6" x2="20" y2="6" />
@@ -302,7 +305,7 @@
 
             <span class="flex items-center justify-between space-x-3">
                 <!-- Dark mode toggle -->
-                <button type="button" id="darkModeToggle" data-component="darkmode" data-action="toggle" class="flex items-center" aria-label="Dark Mode Toggle">
+                <button type="button" id="darkModeToggle" data-component="DarkMode" data-action="toggle" class="flex items-center" aria-label="Dark Mode Toggle">
                     <svg xmlns="http://www.w3.org/2000/svg" class="stroke-cyan-700 fill-cyan-700 hover:stroke-cyan-500 hover:fill-cyan-500 dark:hidden" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -316,10 +319,10 @@
 
                 <!-- Account Dropdown -->
                 <div class="relative flex items-center">
-                    <button data-target="menuDropdown" data-trigger="dropdown" data-action="toggle" class="w-8 h-8 border-2 rounded-full border-cyan-700 dark:border-cyan-300 hover:border-cyan-500 dark:hover:border-cyan-500">
+                    <button data-target="menuDropdown" data-trigger="Dropdown" data-action="toggle" class="w-8 h-8 border-2 rounded-full border-cyan-700 dark:border-cyan-300 hover:border-cyan-500 dark:hover:border-cyan-500">
                         <img src="./src/img/avatar.png" class="rounded-full" alt="">
                     </button>
-                    <ul id="menuDropdown" data-component="dropdown" class="absolute right-0 z-10 w-32 py-2 overflow-y-auto transition origin-top-right scale-0 bg-white rounded-md shadow opacity-0 dark:bg-gray-800 top-16 max-h-96">
+                    <ul id="menuDropdown" data-component="Dropdown" class="absolute right-0 z-10 w-32 py-2 overflow-y-auto transition origin-top-right scale-0 bg-white rounded-md shadow opacity-0 dark:bg-gray-800 top-16 max-h-96">
                         <li><a href="#" class="block px-4 py-2 text-sm font-medium hover:text-cyan-500">Profile</a></li>
                         <li><a href="#" class="block px-4 py-2 text-sm font-medium hover:text-cyan-500">Settings</a></li>
                         <li><a href="#" class="block px-4 py-2 text-sm font-medium hover:text-cyan-500">Logout</a></li>
