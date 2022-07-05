@@ -46,7 +46,7 @@ const setComponentByQuery = (selector, object) => {
  */
 const toggleTransition = element => {
     element.classList.add("transition-none");
-    setTimeout(() => { element.classList.remove("transition-none"); }, 1000);       
+    setTimeout(() => { element.classList.remove("transition-none"); }, 100);       
 }
 
 /**
@@ -56,7 +56,7 @@ const toggleAllTransition = () => {
     let transitions = document.querySelectorAll(".transition, .transition-all, .transition-colors, .transition-opacity, .transition-shadow, .transition-transform");
     for (let i = 0; i < transitions.length; i++) {
         transitions[i].classList.add("transition-none");
-        setTimeout(() => { transitions[i].classList.remove("transition-none"); }, 1000);
+        setTimeout(() => { transitions[i].classList.remove("transition-none"); }, 100);
     }
 }
 
