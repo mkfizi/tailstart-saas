@@ -4,7 +4,6 @@ import ClickOutside from "../util/click-outside.js";
 import FocusTrap from "../util/focus-trap.js";
 
 class Sidebar{
-    component = "sidebar";  // Sidebar component type
     element = null;         // Sidebar element
     position = null;        // Sidebar position
     backdrop = null;        // Sidebar position
