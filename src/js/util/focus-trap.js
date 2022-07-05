@@ -1,22 +1,22 @@
 class FocusTrap{
-    activeObject = null;    // Object which triggers backdrop 
+    targetObject = null;    // Object which triggers backdrop 
     firstElement = null;    // First focusable element
     lastElement = null;     // Last focusable element
 
     /**
      * FocusTrap constructor.
-     * @params (class) activeObject
+     * @params (class) targetObject
      */
-    constructor(activeObject) {
-        this.setActiveObject(activeObject);
+    constructor(targetObject) {
+        this.setTargetObject(targetObject);
         this.setFocusableElement();
-        this.setDocument();
     }
     
     /**
      * FocusTrap destructor.
      */
     destructor() {
+        this.targetObject = null;
         document.removeEventListener("keydown", this);
     }
 
@@ -38,29 +38,24 @@ class FocusTrap{
     
     /**
      * Set active object attributes.
-     * @oarans (object) activeObject
+     * @oarans (object) targetObject
      */
-    setActiveObject(activeObject) {
-        this.activeObject = activeObject;
-        this.activeObject.element.setAttribute("tabindex", 0);
-        this.activeObject.element.focus();
-        setTimeout(() => { this.activeObject.element.removeAttribute("tabindex"); }, 1000);
+    setTargetObject(targetObject) {
+        this.targetObject = targetObject;
+        this.targetObject.element.setAttribute("tabindex", 0);
+        this.targetObject.element.focus();
+        setTimeout(() => { this.targetObject.element.removeAttribute("tabindex"); }, 1000);
+
+        document.addEventListener("keydown", this);
     }
     
     /**
      * Set focusable elements.
      */
     setFocusableElement() {
-        let focusableElements = this.activeObject.element.querySelectorAll("a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, [tabindex=\"0\"], [contenteditable]"); 
+        let focusableElements = this.targetObject.element.querySelectorAll("a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, [tabindex=\"0\"], [contenteditable]"); 
         this.firstElement = focusableElements[0];
         this.lastElement = focusableElements[focusableElements.length - 1];
-    }
-
-    /**
-     * Set document.
-     */
-    setDocument() {
-        document.addEventListener("keydown", this);
     }
 }
 
