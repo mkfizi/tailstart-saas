@@ -3,7 +3,7 @@ class ClickOutside{
 
     /**
      * ClickOutside constructor.
-     * @params (class) activeObject
+     * @params (class) targetObject
      */
     constructor(targetObject) {
         this.setTargetObject(targetObject);
