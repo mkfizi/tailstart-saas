@@ -16,8 +16,11 @@ const setBackdrop = () => {
  * @params (object) componentObject
  */
 const setComponentObjectById = (componentSelector, componentObject) => {
+    let objectInstance = null;
     let element = document.getElementById(componentSelector);
-    if (element != null) new componentObject(element);
+    if (element != null) objectInstance = new componentObject(element);
+
+    return objectInstance;
 }
 
 /**
