@@ -66,7 +66,7 @@ class DarkMode {
     }
 }
 
-const selector = "[data-component='darkmode']";
+const selector = "[data-component='DarkMode']";
 const object = DarkMode;
         
 const darkmodes = setComponentByQuery(selector, object);
