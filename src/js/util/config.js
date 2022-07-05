@@ -1,4 +1,16 @@
 /**
+ * Set backdrop element.
+ * @return (HTMLDom) backdrop
+ */
+const setBackdrop = () => {
+    let backdrop = document.createElement("div");
+    backdrop.setAttribute("class", "fixed w-screen h-screen bg-neutral-900 opacity-50 z-10 transition top-0 left-0");
+    backdrop.addEventListener("click", this);
+    
+    return backdrop;
+}
+
+/**
  * Set component object by id.
  * @params (string) componentSelector
  * @params (object) componentObject
@@ -46,6 +58,7 @@ const toggleAllTransition = () => {
 }
 
 export {
+    setBackdrop,
     setComponentObjectById,
     setComponentByQuery,
     toggleTransition,
