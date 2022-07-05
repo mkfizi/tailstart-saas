@@ -20,8 +20,7 @@ class App {
      * @params (object) event
      */
     handleEvent(event) {
-        if (event.type == "load") this.setFooterCurrentYear();  
-        this.setViewport();    
+        if (event.type == "load" || event.type == "resize") this.setViewport();    
     }
 
     /**
@@ -31,14 +30,6 @@ class App {
     setViewport() {
         const viewportHeight = window.innerHeight * 0.01;
         document.documentElement.style.setProperty("--vh", viewportHeight + "px");
-    }
-
-    /**
-     * Set footer current year.
-     */
-    setFooterCurrentYear() {
-        const footerCurrentYear = document.getElementById("footerCurrentYear");
-        footerCurrentYear.innerHTML = new Date().getFullYear();
     }
 
 }
