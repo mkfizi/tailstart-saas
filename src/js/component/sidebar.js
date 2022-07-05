@@ -1,20 +1,20 @@
-import {setObjectByQuery} from "../util/config.js";
+import {setBackdrop, setComponentByQuery} from "../util/config.js";
 
-import Backdrop from "../util/backdrop.js";
+import ClickOutside from "../util/click-outside.js";
 import FocusTrap from "../util/focus-trap.js";
 
 class Sidebar{
-    element = null;     // Sidebar element
-    position = null;    // Sidebar position
+    component = "sidebar";  // Sidebar component type
+    element = null;         // Sidebar element
+    position = null;        // Sidebar position
+    backdrop = null;        // Sidebar position
 
     /**
      * Sidebar constructor.
      * @params (HTMLDom) element
      */
     constructor(element) {
-        this.setElement(element);
-        this.setPosition();
-        this.setButton();
+        this.setComponent(element);
     }
 
     /**
@@ -33,8 +33,12 @@ class Sidebar{
      */
     show() {
         this.element.classList.remove(this.position);
+
+        this.clickOutside = new ClickOutside(this);
         this.focusTrap = new FocusTrap(this);
-        this.backdrop = new Backdrop(this);
+
+        this.backdrop = setBackdrop();
+        this.element.parentNode.insertBefore(this.backdrop, this.element);
     }
 
     /**
@@ -42,48 +46,36 @@ class Sidebar{
      */
     hide() {
         this.element.classList.add(this.position);
-        if (this.focusTrap != null && this.backdrop != null) {
-            this.focusTrap.destructor();
-            this.backdrop.destructor();
-            this.focusTrap = null;
-            this.backdrop = null;
-        }
+        
+        this.backdrop.remove();
+        this.clickOutside.destructor();
+        this.focusTrap.destructor();
+
+        this.backdrop = null;
+        this.clickOutside = null;
+        this.focusTrap = null;
     }
     
     /**
      * Set sidebar element.
      * @params (HTMLDom) element
      */
-    setElement(element) {
+     setComponent(element) {
         this.element = element;
-        this.element.addEventListener("click", this);
-    }
-
-    /**
-     * Set sidebar position.
-     */
-    setPosition() {
+        this.id = this.element.getAttribute("id");
         if (this.element.classList.contains("-translate-x-full")) this.position = "-translate-x-full";
         if (this.element.classList.contains("translate-x-full")) this.position = "translate-x-full";
-    }
 
-    /**
-     * Set sidebar buttons.
-     */
-    setButton() {
-        if (this.element.getAttribute("id") == null) return null;
-
-        let buttons = document.querySelectorAll(`[data-target="${this.element.getAttribute("id")}"]`);
-        for (let i = 0; i < buttons.length; i++){
-            buttons[i].addEventListener("click", this);
+        this.buttons = document.querySelectorAll(`[data-target="${this.id}"][data-trigger="${this.constructor.name}"]`);
+        for (let i = 0; i < this.buttons.length; i++){
+            this.buttons[i].addEventListener("click", this);
         }
     }
-
 }
 
 const selector = "[data-component='Sidebar']";
 const object = Sidebar;
 
-setObjectByQuery(selector, object);
+const sidebars = setComponentByQuery(selector, object);
 
 export default Sidebar;
