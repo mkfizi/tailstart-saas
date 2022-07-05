@@ -1,4 +1,4 @@
-import {setComponentObjectByQuery} from "../util/config.js";
+import {setComponentByQuery} from "../util/config.js";
 
 class Collapse {
     element = null;     // Collapse element
@@ -41,6 +41,8 @@ class Collapse {
         setTimeout(() => this.element.removeAttribute("style"), 500);
 
         this.toggleCollapseIcon();
+
+        if (this.isAccordion()) this.toggleAccordion(this);
     }
 
     /**
@@ -73,7 +75,7 @@ class Collapse {
         }
     }
 
-     /**
+    /**
      * Check if collapse is active or not.
      * @return (boolean) isDropdownActive
      */
@@ -83,6 +85,9 @@ class Collapse {
         return isCollapseActive;
     }
 
+    /**
+     * Toggle collapse icon.
+     */
     toggleCollapseIcon() {
         let icons = document.querySelectorAll(`[data-icon="${this.id}"]`);
         for (let i = 0; i < icons.length; i++){
@@ -91,11 +96,32 @@ class Collapse {
                 : icons[i].classList.remove("rotate-180")
         }
     }
+
+    /**
+     * Check if collapse is accordion or not.
+     * @return (boolean) isDropdownActive
+     */
+    isAccordion() {
+        let isCollapseAccordion = false;
+        if (this.element.getAttribute("data-accordion") != null) isCollapseAccordion = true;
+        return isCollapseAccordion;
+    }
+
+    /**
+     * Toggle accordion.
+     */
+     toggleAccordion() {
+        for (let i = 0; i < collapses.length; i++) {
+            if(collapses[i] != this){
+                collapses[i].hide();
+            }
+        }
+    }
 }
 
-const componentSelector = "[data-component='collapse']";
-const componentObject = Collapse;
+const selector = "[data-component='collapse']";
+const object = Collapse;
 
-setComponentObjectByQuery(componentSelector, componentObject);
+const collapses = setComponentByQuery(selector, object);
 
 export default Collapse;
