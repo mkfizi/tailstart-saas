@@ -1,4 +1,4 @@
-import {setComponentObjectByQuery} from "../util/config.js";
+import {setComponentByQuery} from "../util/config.js";
 import {toggleAllTransition} from "../util/config.js";
 
 class DarkMode {
@@ -66,9 +66,9 @@ class DarkMode {
     }
 }
 
-const componentSelector = "[data-component='darkmode']";
-const componentObject = DarkMode;
+const selector = "[data-component='darkmode']";
+const object = DarkMode;
         
-setComponentObjectByQuery(componentSelector, componentObject);
+const darkmodes = setComponentByQuery(selector, object);
 
 export default DarkMode;
