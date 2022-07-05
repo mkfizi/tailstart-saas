@@ -22,9 +22,7 @@ class ClickOutside{
      * @params (object) event
      */
     handleEvent(event) {
-        if (event.type == "click") {
-            if (this.isOutside(event)) this.targetObject.hide();
-        }
+        if (event.type == "click" && this.isOutside(event)) this.targetObject.hide();
     }
 
     /**
