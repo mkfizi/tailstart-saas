@@ -44,10 +44,9 @@ class ClickOutside{
      */
     isOutside(event) {
         let isOutside = true;
-
         if (this.targetObject.element.contains(event.target)) isOutside = false;
         this.targetObject.buttons.forEach(element => {
-            if (element == event.target.closest(`[data-trigger="dropdown"][data-target="${this.targetObject.id}"]`)) isOutside = false;
+            if (element == event.target.closest(`[data-trigger="${this.targetObject.constructor.name}"][data-target="${this.targetObject.id}"]`)) isOutside = false;
         });
         
         return isOutside;
