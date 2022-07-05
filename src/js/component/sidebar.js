@@ -46,13 +46,15 @@ class Sidebar{
     hide() {
         this.element.classList.add(this.position);
         
-        this.backdrop.remove();
-        this.clickOutside.destructor();
-        this.focusTrap.destructor();
+        if (this.backdrop != null && this.clickOutside != null && this.focusTrap != null) {
+            this.backdrop.remove();
+            this.clickOutside.destructor();
+            this.focusTrap.destructor();
 
-        this.backdrop = null;
-        this.clickOutside = null;
-        this.focusTrap = null;
+            this.backdrop = null;
+            this.clickOutside = null;
+            this.focusTrap = null;
+        }
     }
     
     /**
