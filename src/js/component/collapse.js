@@ -81,7 +81,7 @@ class Collapse {
      */
     isActive() {
         let isActive = false;
-        if (! this.element.classList.contains("h-0")) return true;
+        if (! this.element.classList.contains("h-0")) isActive = true;
         return isActive;
     }
 
