@@ -23,7 +23,7 @@ class Collapse {
      * Toggle collapse.
      */
     toggle() {
-        this.isCollapseActive()
+        this.isActive()
             ? this.hide()
             : this.show();
     }
@@ -40,7 +40,7 @@ class Collapse {
         setTimeout(() => this.element.style.height = containerHeight, 50);
         setTimeout(() => this.element.removeAttribute("style"), 500);
 
-        this.toggleCollapseIcon();
+        this.toggleIcon();
 
         if (this.isAccordion()) this.toggleAccordion(this);
     }
@@ -58,7 +58,7 @@ class Collapse {
         setTimeout(() => this.element.removeAttribute("style"), 500);
         this.element.classList.add("h-0");
 
-        this.toggleCollapseIcon();
+        this.toggleIcon();
     }
 
     /**
@@ -79,19 +79,19 @@ class Collapse {
      * Check if collapse is active or not.
      * @return (boolean) isDropdownActive
      */
-    isCollapseActive() {
-        let isCollapseActive = false;
+    isActive() {
+        let isActive = false;
         if (! this.element.classList.contains("h-0")) return true;
-        return isCollapseActive;
+        return isActive;
     }
 
     /**
      * Toggle collapse icon.
      */
-    toggleCollapseIcon() {
+    toggleIcon() {
         let icons = document.querySelectorAll(`[data-icon="${this.id}"]`);
         for (let i = 0; i < icons.length; i++){
-            this.isCollapseActive()
+            this.isActive()
                 ? icons[i].classList.add("rotate-180")
                 : icons[i].classList.remove("rotate-180")
         }
