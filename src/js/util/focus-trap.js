@@ -37,7 +37,7 @@ class FocusTrap{
     }
     
     /**
-     * Set active object attributes.
+     * Set target object property.
      * @oarans (object) targetObject
      */
     setTargetObject(targetObject) {
