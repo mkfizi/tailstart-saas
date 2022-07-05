@@ -69,7 +69,7 @@ class Collapse {
         this.element = element;
         this.id = this.element.getAttribute("id");
         
-        let buttons = document.querySelectorAll(`[data-target="${this.id}"][data-trigger="collapse"]`);
+        let buttons = document.querySelectorAll(`[data-target="${this.id}"][data-trigger="${this.constructor.name}"]`);
         for (let i = 0; i < buttons.length; i++){
             buttons[i].addEventListener("click", this);
         }
@@ -119,7 +119,7 @@ class Collapse {
     }
 }
 
-const selector = "[data-component='collapse']";
+const selector = "[data-component='Collapse']";
 const object = Collapse;
 
 const collapses = setComponentByQuery(selector, object);
