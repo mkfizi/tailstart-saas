@@ -18,7 +18,7 @@ class Dropdown {
     }
 
     /**
-     * Handle evenet.
+     * Handle event.
      * @params (object) event
      */
     handleEvent(event) {
