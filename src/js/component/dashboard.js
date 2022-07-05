@@ -1,4 +1,4 @@
-import {setComponentByQuery, toggleTransition} from "../util/config.js";
+import {setComponentObjectById, toggleTransition} from "../util/config.js";
 
 import Sidebar from "./sidebar.js";
 
@@ -19,6 +19,7 @@ class Dashboard extends Sidebar{
     handleEvent(event) {
         super.handleEvent(event);
         if (event.type == "resize") {
+            console.log("kontol")
             toggleTransition(this.element);
             if (window.innerWidth >= 1024) this.hide();
         }
@@ -36,6 +37,8 @@ class Dashboard extends Sidebar{
 const selector = "dashboard";
 const object = Dashboard;
 
-setComponentByQuery(selector, object);
+const dashboard = setComponentObjectById(selector, object);
+
+console.log(dashboard);
 
 export default Dashboard;
