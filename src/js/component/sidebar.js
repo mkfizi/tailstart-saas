@@ -62,6 +62,7 @@ class Sidebar{
      setComponent(element) {
         this.element = element;
         this.id = this.element.getAttribute("id");
+        
         if (this.element.classList.contains("-translate-x-full")) this.position = "-translate-x-full";
         if (this.element.classList.contains("translate-x-full")) this.position = "translate-x-full";
 
