@@ -1,4 +1,4 @@
-import {setObjectById, toggleTransition} from "../util/config.js";
+import {setComponentByQuery, toggleTransition} from "../util/config.js";
 
 import Sidebar from "./sidebar.js";
 
@@ -36,6 +36,6 @@ class Dashboard extends Sidebar{
 const selector = "dashboard";
 const object = Dashboard;
 
-setObjectById(selector, object);
+setComponentByQuery(selector, object);
 
 export default Dashboard;

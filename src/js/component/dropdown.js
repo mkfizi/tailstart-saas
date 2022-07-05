@@ -1,4 +1,4 @@
-import {setComponentObjectByQuery} from "../util/config.js";
+import {setComponentByQuery} from "../util/config.js";
 
 import ClickOutside from "../util/click-outside.js";
 
@@ -30,7 +30,7 @@ class Dropdown {
      * @params (HTMLDom) currentTarget
      */
     toggle() {
-        this.isDropdownActive()
+        this.isActive()
             ? this.hide()
             : this.show();
     }
@@ -72,16 +72,16 @@ class Dropdown {
      * Check if dropdown is active or not.
      * @return (boolean) isDropdownActive
      */
-    isDropdownActive() {
-        let isDropdownActive = false;
-        if(! this.element.classList.contains("scale-0", "opacity-0")) isDropdownActive = true;
-        return isDropdownActive;
+    isActive() {
+        let isActive = false;
+        if(! this.element.classList.contains("scale-0", "opacity-0")) isActive = true;
+        return isActive;
     }
 }
 
-const componentSelector = "[data-component='dropdown']";
-const componentObject = Dropdown;
+const selector = "[data-component='dropdown']";
+const object = Dropdown;
 
-setComponentObjectByQuery(componentSelector, componentObject);
+const dropdowns = setComponentByQuery(selector, object);
 
 export default Dropdown;
