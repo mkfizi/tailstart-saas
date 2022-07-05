@@ -50,8 +50,10 @@ class Dropdown {
     hide() {
         this.element.classList.add("scale-0", "opacity-0");
 
-        this.clickOutside.destructor();
-        this.clickOutside = null;
+        if (this.clickOutside != null) {
+            this.clickOutside.destructor();
+            this.clickOutside = null;
+        }
     }
     
     /**
