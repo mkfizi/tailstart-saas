@@ -2,7 +2,7 @@
 
 import Collapse from "./component/collapse.js"
 import DarkMode from "./component/dark-mode.js"
-// import Dashboard from "./component/dashboard.js"
+import Dashboard from "./component/dashboard.js"
 import Dropdown from "./component/dropdown.js"
 import Sidebar from "./component/sidebar.js"
 
