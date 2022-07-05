@@ -19,7 +19,6 @@ class Dashboard extends Sidebar{
     handleEvent(event) {
         super.handleEvent(event);
         if (event.type == "resize") {
-            console.log("kontol")
             toggleTransition(this.element);
             if (window.innerWidth >= 1024) this.hide();
         }
@@ -38,7 +37,5 @@ const selector = "dashboard";
 const object = Dashboard;
 
 const dashboard = setComponentObjectById(selector, object);
-
-console.log(dashboard);
 
 export default Dashboard;
