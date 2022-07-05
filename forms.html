@@ -421,11 +421,11 @@
                     </script>
                 </a>
 
-                <!-- Styles -->
+                <!-- Example -->
                 <p class="mb-4 text-xl font-semibold">Example</p>
                 <div class="p-4 mb-8 bg-white rounded-md shadow-md dark:bg-gray-800">
                     <div class="mb-4">
-                        <label for="input-text-example" class="block mb-2 text-sm font-semibold">Input</label>
+                        <label for="input-example" class="block mb-2 text-sm font-semibold">Input</label>
                         <input type="text" id="input-example" name="input_example" placeholder="Input example" class="w-full h-10 px-2 mb-1 text-sm bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-cyan-500 dark:border-gray-600 focus:ring-cyan-500 focus:outline-none">
                     </div>
                     <div class="mb-4">
@@ -439,23 +439,63 @@
                     </div>
                     <div class="mb-4">
                         <label for="text-area-example" class="block mb-2 text-sm font-semibold">Text Area</label>
-                        <textarea type="text" id="text-area-example" name="text_area_example" placeholder="Text area example" class="w-full px-2 mb-1 text-sm bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-cyan-500 dark:border-gray-600 focus:ring-cyan-500 focus:outline-none"></textarea>
+                        <textarea id="text-area-example" name="text_area_example" placeholder="Text area example" class="w-full px-2 mb-1 text-sm bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-cyan-500 dark:border-gray-600 focus:ring-cyan-500 focus:outline-none"></textarea>
                     </div>
                     <div class="mb-4">
                         <p class="mb-2 text-sm font-semibold">Checkbox</p>
-                        <input type="checkbox" id="checkbox-example" name="checkbox_example" value="checkbox_example" class="mb-1 bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-cyan-500 dark:border-gray-600 focus:ring-cyan-500 focus:outline-none text-cyan-500">
+                        <input type="checkbox" id="checkbox-example" name="checkbox_example" value="Checkbox Example" class="mb-1 bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-cyan-500 dark:border-gray-600 focus:ring-cyan-500 focus:outline-none text-cyan-500">
                         <label for="checkbox-example" class="mb-1 ml-1 text-sm">Checkbox item</label>
                     </div>
                     <div class="mb-4">
                         <p class="mb-2 text-sm font-semibold">Radio</p>
                         <div class="flex space-x-4">
                             <span>
-                                <input type="radio" id="radio-example-1" name="radio_example" value="radio_example_1" class="mb-1 bg-transparent border border-gray-400 appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-cyan-500 dark:border-gray-600 focus:ring-cyan-500 focus:outline-none text-cyan-500">
+                                <input type="radio" id="radio-example-1" name="radio_example" value="Radio Example 1" class="mb-1 bg-transparent border border-gray-400 appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-cyan-500 dark:border-gray-600 focus:ring-cyan-500 focus:outline-none text-cyan-500">
                                 <label for="radio-example-1" class="mb-1 ml-1 text-sm">Radio item 1</label>
                             </span>
                             <span>
-                                <input type="radio" id="radio-example-1" name="radio_example" value="radio_example_2" class="mb-1 bg-transparent border border-gray-400 appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-cyan-500 dark:border-gray-600 focus:ring-cyan-500 focus:outline-none text-cyan-500">
-                                <label for="radio-example" class="mb-1 ml-1 text-sm">Radio item 2</label>
+                                <input type="radio" id="radio-example-2" name="radio_example" value="Radio Example 2" class="mb-1 bg-transparent border border-gray-400 appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-cyan-500 dark:border-gray-600 focus:ring-cyan-500 focus:outline-none text-cyan-500">
+                                <label for="radio-example-2" class="mb-1 ml-1 text-sm">Radio item 2</label>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Disabled -->
+                <p class="mb-4 text-xl font-semibold">Disabled</p>
+                <div class="p-4 mb-8 bg-white rounded-md shadow-md dark:bg-gray-800">
+                    <div class="mb-4">
+                        <label for="input-disabled-example" class="block mb-2 text-sm font-semibold">Input</label>
+                        <input type="text" id="input-disabled-example" name="input_disabled_example" placeholder="Input disable example" class="w-full h-10 px-2 mb-1 text-sm bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-cyan-500 dark:border-gray-600 focus:ring-cyan-500 focus:outline-none" disabled>
+                    </div>
+                    <div class="mb-4">
+                        <label for="select-disabled-example" class="block mb-2 text-sm font-semibold">Select</label>
+                        <select name="select_disabled_example" id="select-disabled-example" class="w-full h-10 px-2 mb-1 text-sm bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-cyan-500 dark:border-gray-600 focus:ring-cyan-500 focus:outline-none" disabled>
+                            <option value="" selected>Select Disabled Example</option>
+                            <option value="Option 1">Option 1</option>
+                            <option value="Option 2">Option 2</option>
+                            <option value="Option 3">Option 3</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label for="text-area-disabled-example" class="block mb-2 text-sm font-semibold">Text Area</label>
+                        <textarea id="text-area-disabled-example" name="text_area_disabled_example" placeholder="Text area disabled example" class="w-full px-2 mb-1 text-sm bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-cyan-500 dark:border-gray-600 focus:ring-cyan-500 focus:outline-none" disabled></textarea>
+                    </div>
+                    <div class="mb-4">
+                        <p class="mb-2 text-sm font-semibold">Checkbox</p>
+                        <input type="checkbox" id="checkbox-disabled-example" name="checkbox_disabled_example" value="Checkbox Disabled Example" class="mb-1 bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-cyan-500 dark:border-gray-600 focus:ring-cyan-500 focus:outline-none text-cyan-500" disabled>
+                        <label for="checkbox-disabled-example" class="mb-1 ml-1 text-sm">Checkbox disabled item</label>
+                    </div>
+                    <div class="mb-4">
+                        <p class="mb-2 text-sm font-semibold">Radio</p>
+                        <div class="flex space-x-4">
+                            <span>
+                                <input type="radio" id="radio-disabled-example-1" name="radio_disabled_example" value="Radio Disabled Example 1" class="mb-1 bg-transparent border border-gray-400 appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-cyan-500 dark:border-gray-600 focus:ring-cyan-500 focus:outline-none text-cyan-500" disabled>
+                                <label for="radio-disabled-example-1" class="mb-1 ml-1 text-sm">Radio disabled item 1</label>
+                            </span>
+                            <span>
+                                <input type="radio" id="radio-disabled-example-2" name="radio_disabled_example" value="Radio Example 2" class="mb-1 bg-transparent border border-gray-400 appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-cyan-500 dark:border-gray-600 focus:ring-cyan-500 focus:outline-none text-cyan-500" disabled>
+                                <label for="radio-disabled-example-2" class="mb-1 ml-1 text-sm">Radio disabled item 2</label>
                             </span>
                         </div>
                     </div>
