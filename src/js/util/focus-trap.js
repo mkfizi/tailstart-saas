@@ -44,7 +44,7 @@ class FocusTrap{
         this.targetObject = targetObject;
         this.targetObject.element.setAttribute("tabindex", 0);
         this.targetObject.element.focus();
-        setTimeout(() => { this.targetObject.element.removeAttribute("tabindex"); }, 1000);
+        setTimeout(() => { this.targetObject.element.removeAttribute("tabindex"); }, 50);
 
         document.addEventListener("keydown", this);
     }
