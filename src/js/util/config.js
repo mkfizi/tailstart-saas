@@ -10,15 +10,19 @@ const setComponentObjectById = (componentSelector, componentObject) => {
 
 /**
  * Set component object by query.
- * @params (string) componentSelector
- * @params (object) componentObject
+ * @params (string) selector
+ * @params (object) object
+ * @return (array) objectInstances
  */
-const setComponentObjectByQuery = (componentSelector, componentObject) => {
-    let element = document.querySelectorAll(componentSelector);
+const setComponentByQuery = (selector, object) => {
+    let objectInstances = []
+    let element = document.querySelectorAll(selector);
 
     for (let i = 0; i < element.length; i++) {
-        if(element[i].getAttribute("id") != null) new componentObject(element[i]);
+        if(element[i].getAttribute("id") != null) objectInstances.push(new object(element[i]));
     }
+
+    return objectInstances;
 }
 
 /**
@@ -43,7 +47,7 @@ const toggleAllTransition = () => {
 
 export {
     setComponentObjectById,
-    setComponentObjectByQuery,
+    setComponentByQuery,
     toggleTransition,
     toggleAllTransition,
 }
