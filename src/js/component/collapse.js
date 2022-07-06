@@ -7,7 +7,7 @@ class Collapse {
      * Sidebar constructor.
      * @params (HTMLDom) element
      */
-     constructor(element) {
+    constructor(element) {
         this.setComponent(element);
     }
 
