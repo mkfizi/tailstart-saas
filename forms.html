@@ -572,7 +572,7 @@
                 </div>
 
                 <!-- Text Validation -->
-                <p class="mb-4 text-xl font-semibold">Text Validation</p>
+                <p class="mb-4 text-xl font-semibold">Input Required Validation</p>
                 <div class="p-4 mb-8 bg-white rounded-md shadow-md dark:bg-gray-800">
 
                     <!-- Valid Input -->
@@ -600,9 +600,10 @@
                     This code is for demonstartion purpose only.
                 -------------------------------------------------------------------------->
                 <script type="module">
-                    const inputs = document.querySelectorAll("[required]");
-                    for (let i = 0; i < inputs.length; i++) {
-                        inputs[i].dispatchEvent(new Event('keyup'));
+                    import {inputValidations} from "./src/js/component/input-validation.js"
+                    
+                    for (let i = 0; i < inputValidations.length; i++) {
+                        inputValidations[i].element.dispatchEvent(new Event('keyup'));
                     }
                 </script>
             </section>
