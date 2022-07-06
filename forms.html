@@ -588,10 +588,12 @@
                     </div>
 
                     <!-- Hide if Valid -->
-                    <div>
+                    <div class="mb-4">
                         <label for="input-is-valid-example" class="block mb-2 text-sm font-semibold">Hide if Valid</label>
                         <input type="text" id="input-is-valid-example" name="input_is_valid_example" data-invalid="Input is required." data-valid="Input is valid." data-is-valid="hide" placeholder="Hide if valid example" class="w-full h-10 px-2 mb-1 text-sm bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none" required>
                     </div>
+                    <p class="mb-1 text-sm font-semibold">Note:</p>
+                    <p class="mb-1 text-sm">Required validation is triggered on input elements that have <code class="bg-gray-300 dark:bg-gray-500">required</code> attribute. Refer <a href="#" class="mb-1 text-sm text-blue-600 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-500">here</a> for usage.</p>
                 </div>
 
                 <!-- 
@@ -600,7 +602,7 @@
                     This code is for demonstartion purpose only.
                 -------------------------------------------------------------------------->
                 <script type="module">
-                    import {requiredValidations} from "./src/js/component/required-validation.js"
+                    import {requiredValidations} from "./src/js/util/required-validation.js"
                     
                     for (let i = 0; i < requiredValidations.length; i++) {
                         requiredValidations[i].element.dispatchEvent(new Event('keyup'));
