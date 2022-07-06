@@ -23,9 +23,7 @@ class Dashboard extends Sidebar{
             toggleTransition(this.element);
             if (window.innerWidth >= 1024) {
                 this.hide();
-                for (let i = 0; i < sidebars.length; i++) {
-                    if (sidebars[i].element == this.element) sidebars[i].hide()
-                }
+                this.hideSidebar();
             }
         }
     }
@@ -36,6 +34,15 @@ class Dashboard extends Sidebar{
      */
     setWindow() {
         window.addEventListener("resize", this);
+    }
+    
+    /**
+     * Hide Sidebar instance that shares same element as Dashboard.
+     */
+    hideSidebar() {
+        for (let i = 0; i < sidebars.length; i++) {
+            if (sidebars[i].element == this.element) sidebars[i].hide()
+        }
     }
 }
 
