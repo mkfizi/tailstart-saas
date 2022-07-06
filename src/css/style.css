@@ -2500,6 +2500,16 @@ body{
   background-color: rgb(37 99 235 / var(--tw-bg-opacity));
 }
 
+.file\:hover\:bg-blue-400:hover::-webkit-file-upload-button {
+  --tw-bg-opacity: 1;
+  background-color: rgb(96 165 250 / var(--tw-bg-opacity));
+}
+
+.file\:hover\:bg-blue-400:hover::file-selector-button {
+  --tw-bg-opacity: 1;
+  background-color: rgb(96 165 250 / var(--tw-bg-opacity));
+}
+
 .focus\:border-2:focus {
   border-width: 2px;
 }
@@ -2576,6 +2586,44 @@ body{
   --tw-ring-offset-width: 0px;
 }
 
+.focus\:file\:outline-2::-webkit-file-upload-button:focus {
+  outline-width: 2px;
+}
+
+.focus\:file\:outline-2::file-selector-button:focus {
+  outline-width: 2px;
+}
+
+.focus\:file\:outline-blue-500::-webkit-file-upload-button:focus {
+  outline-color: #3b82f6;
+}
+
+.focus\:file\:outline-blue-500::file-selector-button:focus {
+  outline-color: #3b82f6;
+}
+
+.focus\:file\:ring-2::-webkit-file-upload-button:focus {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
+.focus\:file\:ring-2::file-selector-button:focus {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
+.focus\:file\:ring-blue-500::-webkit-file-upload-button:focus {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity));
+}
+
+.focus\:file\:ring-blue-500::file-selector-button:focus {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity));
+}
+
 .disabled\:bg-gray-100:disabled {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
@@ -2594,6 +2642,46 @@ body{
 .disabled\:text-gray-400:disabled {
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
+}
+
+.disabled\:file\:bg-blue-400::-webkit-file-upload-button:disabled {
+  --tw-bg-opacity: 1;
+  background-color: rgb(96 165 250 / var(--tw-bg-opacity));
+}
+
+.disabled\:file\:bg-blue-400::file-selector-button:disabled {
+  --tw-bg-opacity: 1;
+  background-color: rgb(96 165 250 / var(--tw-bg-opacity));
+}
+
+.file\:disabled\:bg-blue-400:disabled::-webkit-file-upload-button {
+  --tw-bg-opacity: 1;
+  background-color: rgb(96 165 250 / var(--tw-bg-opacity));
+}
+
+.file\:disabled\:bg-blue-400:disabled::file-selector-button {
+  --tw-bg-opacity: 1;
+  background-color: rgb(96 165 250 / var(--tw-bg-opacity));
+}
+
+.file\:disabled\:hover\:bg-blue-400:hover:disabled::-webkit-file-upload-button {
+  --tw-bg-opacity: 1;
+  background-color: rgb(96 165 250 / var(--tw-bg-opacity));
+}
+
+.file\:disabled\:hover\:bg-blue-400:hover:disabled::file-selector-button {
+  --tw-bg-opacity: 1;
+  background-color: rgb(96 165 250 / var(--tw-bg-opacity));
+}
+
+.disabled\:file\:hover\:bg-blue-400:hover::-webkit-file-upload-button:disabled {
+  --tw-bg-opacity: 1;
+  background-color: rgb(96 165 250 / var(--tw-bg-opacity));
+}
+
+.disabled\:file\:hover\:bg-blue-400:hover::file-selector-button:disabled {
+  --tw-bg-opacity: 1;
+  background-color: rgb(96 165 250 / var(--tw-bg-opacity));
 }
 
 .dark .dark\:block {
@@ -2939,6 +3027,26 @@ body{
   color: rgb(75 85 99 / var(--tw-text-opacity));
 }
 
+.dark .dark\:disabled\:file\:hover\:bg-blue-400:hover::-webkit-file-upload-button:disabled {
+  --tw-bg-opacity: 1;
+  background-color: rgb(96 165 250 / var(--tw-bg-opacity));
+}
+
+.dark .dark\:disabled\:file\:hover\:bg-blue-400:hover::file-selector-button:disabled {
+  --tw-bg-opacity: 1;
+  background-color: rgb(96 165 250 / var(--tw-bg-opacity));
+}
+
+.dark .dark\:file\:disabled\:hover\:bg-blue-400:hover:disabled::-webkit-file-upload-button {
+  --tw-bg-opacity: 1;
+  background-color: rgb(96 165 250 / var(--tw-bg-opacity));
+}
+
+.dark .dark\:file\:disabled\:hover\:bg-blue-400:hover:disabled::file-selector-button {
+  --tw-bg-opacity: 1;
+  background-color: rgb(96 165 250 / var(--tw-bg-opacity));
+}
+
 @media (min-width: 768px) {
   .md\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2956,6 +3064,18 @@ body{
     --tw-space-x-reverse: 0;
     margin-right: calc(1rem * var(--tw-space-x-reverse));
     margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+
+  .md\:space-x-0 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(0px * var(--tw-space-x-reverse));
+    margin-left: calc(0px * calc(1 - var(--tw-space-x-reverse)));
+  }
+
+  .md\:space-y-0 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0px * var(--tw-space-y-reverse));
   }
 }
 
