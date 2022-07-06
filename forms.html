@@ -600,10 +600,10 @@
                     This code is for demonstartion purpose only.
                 -------------------------------------------------------------------------->
                 <script type="module">
-                    import {inputValidations} from "./src/js/component/input-validation.js"
+                    import {requiredValidations} from "./src/js/component/required-validation.js"
                     
-                    for (let i = 0; i < inputValidations.length; i++) {
-                        inputValidations[i].element.dispatchEvent(new Event('keyup'));
+                    for (let i = 0; i < requiredValidations.length; i++) {
+                        requiredValidations[i].element.dispatchEvent(new Event('keyup'));
                     }
                 </script>
             </section>
