@@ -1,9 +1,9 @@
-import {setBackdrop, setComponentByQuery} from "../util/config.js";
+import { setBackdrop, setComponentByQuery } from "../util/config.js";
 
 import ClickOutside from "../util/click-outside.js";
 import FocusTrap from "../util/focus-trap.js";
 
-class Sidebar{
+class Sidebar {
     element = null;         // Sidebar element
     position = null;        // Sidebar position
     backdrop = null;        // Sidebar position
@@ -26,7 +26,7 @@ class Sidebar{
             if (event.currentTarget.dataset.action == "hide") this.hide();
         }
     }
-    
+
     /**
      * Show sidebar.
      */
@@ -45,7 +45,7 @@ class Sidebar{
      */
     hide() {
         this.element.classList.add(this.position);
-        
+
         if (this.backdrop != null && this.clickOutside != null && this.focusTrap != null) {
             this.backdrop.remove();
             this.clickOutside.destructor();
@@ -56,20 +56,20 @@ class Sidebar{
             this.focusTrap = null;
         }
     }
-    
+
     /**
      * Set sidebar element.
      * @params (HTMLDom) element
      */
-     setComponent(element) {
+    setComponent(element) {
         this.element = element;
         this.id = this.element.getAttribute("id");
-        
+
         if (this.element.classList.contains("-translate-x-full")) this.position = "-translate-x-full";
         if (this.element.classList.contains("translate-x-full")) this.position = "translate-x-full";
 
         this.buttons = document.querySelectorAll(`[data-target="${this.id}"][data-trigger="${this.constructor.name}"]`);
-        for (let i = 0; i < this.buttons.length; i++){
+        for (let i = 0; i < this.buttons.length; i++) {
             this.buttons[i].addEventListener("click", this);
         }
     }
@@ -78,6 +78,6 @@ class Sidebar{
 const selector = "[data-component='Sidebar']";
 const object = Sidebar;
 
-const sidebars = setComponentByQuery(selector, object);
+export const sidebars = setComponentByQuery(selector, object);
 
 export default Sidebar;

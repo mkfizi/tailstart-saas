@@ -68,6 +68,6 @@ class InputValidation{
 const selector = "[required]";
 const object = InputValidation;
 
-const inputValidations = setComponentByQuery(selector, object);
+export const inputValidations = setComponentByQuery(selector, object);
 
 export default InputValidation;
