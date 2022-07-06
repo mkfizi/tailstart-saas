@@ -66,10 +66,11 @@
     <title>Tailboard</title>
 </head>
 <body class="relative flex min-h-screen antialiased text-gray-900 dark:text-white bg-gray-50 dark:bg-gray-900">
+    
     <!-- Dashboard Menu -->
     <aside id="dashboard" data-component="Sidebar" class="fixed top-0 z-30 flex flex-col w-64 h-screen overflow-y-auto transition -translate-x-full bg-white shadow-2xl dark:bg-gray-800 lg:border-r lg:border-gray-100 lg:dark:border-gray-900 lg:shadow-none lg:sticky shrink-0 lg:translate-x-0 lg:transition-none">
-
         <div class="flex items-center justify-between px-4 py-5 lg:pl-6">
+
             <!-- Title -->
             <a href="index" class="block text-xl font-bold text-blue-600 transition dark:text-blue-400 hover:text-blue-500">Tailboard</a>
 
@@ -85,6 +86,7 @@
 
         <!-- Dashboard Content -->
         <div class="h-full overflow-y-auto text-gray-600 dark:text-gray-400">
+
             <!-- Dashboard Link -->
             <a href="index" class="flex w-full gap-4 py-4 pl-6 pr-4 text-blue-600 dark:text-blue-400">
                 <svg xmlns="http://www.w3.org/2000/svg"  width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -231,6 +233,7 @@
 
             <!-- Page Collapse -->
             <div id="pageCollapse" data-component="Collapse" data-accordion="accodion" class="h-0 overflow-hidden transition-all bg-gray-100 dark:bg-gray-600">
+
                 <!-- Login Link -->
                 <a href="./login" class="flex w-full gap-4 py-3 pl-8 pr-4 transition hover:text-blue-500">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -283,15 +286,15 @@
                     <p class="text-sm font-semibold">Blank</p>
                 </a>
             </div>
-            
         </div>
-        
     </aside>
 
     <div class="flex-auto w-full">
+
         <!-- Nav -->
         <nav class="sticky top-0 z-10 flex justify-between w-full p-4 bg-white shadow lg:pr-6 items-between dark:bg-gray-800">
             <div class="flex items-center">
+
                 <!-- Dashboard Show Button -->
                 <button type="button" data-target="dashboard" data-trigger="Sidebar" data-action="show" class="lg:hidden">
                     <svg xmlns="http://www.w3.org/2000/svg" class="stroke-blue-600 fill-blue-600 dark:stroke-blue-400 dark:fill-blue-400 hover:stroke-blue-500 hover:fill-blue-500 " width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -304,6 +307,7 @@
             </div>
 
             <span class="flex items-center justify-between gap-4">
+
                 <!-- Dark mode toggle -->
                 <button type="button" id="darkModeToggle" data-component="DarkMode" data-action="toggle" class="flex items-center h-8" aria-label="Dark Mode Toggle">
                     <svg xmlns="http://www.w3.org/2000/svg" class="stroke-blue-600 fill-blue-600 hover:stroke-blue-500 hover:fill-blue-500 dark:hidden" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -405,6 +409,7 @@
                         </svg>
                     </span>
                     
+                    <!-- Fetch github stars -->
                     <script>
                         fetch('https://api.github.com/repos/mkfizi/tailboard')
                             .then(response =>{
@@ -423,7 +428,7 @@
                     </script>
                 </a>
 
-                <!-- Content -->
+                <!-- Dashboard Content -->
                 <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
                     <div class="p-4 bg-white rounded-md shadow-md dark:bg-gray-800">
                         <div class="flex justify-between gap-3">
