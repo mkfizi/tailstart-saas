@@ -66,10 +66,11 @@
     <title>Tailboard | Forms</title>
 </head>
 <body class="relative flex min-h-screen antialiased text-gray-900 dark:text-white bg-gray-50 dark:bg-gray-900">
+    
     <!-- Dashboard Menu -->
     <aside id="dashboard" data-component="Sidebar" class="fixed top-0 z-30 flex flex-col w-64 h-screen overflow-y-auto transition -translate-x-full bg-white shadow-2xl dark:bg-gray-800 lg:border-r lg:border-gray-100 lg:dark:border-gray-900 lg:shadow-none lg:sticky shrink-0 lg:translate-x-0 lg:transition-none">
-
         <div class="flex items-center justify-between px-4 py-5 lg:pl-6">
+
             <!-- Title -->
             <a href="index" class="block text-xl font-bold text-blue-600 transition dark:text-blue-400 hover:text-blue-500">Tailboard</a>
 
@@ -85,6 +86,7 @@
 
         <!-- Dashboard Content -->
         <div class="h-full overflow-y-auto text-gray-600 dark:text-gray-400">
+
             <!-- Dashboard Link -->
             <a href="index" class="flex w-full gap-4 py-4 pl-6 pr-4 transition hover:text-blue-500">
                 <svg xmlns="http://www.w3.org/2000/svg"  width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -231,6 +233,7 @@
 
             <!-- Page Collapse -->
             <div id="pageCollapse" data-component="Collapse" data-accordion="accodion" class="h-0 overflow-hidden transition-all bg-gray-100 dark:bg-gray-600">
+
                 <!-- Login Link -->
                 <a href="./login" class="flex w-full gap-4 py-3 pl-8 pr-4 transition hover:text-blue-500">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -283,15 +286,15 @@
                     <p class="text-sm font-semibold">Blank</p>
                 </a>
             </div>
-            
         </div>
-        
     </aside>
 
     <div class="flex-auto w-full">
+
         <!-- Nav -->
         <nav class="sticky top-0 z-10 flex justify-between w-full p-4 bg-white shadow lg:pr-6 items-between dark:bg-gray-800">
             <div class="flex items-center">
+
                 <!-- Dashboard Show Button -->
                 <button type="button" data-target="dashboard" data-trigger="Sidebar" data-action="show" class="lg:hidden">
                     <svg xmlns="http://www.w3.org/2000/svg" class="stroke-blue-600 fill-blue-600 dark:stroke-blue-400 dark:fill-blue-400 hover:stroke-blue-500 hover:fill-blue-500 " width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -304,6 +307,7 @@
             </div>
 
             <span class="flex items-center justify-between gap-4">
+
                 <!-- Dark mode toggle -->
                 <button type="button" id="darkModeToggle" data-component="DarkMode" data-action="toggle" class="flex items-center h-8" aria-label="Dark Mode Toggle">
                     <svg xmlns="http://www.w3.org/2000/svg" class="stroke-blue-600 fill-blue-600 hover:stroke-blue-500 hover:fill-blue-500 dark:hidden" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -405,6 +409,7 @@
                         </svg>
                     </span>
                     
+                    <!-- Fetch github stars -->
                     <script>
                         fetch('https://api.github.com/repos/mkfizi/tailboard')
                             .then(response =>{
@@ -426,10 +431,14 @@
                 <!-- Example -->
                 <p class="mb-4 text-xl font-semibold">Example</p>
                 <div class="p-4 mb-8 bg-white rounded-md shadow-md dark:bg-gray-800">
+
+                    <!-- Input Text -->
                     <div class="mb-4">
                         <label for="input-example" class="block mb-2 text-sm font-semibold">Input</label>
                         <input type="text" id="input-example" name="input_example" placeholder="Input example" class="w-full h-10 px-2 mb-1 text-sm bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none">
                     </div>
+
+                    <!-- Select -->
                     <div class="mb-4">
                         <label for="select-example" class="block mb-2 text-sm font-semibold">Select</label>
                         <select name="select_example" id="select-example" class="w-full h-10 px-2 mb-1 text-sm bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none">
@@ -439,15 +448,21 @@
                             <option value="Option 3">Option 3</option>
                         </select>
                     </div>
+
+                    <!-- Text Area -->
                     <div class="mb-4">
                         <label for="text-area-example" class="block mb-2 text-sm font-semibold">Text Area</label>
                         <textarea id="text-area-example" name="text_area_example" placeholder="Text area example" class="w-full px-2 mb-1 text-sm bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none"></textarea>
                     </div>
+
+                    <!-- Input Checkbox -->
                     <div class="mb-4">
                         <p class="mb-2 text-sm font-semibold">Checkbox</p>
                         <input type="checkbox" id="checkbox-example" name="checkbox_example" value="Checkbox Example" class="mb-1 text-blue-500 bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none">
                         <label for="checkbox-example" class="mb-1 ml-1 text-sm">Checkbox item</label>
                     </div>
+
+                    <!-- Input Radio -->
                     <div class="mb-4">
                         <p class="mb-2 text-sm font-semibold">Radio</p>
                         <div class="flex gap-4">
@@ -461,19 +476,25 @@
                             </span>
                         </div>
                     </div>
+
+                    <!-- Input File -->
                     <div>
                         <label for="upload-file-example" class="block mb-2 text-sm font-semibold">Upload file</label>
-                        <input type="file" id="upload-file-example" name="upload_file_example" class="h-10 mb-1 text-sm transition bg-transparent border-0 rounded appearance-none file:font-semibold focus:outline-none focus:ring-0 file:border-0 file:h-10 file:px-6 file:disabled:bg-blue-400 file:disabled:hover:bg-blue-400 dark:file:disabled:hover:bg-blue-400 file:bg-blue-700 file:text-white file:hover:bg-blue-600 dark:file:hover:bg-blue-500 file:rounded file:mr-2">
+                        <input type="file" id="upload-file-example" name="upload_file_example" class="h-10 mb-1 text-sm transition bg-transparent border-0 rounded appearance-none file:font-semibold focus:outline-none focus:ring-0 file:border-0 file:h-10 file:px-6 file:disabled:bg-blue-400 disabled:pointer-events-none file:bg-blue-700 file:text-white file:hover:bg-blue-600 dark:file:hover:bg-blue-500 file:rounded file:mr-2">
                     </div>
                 </div>
 
                 <!-- Disabled -->
                 <p class="mb-4 text-xl font-semibold">Disabled</p>
                 <div class="p-4 mb-8 bg-white rounded-md shadow-md dark:bg-gray-800">
+
+                    <!-- Input Text Disabled -->
                     <div class="mb-4">
                         <label for="input-disabled-example" class="block mb-2 text-sm font-semibold">Input</label>
                         <input type="text" id="input-disabled-example" name="input_disabled_example" placeholder="Input disable example" class="w-full h-10 px-2 mb-1 text-sm bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none" disabled>
                     </div>
+
+                    <!-- Select Disabled -->
                     <div class="mb-4">
                         <label for="select-disabled-example" class="block mb-2 text-sm font-semibold">Select</label>
                         <select name="select_disabled_example" id="select-disabled-example" class="w-full h-10 px-2 mb-1 text-sm bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none" disabled>
@@ -483,15 +504,21 @@
                             <option value="Option 3">Option 3</option>
                         </select>
                     </div>
+
+                    <!-- Text Area Disabled -->
                     <div class="mb-4">
                         <label for="text-area-disabled-example" class="block mb-2 text-sm font-semibold">Text Area</label>
                         <textarea id="text-area-disabled-example" name="text_area_disabled_example" placeholder="Text area disabled example" class="w-full px-2 mb-1 text-sm bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none" disabled></textarea>
                     </div>
+
+                    <!-- Input Checkbox Disabled -->
                     <div class="mb-4">
                         <p class="mb-2 text-sm font-semibold">Checkbox</p>
                         <input type="checkbox" id="checkbox-disabled-example" name="checkbox_disabled_example" value="Checkbox Disabled Example" class="mb-1 text-blue-500 bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none" disabled>
                         <label for="checkbox-disabled-example" class="mb-1 ml-1 text-sm">Checkbox item</label>
                     </div>
+
+                    <!-- Input Radio Disabled -->
                     <div class="mb-4">
                         <p class="mb-2 text-sm font-semibold">Radio</p>
                         <div class="flex gap-4">
@@ -505,16 +532,19 @@
                             </span>
                         </div>
                     </div>
+
+                    <!-- Input File Disabled -->
                     <div>
                         <label for="upload-file-disabled-example" class="block mb-2 text-sm font-semibold">Upload File</label>
-                        <input type="file" id="upload-file-disabled-example" name="upload_file_disabled_example" class="h-10 mb-1 text-sm transition bg-transparent border-0 rounded appearance-none file:font-semibold focus:outline-none focus:ring-0 file:border-0 file:h-10 file:px-6 file:disabled:bg-blue-400 file:disabled:hover:bg-blue-400 dark:file:disabled:hover:bg-blue-400 file:bg-blue-700 file:text-white file:hover:bg-blue-600 dark:file:hover:bg-blue-500 file:rounded file:mr-2" disabled>
+                        <input type="file" id="upload-file-disabled-example" name="upload_file_disabled_example" class="h-10 mb-1 text-sm transition bg-transparent border-0 rounded appearance-none file:font-semibold focus:outline-none focus:ring-0 file:border-0 file:h-10 file:px-6 file:disabled:bg-blue-400 disabled:pointer-events-none file:bg-blue-700 file:text-white file:hover:bg-blue-600 dark:file:hover:bg-blue-500 file:rounded file:mr-2" disabled>
                     </div>
                 </div>
-
 
                 <!-- Icon -->
                 <p class="mb-4 text-xl font-semibold">Icons</p>
                 <div class="p-4 mb-8 bg-white rounded-md shadow-md dark:bg-gray-800">
+
+                    <!-- Left Icon -->
                     <div class="mb-4">
                         <label for="input-left-icon-example" class="block mb-2 text-sm font-semibold">Left icon</label>
                         <div class="relative">
@@ -526,6 +556,8 @@
                             </svg>
                         </div>
                     </div>
+
+                    <!-- Right Icon -->
                     <div class="mb-4">
                         <label for="input-right-icon-example" class="block mb-2 text-sm font-semibold">Right icon</label>
                         <div class="relative">
