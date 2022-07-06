@@ -1,5 +1,5 @@
-import {setComponentByQuery} from "../util/config.js";
-import {toggleAllTransition} from "../util/config.js";
+import {setComponentByQuery} from "./config.js";
+import {toggleAllTransition} from "./config.js";
 
 class DarkMode {
     element = null; // Dark mode element

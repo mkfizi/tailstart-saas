@@ -1,11 +1,12 @@
 "use strict";
 
 import Collapse from "./component/collapse.js"
-import DarkMode from "./component/dark-mode.js"
-import Dashboard from "./component/dashboard.js"
 import Dropdown from "./component/dropdown.js"
-import RequiredValidation from "./component/required-validation.js"
 import Sidebar from "./component/sidebar.js"
+
+import DarkMode from "./util/dark-mode.js"
+import Dashboard from "./util/dashboard.js"
+import RequiredValidation from "./util/required-validation.js"
 
 class App {
     /**

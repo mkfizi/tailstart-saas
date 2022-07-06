@@ -1,7 +1,7 @@
-import {setComponentObjectById, toggleTransition} from "../util/config.js";
+import {setComponentObjectById, toggleTransition} from "./config.js";
 
-import Sidebar from "./sidebar.js";
-import {sidebars} from "./sidebar.js";
+import Sidebar from "../component/sidebar.js";
+import {sidebars} from "../component/sidebar.js";
 
 class Dashboard extends Sidebar{
     /**

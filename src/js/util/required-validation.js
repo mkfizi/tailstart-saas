@@ -1,4 +1,4 @@
-import {setComponentByQuery, setValidationText} from "../util/config.js";
+import {setComponentByQuery, setValidationText} from "./config.js";
 
 class RequiredValidation{
     element = null;         // Input Validation element
