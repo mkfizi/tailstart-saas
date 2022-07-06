@@ -1,6 +1,6 @@
 import {setComponentByQuery, setValidationText} from "../util/config.js";
 
-class InputValidation{
+class RequiredValidation{
     element = null;         // Input Validation element
     validationText = null;  // Validation text element
 
@@ -35,7 +35,7 @@ class InputValidation{
      * Set input validation component.
      * @params (HTMLDom) element
      */
-     setComponent(element) {
+    setComponent(element) {
         this.element = element;
         this.element.addEventListener('keyup', this);
     }
@@ -46,13 +46,7 @@ class InputValidation{
     show() {
         if (this.validationText != null) this.hide();
         this.validationText = setValidationText(this.element.checkValidity());
-
-        if(this.element.checkValidity()) {
-            if (this.element.dataset.valid != null) this.validationText.innerHTML = this.element.dataset.valid;
-        } else {
-            if (this.element.dataset.invalid != null) this.validationText.innerHTML = this.element.dataset.invalid;
-        }
-
+        this.validationText.innerHTML = this.getValidationText();
         this.element.parentNode.insertBefore(this.validationText, this.element.nextSibling);
     }
 
@@ -63,11 +57,27 @@ class InputValidation{
         this.validationText.remove();
         this.validationText = null;
     }
+    
+    /**
+     * Get input validation text.
+     * @returns (string) validationText
+     */
+    getValidationText() {
+        let validationText = null;
+
+        if(this.element.checkValidity()) {
+            if (this.element.dataset.valid != null) validationText = this.element.dataset.valid;
+        } else {
+            if (this.element.dataset.invalid != null) validationText = this.element.dataset.invalid;
+        }
+
+        return validationText;
+    }
 }
 
 const selector = "[required]";
-const object = InputValidation;
+const object = RequiredValidation;
 
-export const inputValidations = setComponentByQuery(selector, object);
+export const requiredValidations = setComponentByQuery(selector, object);
 
-export default InputValidation;
+export default RequiredValidation;
