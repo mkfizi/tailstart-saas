@@ -71,11 +71,11 @@
 
         <div class="flex items-center justify-between px-4 py-5 lg:pl-6">
             <!-- Title -->
-            <a href="index" class="block text-xl font-bold text-blue-700 dark:text-blue-300">Tailboard</a>
+            <a href="index" class="block text-xl font-bold text-blue-600 transition dark:text-blue-400 hover:text-blue-500">Tailboard</a>
 
             <!-- Dashboard Hide Button -->
             <button type="button" data-target="dashboard" data-trigger="Sidebar" data-action="hide" class="lg:hidden">
-                <svg xmlns="http://www.w3.org/2000/svg" class="stroke-blue-700 dark:stroke-blue-300 hover:stroke-blue-500 dark:hover:stroke-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <svg xmlns="http://www.w3.org/2000/svg" class="transition stroke-blue-600 dark:stroke-blue-400 hover:stroke-blue-500 dark:hover:stroke-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <line x1="18" y1="6" x2="6" y2="18" />
                     <line x1="6" y1="6" x2="18" y2="18" />
@@ -84,9 +84,9 @@
         </div>
 
         <!-- Dashboard Content -->
-        <div class="h-full overflow-y-auto text-gray-500 dark:text-gray-400">
+        <div class="h-full overflow-y-auto text-gray-600 dark:text-gray-400">
             <!-- Dashboard Link -->
-            <a href="index" class="flex w-full py-4 pl-6 pr-4 space-x-4 text-blue-700 dark:text-blue-300">
+            <a href="index" class="flex w-full py-4 pl-6 pr-4 space-x-4 text-blue-600 dark:text-blue-400">
                 <svg xmlns="http://www.w3.org/2000/svg"  width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <polyline points="5 12 3 12 12 3 21 12 19 12" />
@@ -137,7 +137,7 @@
             </a>
 
             <!-- Components Button -->
-            <button data-target="componentCollapse" data-trigger="Collapse" data-action="toggle" class="flex justify-between w-full py-4 pl-6 pr-4 transition">
+            <button data-target="componentCollapse" data-trigger="Collapse" data-action="toggle" class="flex justify-between w-full py-4 pl-6 pr-4 transition hover:text-blue-500">
                 <span class="flex space-x-4">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -157,7 +157,7 @@
             </button>
 
             <!-- Components Collapse -->
-            <div id="componentCollapse" data-component="Collapse" data-accordion="accodion" class="h-0 overflow-hidden transition-all bg-gray-100 dark:bg-gray-700">
+            <div id="componentCollapse" data-component="Collapse" data-accordion="accodion" class="h-0 overflow-hidden transition-all bg-gray-100 dark:bg-gray-600">
                 <!-- Alerts Link -->
                 <a href="./alerts" class="flex w-full py-3 pl-8 pr-4 space-x-4 transition hover:text-blue-500">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -210,7 +210,7 @@
             </div>
 
             <!-- Pages Button -->
-            <button data-target="pageCollapse" data-trigger="Collapse" data-action="toggle" class="flex justify-between w-full py-4 pl-6 pr-4 transition">
+            <button data-target="pageCollapse" data-trigger="Collapse" data-action="toggle" class="flex justify-between w-full py-4 pl-6 pr-4 transition hover:text-blue-500">
                 <span class="flex space-x-4">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -230,7 +230,7 @@
             </button>
 
             <!-- Page Collapse -->
-            <div id="pageCollapse" data-component="Collapse" data-accordion="accodion" class="h-0 overflow-hidden transition-all bg-gray-100 dark:bg-gray-700">
+            <div id="pageCollapse" data-component="Collapse" data-accordion="accodion" class="h-0 overflow-hidden transition-all bg-gray-100 dark:bg-gray-600">
                 <!-- Login Link -->
                 <a href="./login" class="flex w-full py-3 pl-8 pr-4 space-x-4 transition hover:text-blue-500">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -294,7 +294,7 @@
             <div class="flex items-center">
                 <!-- Dashboard Show Button -->
                 <button type="button" data-target="dashboard" data-trigger="Sidebar" data-action="show" class="lg:hidden">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="stroke-blue-700 fill-blue-700 dark:stroke-blue-300 dark:fill-blue-300 hover:stroke-blue-500 hover:fill-blue-500 " width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="stroke-blue-600 fill-blue-600 dark:stroke-blue-400 dark:fill-blue-400 hover:stroke-blue-500 hover:fill-blue-500 " width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <line x1="4" y1="6" x2="20" y2="6" />
                         <line x1="4" y1="12" x2="20" y2="12" />
@@ -306,11 +306,11 @@
             <span class="flex items-center justify-between space-x-4">
                 <!-- Dark mode toggle -->
                 <button type="button" id="darkModeToggle" data-component="DarkMode" data-action="toggle" class="flex items-center h-8" aria-label="Dark Mode Toggle">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="stroke-blue-700 fill-blue-700 hover:stroke-blue-500 hover:fill-blue-500 dark:hidden" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="stroke-blue-600 fill-blue-600 hover:stroke-blue-500 hover:fill-blue-500 dark:hidden" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
                     </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="hidden stroke-blue-300 fill-blue-300 hover:stroke-blue-500 hover:fill-blue-500 dark:block" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="hidden stroke-blue-400 fill-blue-400 hover:stroke-blue-500 hover:fill-blue-500 dark:block" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <circle cx="12" cy="12" r="4" />
                         <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
@@ -320,7 +320,7 @@
                 <!-- Notification Dropdown -->
                 <div class="relative flex items-center">
                     <button data-target="notificationDropdown" data-trigger="Dropdown" data-action="toggle" class="relative flex items-center h-8" aria-label="Notification Toggle">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-blue-700 fill-blue-700 dark:stroke-blue-300 dark:fill-blue-300 hover:stroke-blue-500 hover:fill-blue-500 dark:hover:stroke-blue-500 dark:hover:fill-blue-500" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-blue-600 fill-blue-600 dark:stroke-blue-400 dark:fill-blue-400 hover:stroke-blue-500 hover:fill-blue-500 dark:hover:stroke-blue-500 dark:hover:fill-blue-500" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                             <path d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
                             <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
@@ -334,42 +334,42 @@
                                 <div class="text-xs text-right"><small>30 minutes ago</small></div>
                             </a>
                         </li>
-                        <li><hr class="border-gray-200 dark:border-gray-700"></li>
+                        <li><hr class="border-gray-300 dark:border-gray-700"></li>
                         <li>
                             <a href="#" class="block px-4 py-2 hover:text-blue-500">
                                 <div class="h-8 text-xs font-light">You have 3 new task requests by Khafizi Noh to approve.</div>
                                 <div class="text-xs text-right"><small>5 hours ago</small></div>
                             </a>
                         </li>
-                        <li><hr class="border-gray-200 dark:border-gray-700"></li>
+                        <li><hr class="border-gray-300 dark:border-gray-700"></li>
                         <li>
                             <a href="#" class="block px-4 py-2 hover:text-blue-500">
                                 <div class="h-8 text-xs font-light">You have 99 unread messages.</div>
                                 <div class="text-xs text-right"><small>10 days ago</small></div>
                             </a>
                         </li>
-                        <li><hr class="border-gray-200 dark:border-gray-700"></li>
+                        <li><hr class="border-gray-300 dark:border-gray-700"></li>
                         <li>
                             <a href="#" class="block px-4 py-2 hover:text-blue-500">
                                 <div class="h-8 text-xs font-light">You have a pending delivery for order #18035025.</div>
                                 <div class="text-xs text-right"><small>3 months ago</small></div>
                             </a>
                         </li>
-                        <li><hr class="border-gray-200 dark:border-gray-700"></li>
+                        <li><hr class="border-gray-300 dark:border-gray-700"></li>
                         <li>
                             <a href="#" class="block px-4 py-2 hover:text-blue-500">
                                 <div class="h-8 text-xs font-light">You have made a new transaction amout of $308.95.</div>
                                 <div class="text-xs text-right"><small>4 years ago</small></div>
                             </a>
                         </li>
-                        <li><hr class="border-gray-200 dark:border-gray-700"></li>
+                        <li><hr class="border-gray-300 dark:border-gray-700"></li>
                         <li><a href="#" class="block pt-2 text-xs text-center hover:text-blue-500">View all notifications</a></li>
                     </ul>
                 </div>
 
                 <!-- Account Dropdown -->
                 <div class="relative flex items-center">
-                    <button data-target="menuDropdown" data-trigger="Dropdown" data-action="toggle" class="w-8 h-8 border-2 border-blue-700 rounded-full dark:border-blue-300 hover:border-blue-500 dark:hover:border-blue-500">
+                    <button data-target="menuDropdown" data-trigger="Dropdown" data-action="toggle" class="w-8 h-8 border-2 border-blue-600 rounded-full dark:border-blue-400 hover:border-blue-500 dark:hover:border-blue-500" aria-label="Toggle navbar menu">
                         <img src="./src/img/avatar.png" class="rounded-full" alt="">
                     </button>
                     <ul id="menuDropdown" data-component="Dropdown" class="absolute right-0 z-30 w-32 py-2 overflow-y-auto transition origin-top-right scale-0 bg-white rounded-md shadow opacity-0 dark:bg-gray-800 top-16 max-h-96">
@@ -385,7 +385,9 @@
         <main class="container p-4 mx-auto lg:px-6">
             <section class="my-4">
                 <p class="mb-4 text-2xl font-semibold">Dashboard</p>
-                <a href="https://github.com/mkfizi/tailboard" target="_blank" class="flex justify-between w-full p-4 mb-4 text-sm text-white bg-blue-700 rounded">
+
+                <!-- View Github -->
+                <a href="https://github.com/mkfizi/tailboard" target="_blank" class="flex justify-between w-full p-4 mb-4 text-sm text-white transition bg-blue-700 rounded hover:bg-blue-600">
                     <span class="flex space-x-2">
                         <span>View this project on Github</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -420,6 +422,30 @@
                             });
                     </script>
                 </a>
+
+                <!-- Content -->
+                <div class="grid space-y-4 md:grid-cols-2 xl:grid-cols-4 md:space-x-4">
+                    <div class="p-4 mb-8 bg-white rounded-md shadow-md dark:bg-gray-800">
+                        <div class="flex justify-between space-x-3">
+                            <div class="flex items-center">
+                                <div class="p-4 bg-blue-200 rounded-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="stroke-blue-500" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                        <circle cx="6" cy="19" r="2" />
+                                        <circle cx="17" cy="19" r="2" />
+                                        <path d="M17 17h-11v-14h-2" />
+                                        <path d="M6 5l14 1l-1 7h-13" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="flex flex-col justify-between">
+                                <p class="mb-2 text-sm font-semibold text-gray-600 dark:text-gray-400">Monthly Sales</p>
+                                <p class="mb-1 text-xl font-semibold text-right">$1805.25</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
             </section>
         </main>
 
