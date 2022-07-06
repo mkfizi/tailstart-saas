@@ -67,15 +67,15 @@
 </head>
 <body class="relative flex min-h-screen antialiased text-gray-900 dark:text-white bg-gray-50 dark:bg-gray-900">
     <!-- Dashboard Menu -->
-    <aside id="dashboard" data-component="Sidebar" class="fixed top-0 z-20 flex flex-col w-64 h-screen overflow-y-auto transition -translate-x-full bg-white shadow-2xl dark:bg-gray-800 lg:border-r lg:border-gray-100 lg:dark:border-gray-900 lg:shadow-none lg:sticky shrink-0 lg:translate-x-0 lg:transition-none">
+    <aside id="dashboard" data-component="Sidebar" class="fixed top-0 z-30 flex flex-col w-64 h-screen overflow-y-auto transition -translate-x-full bg-white shadow-2xl dark:bg-gray-800 lg:border-r lg:border-gray-100 lg:dark:border-gray-900 lg:shadow-none lg:sticky shrink-0 lg:translate-x-0 lg:transition-none">
 
         <div class="flex items-center justify-between px-4 py-5 lg:pl-6">
             <!-- Title -->
-            <a href="index" class="block text-xl font-bold text-cyan-700 dark:text-cyan-300">Tailboard</a>
+            <a href="index" class="block text-xl font-bold text-blue-600 transition dark:text-blue-400 hover:text-blue-500">Tailboard</a>
 
             <!-- Dashboard Hide Button -->
             <button type="button" data-target="dashboard" data-trigger="Sidebar" data-action="hide" class="lg:hidden">
-                <svg xmlns="http://www.w3.org/2000/svg" class="stroke-cyan-700 dark:stroke-cyan-300 hover:stroke-cyan-500 dark:hover:stroke-cyan-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <svg xmlns="http://www.w3.org/2000/svg" class="transition stroke-blue-600 dark:stroke-blue-400 hover:stroke-blue-500 dark:hover:stroke-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <line x1="18" y1="6" x2="6" y2="18" />
                     <line x1="6" y1="6" x2="18" y2="18" />
@@ -84,9 +84,9 @@
         </div>
 
         <!-- Dashboard Content -->
-        <div class="h-full overflow-y-auto text-gray-500 dark:text-gray-400">
+        <div class="h-full overflow-y-auto text-gray-600 dark:text-gray-400">
             <!-- Dashboard Link -->
-            <a href="index" class="flex w-full py-4 pl-6 pr-4 space-x-4 transition hover:text-cyan-500">
+            <a href="index" class="flex w-full py-4 pl-6 pr-4 space-x-4 transition hover:text-blue-500">
                 <svg xmlns="http://www.w3.org/2000/svg"  width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <polyline points="5 12 3 12 12 3 21 12 19 12" />
@@ -97,7 +97,7 @@
             </a>
 
             <!-- Typography Link -->
-            <a href="./typography" class="flex w-full py-4 pl-6 pr-4 space-x-4 transition hover:text-cyan-500">
+            <a href="./typography" class="flex w-full py-4 pl-6 pr-4 space-x-4 transition hover:text-blue-500">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <circle cx="17.5" cy="15.5" r="3.5" />
@@ -109,7 +109,7 @@
             </a>
             
             <!-- Forms Link -->
-            <a href="./forms" class="flex w-full py-4 pl-6 pr-4 space-x-4 text-cyan-700 dark:text-cyan-300">
+            <a href="./forms" class="flex w-full py-4 pl-6 pr-4 space-x-4 text-blue-600 dark:text-blue-400">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2" />
@@ -123,7 +123,7 @@
             </a>
 
             <!-- Buttons Link -->
-            <a href="./buttons" class="flex w-full py-4 pl-6 pr-4 space-x-4 transition hover:text-cyan-500">
+            <a href="./buttons" class="flex w-full py-4 pl-6 pr-4 space-x-4 transition hover:text-blue-500">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <line x1="3" y1="12" x2="6" y2="12" />
@@ -137,7 +137,7 @@
             </a>
 
             <!-- Components Button -->
-            <button data-target="componentCollapse" data-trigger="Collapse" data-action="toggle" class="flex justify-between w-full py-4 pl-6 pr-4 transition">
+            <button data-target="componentCollapse" data-trigger="Collapse" data-action="toggle" class="flex justify-between w-full py-4 pl-6 pr-4 transition hover:text-blue-500">
                 <span class="flex space-x-4">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -157,9 +157,9 @@
             </button>
 
             <!-- Components Collapse -->
-            <div id="componentCollapse" data-component="Collapse" data-accordion="accodion" class="h-0 overflow-hidden transition-all bg-gray-100 dark:bg-gray-700">
+            <div id="componentCollapse" data-component="Collapse" data-accordion="accodion" class="h-0 overflow-hidden transition-all bg-gray-100 dark:bg-gray-600">
                 <!-- Alerts Link -->
-                <a href="./alerts" class="flex w-full py-3 pl-8 pr-4 space-x-4 transition hover:text-cyan-500">
+                <a href="./alerts" class="flex w-full py-3 pl-8 pr-4 space-x-4 transition hover:text-blue-500">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <path d="M10 6h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3" />
@@ -169,7 +169,7 @@
                 </a>
 
                 <!-- Collapse Link -->
-                <a href="./collapse" class="flex w-full py-3 pl-8 pr-4 space-x-4 transition hover:text-cyan-500">
+                <a href="./collapse" class="flex w-full py-3 pl-8 pr-4 space-x-4 transition hover:text-blue-500">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <rect x="4" y="4" width="16" height="16" rx="2" />
@@ -179,7 +179,7 @@
                 </a>
 
                 <!-- Dropdowns Link -->
-                <a href="./dropdowns" class="flex w-full py-3 pl-8 pr-4 space-x-4 transition hover:text-cyan-500">
+                <a href="./dropdowns" class="flex w-full py-3 pl-8 pr-4 space-x-4 transition hover:text-blue-500">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <rect x="4" y="4" width="16" height="6" rx="2" />
@@ -189,7 +189,7 @@
                 </a>
 
                 <!-- Modals Link -->
-                <a href="./modals" class="flex w-full py-3 pl-8 pr-4 space-x-4 transition hover:text-cyan-500">
+                <a href="./modals" class="flex w-full py-3 pl-8 pr-4 space-x-4 transition hover:text-blue-500">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <rect x="7" y="3" width="14" height="14" rx="2" />
@@ -199,7 +199,7 @@
                 </a>
 
                 <!-- Sidebars Link -->
-                <a href="./sidebars" class="flex w-full py-3 pl-8 pr-4 space-x-4 transition hover:text-cyan-500">
+                <a href="./sidebars" class="flex w-full py-3 pl-8 pr-4 space-x-4 transition hover:text-blue-500">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <rect x="4" y="4" width="16" height="16" rx="2" />
@@ -210,7 +210,7 @@
             </div>
 
             <!-- Pages Button -->
-            <button data-target="pageCollapse" data-trigger="Collapse" data-action="toggle" class="flex justify-between w-full py-4 pl-6 pr-4 transition">
+            <button data-target="pageCollapse" data-trigger="Collapse" data-action="toggle" class="flex justify-between w-full py-4 pl-6 pr-4 transition hover:text-blue-500">
                 <span class="flex space-x-4">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -230,9 +230,9 @@
             </button>
 
             <!-- Page Collapse -->
-            <div id="pageCollapse" data-component="Collapse" data-accordion="accodion" class="h-0 overflow-hidden transition-all bg-gray-100 dark:bg-gray-700">
+            <div id="pageCollapse" data-component="Collapse" data-accordion="accodion" class="h-0 overflow-hidden transition-all bg-gray-100 dark:bg-gray-600">
                 <!-- Login Link -->
-                <a href="./login" class="flex w-full py-3 pl-8 pr-4 space-x-4 transition hover:text-cyan-500">
+                <a href="./login" class="flex w-full py-3 pl-8 pr-4 space-x-4 transition hover:text-blue-500">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />
@@ -242,7 +242,7 @@
                 </a>
 
                 <!-- Register Link -->
-                <a href="./register" class="flex w-full py-3 pl-8 pr-4 space-x-4 transition hover:text-cyan-500">
+                <a href="./register" class="flex w-full py-3 pl-8 pr-4 space-x-4 transition hover:text-blue-500">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <circle cx="9" cy="7" r="4" />
@@ -253,7 +253,7 @@
                 </a>
 
                 <!-- Forgot Password Link -->
-                <a href="./forgot-password" class="flex w-full py-3 pl-8 pr-4 space-x-4 transition hover:text-cyan-500">
+                <a href="./forgot-password" class="flex w-full py-3 pl-8 pr-4 space-x-4 transition hover:text-blue-500">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <line x1="3" y1="3" x2="21" y2="21" />
@@ -265,7 +265,7 @@
                 </a>
 
                 <!-- 404 Link -->
-                <a href="./404" class="flex w-full py-3 pl-8 pr-4 space-x-4 transition hover:text-cyan-500">
+                <a href="./404" class="flex w-full py-3 pl-8 pr-4 space-x-4 transition hover:text-blue-500">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <path d="M12 9v2m0 4v.01" />
@@ -275,7 +275,7 @@
                 </a>
 
                 <!-- Blank Link -->
-                <a href="./blank" class="flex w-full py-3 pl-8 pr-4 space-x-4 transition hover:text-cyan-500">
+                <a href="./blank" class="flex w-full py-3 pl-8 pr-4 space-x-4 transition hover:text-blue-500">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <rect x="4" y="4" width="16" height="16" rx="2" />
@@ -290,11 +290,11 @@
 
     <div class="flex-auto w-full">
         <!-- Nav -->
-        <nav class="sticky top-0 flex justify-between w-full p-4 bg-white shadow lg:pr-6 items-between dark:bg-gray-800">
+        <nav class="sticky top-0 z-10 flex justify-between w-full p-4 bg-white shadow lg:pr-6 items-between dark:bg-gray-800">
             <div class="flex items-center">
                 <!-- Dashboard Show Button -->
                 <button type="button" data-target="dashboard" data-trigger="Sidebar" data-action="show" class="lg:hidden">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="stroke-cyan-700 fill-cyan-700 dark:stroke-cyan-300 dark:fill-cyan-300 hover:stroke-cyan-500 hover:fill-cyan-500 " width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="stroke-blue-600 fill-blue-600 dark:stroke-blue-400 dark:fill-blue-400 hover:stroke-blue-500 hover:fill-blue-500 " width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <line x1="4" y1="6" x2="20" y2="6" />
                         <line x1="4" y1="12" x2="20" y2="12" />
@@ -306,11 +306,11 @@
             <span class="flex items-center justify-between space-x-4">
                 <!-- Dark mode toggle -->
                 <button type="button" id="darkModeToggle" data-component="DarkMode" data-action="toggle" class="flex items-center h-8" aria-label="Dark Mode Toggle">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="stroke-cyan-700 fill-cyan-700 hover:stroke-cyan-500 hover:fill-cyan-500 dark:hidden" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="stroke-blue-600 fill-blue-600 hover:stroke-blue-500 hover:fill-blue-500 dark:hidden" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
                     </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="hidden stroke-cyan-300 fill-cyan-300 hover:stroke-cyan-500 hover:fill-cyan-500 dark:block" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="hidden stroke-blue-400 fill-blue-400 hover:stroke-blue-500 hover:fill-blue-500 dark:block" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <circle cx="12" cy="12" r="4" />
                         <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
@@ -320,62 +320,62 @@
                 <!-- Notification Dropdown -->
                 <div class="relative flex items-center">
                     <button data-target="notificationDropdown" data-trigger="Dropdown" data-action="toggle" class="relative flex items-center h-8" aria-label="Notification Toggle">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-cyan-700 fill-cyan-700 dark:stroke-cyan-300 dark:fill-cyan-300 hover:stroke-cyan-500 hover:fill-cyan-500 dark:hover:stroke-cyan-500 dark:hover:fill-cyan-500" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-blue-600 fill-blue-600 dark:stroke-blue-400 dark:fill-blue-400 hover:stroke-blue-500 hover:fill-blue-500 dark:hover:stroke-blue-500 dark:hover:fill-blue-500" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                             <path d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
                             <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
                         </svg>
                         <div class="absolute right-0 w-2 h-2 bg-red-500 rounded-full top-1"></div>
                     </button>
-                    <ul id="notificationDropdown" data-component="Dropdown" class="absolute right-0 z-10 py-2 overflow-y-auto transition origin-top-right scale-0 bg-white rounded-md shadow opacity-0 w-72 dark:bg-gray-800 top-16 max-h-72">
+                    <ul id="notificationDropdown" data-component="Dropdown" class="absolute right-0 z-30 py-2 overflow-y-auto transition origin-top-right scale-0 bg-white rounded-md shadow opacity-0 w-72 dark:bg-gray-800 top-16 max-h-72">
                         <li>
-                            <a href="#" class="block px-4 py-2 hover:text-cyan-500">
+                            <a href="#" class="block px-4 py-2 hover:text-blue-500">
                                 <div class="h-8 text-xs font-light">You have received a purchase order amount of $104.85.</div>
                                 <div class="text-xs text-right"><small>30 minutes ago</small></div>
                             </a>
                         </li>
-                        <li><hr class="border-gray-200 dark:border-gray-700"></li>
+                        <li><hr class="border-gray-300 dark:border-gray-700"></li>
                         <li>
-                            <a href="#" class="block px-4 py-2 hover:text-cyan-500">
+                            <a href="#" class="block px-4 py-2 hover:text-blue-500">
                                 <div class="h-8 text-xs font-light">You have 3 new task requests by Khafizi Noh to approve.</div>
                                 <div class="text-xs text-right"><small>5 hours ago</small></div>
                             </a>
                         </li>
-                        <li><hr class="border-gray-200 dark:border-gray-700"></li>
+                        <li><hr class="border-gray-300 dark:border-gray-700"></li>
                         <li>
-                            <a href="#" class="block px-4 py-2 hover:text-cyan-500">
+                            <a href="#" class="block px-4 py-2 hover:text-blue-500">
                                 <div class="h-8 text-xs font-light">You have 99 unread messages.</div>
                                 <div class="text-xs text-right"><small>10 days ago</small></div>
                             </a>
                         </li>
-                        <li><hr class="border-gray-200 dark:border-gray-700"></li>
+                        <li><hr class="border-gray-300 dark:border-gray-700"></li>
                         <li>
-                            <a href="#" class="block px-4 py-2 hover:text-cyan-500">
+                            <a href="#" class="block px-4 py-2 hover:text-blue-500">
                                 <div class="h-8 text-xs font-light">You have a pending delivery for order #18035025.</div>
                                 <div class="text-xs text-right"><small>3 months ago</small></div>
                             </a>
                         </li>
-                        <li><hr class="border-gray-200 dark:border-gray-700"></li>
+                        <li><hr class="border-gray-300 dark:border-gray-700"></li>
                         <li>
-                            <a href="#" class="block px-4 py-2 hover:text-cyan-500">
+                            <a href="#" class="block px-4 py-2 hover:text-blue-500">
                                 <div class="h-8 text-xs font-light">You have made a new transaction amout of $308.95.</div>
                                 <div class="text-xs text-right"><small>4 years ago</small></div>
                             </a>
                         </li>
-                        <li><hr class="border-gray-200 dark:border-gray-700"></li>
-                        <li><a href="#" class="block pt-2 text-xs text-center hover:text-cyan-500">View all notifications</a></li>
+                        <li><hr class="border-gray-300 dark:border-gray-700"></li>
+                        <li><a href="#" class="block pt-2 text-xs text-center hover:text-blue-500">View all notifications</a></li>
                     </ul>
                 </div>
 
                 <!-- Account Dropdown -->
                 <div class="relative flex items-center">
-                    <button data-target="menuDropdown" data-trigger="Dropdown" data-action="toggle" class="w-8 h-8 border-2 rounded-full border-cyan-700 dark:border-cyan-300 hover:border-cyan-500 dark:hover:border-cyan-500">
+                    <button data-target="menuDropdown" data-trigger="Dropdown" data-action="toggle" class="w-8 h-8 border-2 border-blue-600 rounded-full dark:border-blue-400 hover:border-blue-500 dark:hover:border-blue-500" aria-label="Toggle navbar menu">
                         <img src="./src/img/avatar.png" class="rounded-full" alt="">
                     </button>
-                    <ul id="menuDropdown" data-component="Dropdown" class="absolute right-0 z-10 w-32 py-2 overflow-y-auto transition origin-top-right scale-0 bg-white rounded-md shadow opacity-0 dark:bg-gray-800 top-16 max-h-96">
-                        <li><a href="https://mkfizi.github.io/" target="_blank" class="block px-4 py-2 text-sm font-medium hover:text-cyan-500">Profile</a></li>
-                        <li><a href="#" class="block px-4 py-2 text-sm font-medium hover:text-cyan-500">Settings</a></li>
-                        <li><a href="#" class="block px-4 py-2 text-sm font-medium hover:text-cyan-500">Logout</a></li>
+                    <ul id="menuDropdown" data-component="Dropdown" class="absolute right-0 z-30 w-32 py-2 overflow-y-auto transition origin-top-right scale-0 bg-white rounded-md shadow opacity-0 dark:bg-gray-800 top-16 max-h-96">
+                        <li><a href="https://mkfizi.github.io/" target="_blank" class="block px-4 py-2 text-sm font-medium hover:text-blue-500">Profile</a></li>
+                        <li><a href="#" class="block px-4 py-2 text-sm font-medium hover:text-blue-500">Settings</a></li>
+                        <li><a href="#" class="block px-4 py-2 text-sm font-medium hover:text-blue-500">Logout</a></li>
                     </ul>
                 </div>
             </span>
@@ -384,8 +384,10 @@
         <!-- Content -->
         <main class="container p-4 mx-auto lg:px-6">
             <section class="my-4">
-                <p class="mb-4 text-2xl font-semibold">Forms</p>
-                <a href="https://github.com/mkfizi/tailboard" target="_blank" class="flex justify-between w-full p-4 mb-4 text-sm text-white rounded bg-cyan-700">
+                <p class="mb-4 text-2xl font-semibold">Dashboard</p>
+
+                <!-- View Github -->
+                <a href="https://github.com/mkfizi/tailboard" target="_blank" class="flex justify-between w-full p-4 mb-4 text-sm text-white transition bg-blue-700 rounded hover:bg-blue-600">
                     <span class="flex space-x-2">
                         <span>View this project on Github</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -426,11 +428,11 @@
                 <div class="p-4 mb-8 bg-white rounded-md shadow-md dark:bg-gray-800">
                     <div class="mb-4">
                         <label for="input-example" class="block mb-2 text-sm font-semibold">Input</label>
-                        <input type="text" id="input-example" name="input_example" placeholder="Input example" class="w-full h-10 px-2 mb-1 text-sm bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-cyan-500 dark:border-gray-600 focus:ring-cyan-500 focus:outline-none">
+                        <input type="text" id="input-example" name="input_example" placeholder="Input example" class="w-full h-10 px-2 mb-1 text-sm bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none">
                     </div>
                     <div class="mb-4">
                         <label for="select-example" class="block mb-2 text-sm font-semibold">Select</label>
-                        <select name="select_example" id="select-example" class="w-full h-10 px-2 mb-1 text-sm bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-cyan-500 dark:border-gray-600 focus:ring-cyan-500 focus:outline-none">
+                        <select name="select_example" id="select-example" class="w-full h-10 px-2 mb-1 text-sm bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none">
                             <option value="" selected>Select Example</option>
                             <option value="Option 1">Option 1</option>
                             <option value="Option 2">Option 2</option>
@@ -439,22 +441,22 @@
                     </div>
                     <div class="mb-4">
                         <label for="text-area-example" class="block mb-2 text-sm font-semibold">Text Area</label>
-                        <textarea id="text-area-example" name="text_area_example" placeholder="Text area example" class="w-full px-2 mb-1 text-sm bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-cyan-500 dark:border-gray-600 focus:ring-cyan-500 focus:outline-none"></textarea>
+                        <textarea id="text-area-example" name="text_area_example" placeholder="Text area example" class="w-full px-2 mb-1 text-sm bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none"></textarea>
                     </div>
                     <div class="mb-4">
                         <p class="mb-2 text-sm font-semibold">Checkbox</p>
-                        <input type="checkbox" id="checkbox-example" name="checkbox_example" value="Checkbox Example" class="mb-1 bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-cyan-500 dark:border-gray-600 focus:ring-cyan-500 focus:outline-none text-cyan-500">
+                        <input type="checkbox" id="checkbox-example" name="checkbox_example" value="Checkbox Example" class="mb-1 text-blue-500 bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none">
                         <label for="checkbox-example" class="mb-1 ml-1 text-sm">Checkbox item</label>
                     </div>
-                    <div class="mb-4">
+                    <div>
                         <p class="mb-2 text-sm font-semibold">Radio</p>
                         <div class="flex space-x-4">
                             <span>
-                                <input type="radio" id="radio-example-1" name="radio_example" value="Radio Example 1" class="mb-1 bg-transparent border border-gray-400 appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-cyan-500 dark:border-gray-600 focus:ring-cyan-500 focus:outline-none text-cyan-500">
+                                <input type="radio" id="radio-example-1" name="radio_example" value="Radio Example 1" class="mb-1 text-blue-500 bg-transparent border border-gray-400 appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none">
                                 <label for="radio-example-1" class="mb-1 ml-1 text-sm">Radio item 1</label>
                             </span>
                             <span>
-                                <input type="radio" id="radio-example-2" name="radio_example" value="Radio Example 2" class="mb-1 bg-transparent border border-gray-400 appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-cyan-500 dark:border-gray-600 focus:ring-cyan-500 focus:outline-none text-cyan-500">
+                                <input type="radio" id="radio-example-2" name="radio_example" value="Radio Example 2" class="mb-1 text-blue-500 bg-transparent border border-gray-400 appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none">
                                 <label for="radio-example-2" class="mb-1 ml-1 text-sm">Radio item 2</label>
                             </span>
                         </div>
@@ -466,11 +468,11 @@
                 <div class="p-4 mb-8 bg-white rounded-md shadow-md dark:bg-gray-800">
                     <div class="mb-4">
                         <label for="input-disabled-example" class="block mb-2 text-sm font-semibold">Input</label>
-                        <input type="text" id="input-disabled-example" name="input_disabled_example" placeholder="Input disable example" class="w-full h-10 px-2 mb-1 text-sm bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-cyan-500 dark:border-gray-600 focus:ring-cyan-500 focus:outline-none" disabled>
+                        <input type="text" id="input-disabled-example" name="input_disabled_example" placeholder="Input disable example" class="w-full h-10 px-2 mb-1 text-sm bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none" disabled>
                     </div>
                     <div class="mb-4">
                         <label for="select-disabled-example" class="block mb-2 text-sm font-semibold">Select</label>
-                        <select name="select_disabled_example" id="select-disabled-example" class="w-full h-10 px-2 mb-1 text-sm bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-cyan-500 dark:border-gray-600 focus:ring-cyan-500 focus:outline-none" disabled>
+                        <select name="select_disabled_example" id="select-disabled-example" class="w-full h-10 px-2 mb-1 text-sm bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none" disabled>
                             <option value="" selected>Select Disabled Example</option>
                             <option value="Option 1">Option 1</option>
                             <option value="Option 2">Option 2</option>
@@ -479,25 +481,62 @@
                     </div>
                     <div class="mb-4">
                         <label for="text-area-disabled-example" class="block mb-2 text-sm font-semibold">Text Area</label>
-                        <textarea id="text-area-disabled-example" name="text_area_disabled_example" placeholder="Text area disabled example" class="w-full px-2 mb-1 text-sm bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-cyan-500 dark:border-gray-600 focus:ring-cyan-500 focus:outline-none" disabled></textarea>
+                        <textarea id="text-area-disabled-example" name="text_area_disabled_example" placeholder="Text area disabled example" class="w-full px-2 mb-1 text-sm bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none" disabled></textarea>
                     </div>
                     <div class="mb-4">
                         <p class="mb-2 text-sm font-semibold">Checkbox</p>
-                        <input type="checkbox" id="checkbox-disabled-example" name="checkbox_disabled_example" value="Checkbox Disabled Example" class="mb-1 bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-cyan-500 dark:border-gray-600 focus:ring-cyan-500 focus:outline-none text-cyan-500" disabled>
+                        <input type="checkbox" id="checkbox-disabled-example" name="checkbox_disabled_example" value="Checkbox Disabled Example" class="mb-1 text-blue-500 bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none" disabled>
                         <label for="checkbox-disabled-example" class="mb-1 ml-1 text-sm">Checkbox item</label>
                     </div>
-                    <div class="mb-4">
+                    <div>
                         <p class="mb-2 text-sm font-semibold">Radio</p>
                         <div class="flex space-x-4">
                             <span>
-                                <input type="radio" id="radio-disabled-example-1" name="radio_disabled_example" value="Radio Disabled Example 1" class="mb-1 bg-transparent border border-gray-400 appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-cyan-500 dark:border-gray-600 focus:ring-cyan-500 focus:outline-none text-cyan-500" disabled>
+                                <input type="radio" id="radio-disabled-example-1" name="radio_disabled_example" value="Radio Disabled Example 1" class="mb-1 text-blue-500 bg-transparent border border-gray-400 appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none" disabled>
                                 <label for="radio-disabled-example-1" class="mb-1 ml-1 text-sm">Radio item 1</label>
                             </span>
                             <span>
-                                <input type="radio" id="radio-disabled-example-2" name="radio_disabled_example" value="Radio Example 2" class="mb-1 bg-transparent border border-gray-400 appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-cyan-500 dark:border-gray-600 focus:ring-cyan-500 focus:outline-none text-cyan-500" disabled>
+                                <input type="radio" id="radio-disabled-example-2" name="radio_disabled_example" value="Radio Example 2" class="mb-1 text-blue-500 bg-transparent border border-gray-400 appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none" disabled>
                                 <label for="radio-disabled-example-2" class="mb-1 ml-1 text-sm">Radio item 2</label>
                             </span>
                         </div>
+                    </div>
+                </div>
+
+
+                <!-- Icon -->
+                <p class="mb-4 text-xl font-semibold">Icons</p>
+                <div class="p-4 mb-8 bg-white rounded-md shadow-md dark:bg-gray-800">
+                    <div class="mb-4">
+                        <label for="input-left-icon-example" class="block mb-2 text-sm font-semibold">Left icon</label>
+                        <div class="relative">
+                            <input type="text" id="input-left-icon-example" name="input_left_icon_example" placeholder="Input example" class="w-full h-10 pl-8 pr-2 mb-1 text-sm bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-2 left-2 stroke-gray-500" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <circle cx="12" cy="7" r="4" />
+                                <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label for="input-right-icon-example" class="block mb-2 text-sm font-semibold">Right icon</label>
+                        <div class="relative">
+                            <input type="text" id="input-right-icon-example" name="input_left_icon_example" placeholder="Input example" class="w-full h-10 pl-2 pr-8 mb-1 text-sm bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-2 right-2 stroke-gray-500" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <circle cx="12" cy="7" r="4" />
+                                <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Button -->
+                <p class="mb-4 text-xl font-semibold">Input File</p>
+                <div class="p-4 mb-8 bg-white rounded-md shadow-md dark:bg-gray-800">
+                    <div class="mb-4">
+                        <label for="input-file-example" class="block mb-2 text-sm font-semibold">Regular</label>
+                        <input type="file" id="input-file-example" name="input_file_example" class="w-full h-10 mb-1 text-sm transition bg-transparent border-0 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 file:border-0 file:h-10 file:px-4 file:bg-blue-700 file:text-white file:hover:bg-blue-600 dark:file:hover:bg-blue-500 file:rounded file:mr-2">
                     </div>
                 </div>
             </section>
