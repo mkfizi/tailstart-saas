@@ -558,7 +558,7 @@
                     </div>
 
                     <!-- Right Icon -->
-                    <div class="mb-4">
+                    <div>
                         <label for="input-right-icon-example" class="block mb-2 text-sm font-semibold">Right icon</label>
                         <div class="relative">
                             <input type="text" id="input-right-icon-example" name="input_left_icon_example" placeholder="Input example" class="w-full h-10 pl-2 pr-8 mb-1 text-sm bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none">
@@ -570,6 +570,41 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Text Validation -->
+                <p class="mb-4 text-xl font-semibold">Text Validation</p>
+                <div class="p-4 mb-8 bg-white rounded-md shadow-md dark:bg-gray-800">
+
+                    <!-- Valid Input -->
+                    <div class="mb-4">
+                        <label for="input-valid-example" class="block mb-2 text-sm font-semibold">Valid Input</label>
+                        <input type="text" id="input-valid-example" name="input_valid_example" data-invalid="Input is required." data-valid="Input is valid." placeholder="Input valid example" value="Input Valid Example" class="w-full h-10 px-2 mb-1 text-sm bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none" required>
+                    </div>
+
+                    <!-- Invalid Input -->
+                    <div class="mb-4">
+                        <label for="input-invalid-example" class="block mb-2 text-sm font-semibold">Invalid Input</label>
+                        <input type="text" id="input-invalid-example" name="input_valid_example" data-invalid="Input is required." data-valid="Input is valid." placeholder="Input invalid example" class="w-full h-10 px-2 mb-1 text-sm bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none" required>
+                    </div>
+
+                    <!-- Hide if Valid -->
+                    <div>
+                        <label for="input-is-valid-example" class="block mb-2 text-sm font-semibold">Hide if Valid</label>
+                        <input type="text" id="input-is-valid-example" name="input_is_valid_example" data-invalid="Input is required." data-valid="Input is valid." data-is-valid="hide" placeholder="Hide if valid example" class="w-full h-10 px-2 mb-1 text-sm bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none" required>
+                    </div>
+                </div>
+
+                <!-- 
+                    Toggle input validation.
+
+                    This code is for demonstartion purpose only.
+                -------------------------------------------------------------------------->
+                <script type="module">
+                    const inputs = document.querySelectorAll("[required]");
+                    for (let i = 0; i < inputs.length; i++) {
+                        inputs[i].dispatchEvent(new Event('keyup'));
+                    }
+                </script>
             </section>
         </main>
 

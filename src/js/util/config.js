@@ -39,6 +39,23 @@ const setComponentByQuery = (selector, object) => {
 
     return objectInstances;
 }
+/**
+ * Set validation text element.
+ * @params (boolean) validation
+ * @return (HTMLDom) validationText
+ */
+const setValidationText = (validation) => {
+    let validationText = document.createElement("p");
+    let validationClass = null;
+    
+    validation
+        ? validationClass = "text-green-500"
+        : validationClass = "text-red-500";
+
+    validationText.setAttribute("class", `text-xs mb-1 ${validationClass}`);
+    
+    return validationText;
+}
 
 /**
  * Toggle "transition-none" class to target element.
@@ -64,6 +81,7 @@ export {
     setBackdrop,
     setComponentObjectById,
     setComponentByQuery,
+    setValidationText,
     toggleTransition,
     toggleAllTransition,
 }
