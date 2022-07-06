@@ -122,6 +122,6 @@ class Collapse {
 const selector = "[data-component='Collapse']";
 const object = Collapse;
 
-const collapses = setComponentByQuery(selector, object);
+export const collapses = setComponentByQuery(selector, object);
 
 export default Collapse;

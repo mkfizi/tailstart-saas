@@ -84,6 +84,6 @@ class Dropdown {
 const selector = "[data-component='Dropdown']";
 const object = Dropdown;
 
-const dropdowns = setComponentByQuery(selector, object);
+export const dropdowns = setComponentByQuery(selector, object);
 
 export default Dropdown;
