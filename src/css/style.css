@@ -1469,6 +1469,16 @@ select {
   padding-bottom: 24rem;
 }
 
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 .pl-6 {
   padding-left: 1.5rem;
 }
@@ -2312,12 +2322,30 @@ body{
   padding-right: 1rem;
 }
 
+.file\:px-6::-webkit-file-upload-button {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.file\:px-6::file-selector-button {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 .file\:pr-2::-webkit-file-upload-button {
   padding-right: 0.5rem;
 }
 
 .file\:pr-2::file-selector-button {
   padding-right: 0.5rem;
+}
+
+.file\:font-semibold::-webkit-file-upload-button {
+  font-weight: 600;
+}
+
+.file\:font-semibold::file-selector-button {
+  font-weight: 600;
 }
 
 .file\:text-white::-webkit-file-upload-button {
@@ -2408,6 +2436,11 @@ body{
 .hover\:border-blue-500:hover {
   --tw-border-opacity: 1;
   border-color: rgb(59 130 246 / var(--tw-border-opacity));
+}
+
+.hover\:border-blue-600:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(37 99 235 / var(--tw-border-opacity));
 }
 
 .hover\:bg-cyan-500:hover {
@@ -2651,6 +2684,11 @@ body{
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
+.disabled\:bg-blue-400:disabled {
+  --tw-bg-opacity: 1;
+  background-color: rgb(96 165 250 / var(--tw-bg-opacity));
+}
+
 .disabled\:text-gray-400:disabled {
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
@@ -2672,6 +2710,11 @@ body{
 }
 
 .file\:disabled\:bg-blue-400:disabled::file-selector-button {
+  --tw-bg-opacity: 1;
+  background-color: rgb(96 165 250 / var(--tw-bg-opacity));
+}
+
+.disabled\:hover\:bg-blue-400:hover:disabled {
   --tw-bg-opacity: 1;
   background-color: rgb(96 165 250 / var(--tw-bg-opacity));
 }
