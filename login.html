@@ -68,25 +68,41 @@
 <body class="relative min-h-screen antialiased text-gray-900 dark:text-white bg-gray-50 dark:bg-gray-900">
     <main class="container py-16 mx-auto lg:px-4">
         <section class="max-w-md mx-auto mt-16 lg:mt-24">
-            <div class="p-4 mb-8 bg-white rounded-md shadow-md dark:bg-gray-800">
+
+            <!-- Login form -->
+            <form action="#" class="p-4 mb-8 bg-white rounded-md shadow-md dark:bg-gray-800">
                 <p class="my-4 text-2xl font-semibold text-center">Login</p>
+
+                <!-- Email input -->
                 <div class="mb-4">
                     <label for="input-email" class="block mb-2 text-sm font-semibold">Email</label>
                     <input type="email" id="input-email" name="input_email" placeholder="Enter email" class="w-full h-10 px-2 mb-1 text-sm bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none">
                 </div>
+
+                <!-- Password input -->
                 <div>
                     <label for="input-password" class="block mb-2 text-sm font-semibold">Password</label>
                     <input type="password" id="input-password" name="input_password" placeholder="Enter password" class="w-full h-10 px-2 mb-1 text-sm bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none">
                 </div>
+
                 <div class="flex justify-between mb-8">
+                    
+                    <!-- Remember me checkbox -->
                     <div>
                         <input type="checkbox" id="checkbox-remember-me" name="checkbox_remember_me" value="Remember me" class="mb-1 text-blue-500 bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none">
                         <label for="checkbox-remember-me" class="mb-1 ml-1 text-sm">Remember me</label>
                     </div>
-                    <a href="#" class="inline-block mb-1 text-sm text-blue-600 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-500">Forgot password?</a>
+
+                    <!-- Forgot password -->
+                    <a href="./forgot-password" class="inline-block mb-1 text-sm text-blue-600 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-500">Forgot password?</a>
                 </div>
-                <a href="#" class="inline-block w-full h-10 px-6 py-2 mb-8 text-sm font-semibold text-center text-white transition bg-blue-700 border border-blue-700 rounded hover:bg-blue-600 hover:border-blue-600">Login</a>
+
+                <!-- Login button -->
+                <button type="submit" class="h-10 px-6 py-2 mb-1 text-sm font-semibold text-white align-middle transition bg-blue-700 border border-blue-700 rounded hover:bg-blue-600 hover:border-blue-600 disabled:bg-blue-400 disabled:border-blue-400 disabled:pointer-events-none">Login</button>
+                
                 <hr class="mb-8 border-gray-300 dark:border-gray-700">
+                
+                <!-- Login with Gmail -->
                 <a href="#" class="inline-block w-full h-10 px-6 py-2 mb-4 text-sm font-semibold text-center text-blue-700 transition bg-transparent border border-blue-700 rounded dark:border-blue-500 dark:text-blue-500 hover:bg-blue-600 hover:text-white hover:border-blue-600 dark:hover:bg-blue-600 dark:hover:text-white dark:hover:border-blue-600">
                     <div class="flex justify-center gap-2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -99,6 +115,8 @@
                         <span>Login with Gmail</span>
                     </div>
                 </a>
+
+                <!-- Login with Facebook -->
                 <a href="#" class="inline-block w-full h-10 px-6 py-2 mb-4 text-sm font-semibold text-center text-blue-700 transition bg-transparent border border-blue-700 rounded dark:border-blue-500 dark:text-blue-500 hover:bg-blue-600 hover:text-white hover:border-blue-600 dark:hover:bg-blue-600 dark:hover:text-white dark:hover:border-blue-600">
                     <div class="flex justify-center gap-2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -108,8 +126,10 @@
                         <span>Login with Facebook</span>
                     </div>
                 </a>
-                <a href="#" class="block mb-1 text-sm text-center text-blue-600 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-500">New user? Create an account here.</a>
-            </div>
+
+                <!-- Sign up link -->
+                <a href="./sign-up" class="block mb-1 text-sm text-center text-blue-600 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-500">New user? Create an account here.</a>
+            </form>
         </section>
     </main>
 
