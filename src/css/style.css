@@ -2082,6 +2082,11 @@ body{
   background-color: rgb(107 114 128 / var(--tw-bg-opacity));
 }
 
+.dark .dark\:bg-gray-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+}
+
 .dark .dark\:fill-blue-400 {
   fill: #60a5fa;
 }
