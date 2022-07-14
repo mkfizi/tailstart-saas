@@ -63,16 +63,30 @@ window.onload = () => {
         if (currentTarget == null) return null;
 
         let element = document.getElementById(currentTarget);
-        if (element != null && element.classList.contains("-translate-x-full")) {
-            element.classList.remove("-translate-x-full");
-            activeBackdrop = document.createElement("div");
-            activeBackdrop.setAttribute("class", "fixed w-screen h-screen bg-neutral-900 opacity-50 z-20 transition top-0 left-0");
-            element.parentNode.insertBefore(activeBackdrop, element);
-        } else {
-            element.classList.add("-translate-x-full");
-            activeBackdrop.remove();
-            activeBackdrop = null;
-        }
+        element != null && element.classList.contains("-translate-x-full")
+            ? showSidebar(element)
+            : hideSidebar(element);
+    }
+
+    /**
+     * Show sidebar.
+     * @param {HTMLDom} element 
+     */
+    const showSidebar = element => {
+        element.classList.remove("-translate-x-full");
+        activeBackdrop = document.createElement("div");
+        activeBackdrop.setAttribute("class", "fixed w-screen h-screen bg-neutral-900 opacity-50 z-20 transition top-0 left-0");
+        element.parentNode.insertBefore(activeBackdrop, element);
+    }
+
+    /**
+     * Hide sidebar.
+     * @param {HTMLDom} element 
+     */
+    const hideSidebar = element => {
+        element.classList.add("-translate-x-full");
+        activeBackdrop.remove();
+        activeBackdrop = null;
     }
 
     /**
