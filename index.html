@@ -48,7 +48,7 @@
         Handle dark mode toggle when the page is loaded.
 
         These codes below are called before app.js instead of being inside 
-        app.js to avoid FOUC since app.js type is defined as a module. 
+        app.js to avoid FOUC should app.js type is defined as a module. 
     -------------------------------------------------------------------------->
     <script>
         if (localStorage.theme === "light" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: light)").matches)) {
@@ -521,7 +521,7 @@
                 Handle footer current year.
     
                 These codes below are called here instead of being inside app.js to 
-                avoid FOUC since app.js type is defined as a module. 
+                avoid FOUC should app.js type is defined as a module. 
             -------------------------------------------------------------------------->
             <script>
                 const element = document.getElementById("footerCurrentYear");
