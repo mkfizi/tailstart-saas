@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Metadata -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- SEO data -->
+    <meta name="title" content="Tailboard">
+    <meta name="description" content="This is a TailwindCSS admin dashboard panel with built-in components.">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Credit & Technology Stacks -->
+    <link type="text/plain" rel="author" href="./humans.txt"/>
+
+    <!-- Facebook open graph data -->
+    <meta property="fb:app_id" content="123456789">
+    <meta property="og:url" content="https://mkfizi.github.io/tailboard">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Tailboard">
+    <meta property="og:image" content="https://mkfizi.github.io/src/images/fb_og.jpg">
+    <meta property="og:description" content="This is a TailwindCSS admin dashboard panel with built-in components.">
+    <meta property="og:site_name" content="Tailboard">
+
+    <!-- Twitter cards -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@mkfizi">
+    <meta name="twitter:creator" content="@mkfizi">
+    <meta name="twitter:url" content="https://mkfizi.github.io/tailboard">
+    <meta name="twitter:title" content="Tailboard">
+    <meta name="twitter:description" content="This is a TailwindCSS admin dashboard panel with built-in components.">
+    <meta name="twitter:image" content="https://mkfizi.github.io/src/images/tw_card.jpg">
+    
+    <!-- Favicon -->
+    <link rel="manifest" href="./site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./src/css/style.css">
+
+    <!-- 
+        Handle dark mode toggle when the page is loaded.
+
+        These codes below are called before app.js instead of being inside 
+        app.js to avoid FOUC should app.js type is defined as a module. 
+    -------------------------------------------------------------------------->
+    <script>
+        if (localStorage.theme === "light" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: light)").matches)) {
+            localStorage.theme = 'light';
+            document.documentElement.classList.remove("dark");
+        } else if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+            localStorage.theme = 'dark';
+            document.documentElement.classList.add("dark");
+        };
+    </script>
+
+    <!-- Scripts -->
+    <!-- <script type="module" src="./src/js/script.js"></script> -->
+    <script src="./src/js/app.js"></script>
+
+    <title>Tailboard | Blank</title>
+</head>
+<body class="relative flex min-h-screen antialiased text-gray-900 dark:text-white bg-gray-50 dark:bg-gray-900">
+    
+    <!-- Dashboard Menu -->
+    <aside id="dashboard" class="fixed top-0 z-30 flex flex-col w-64 h-screen overflow-y-auto transition -translate-x-full bg-white shadow-2xl dark:bg-gray-800 lg:border-r lg:border-gray-100 lg:dark:border-gray-900 lg:shadow-none lg:sticky shrink-0 lg:translate-x-0 lg:transition-none">
+        <div class="flex items-center justify-between px-4 py-5 lg:pl-6">
+
+            <!-- Title -->
+            <a href="index" class="block text-xl font-bold text-blue-600 transition dark:text-blue-400 hover:text-blue-500">Tailboard</a>
+
+            <!-- Dashboard Hide Button -->
+            <button type="button" data-target="dashboard" data-toggle="sidebar" class="lg:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="transition stroke-blue-600 dark:stroke-blue-400 hover:stroke-blue-500 dark:hover:stroke-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Dashboard Content -->
+        <div class="h-full overflow-y-auto text-gray-600 dark:text-gray-400">
+
+            <!-- Dashboard Link -->
+            <a href="index" class="flex w-full gap-4 py-4 pl-6 pr-4 transition hover:text-blue-500">
+                <svg xmlns="http://www.w3.org/2000/svg"  width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <polyline points="5 12 3 12 12 3 21 12 19 12" />
+                    <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+                    <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+                </svg>
+                <p class="text-sm font-semibold">Dashboard</p>
+            </a>
+
+            <!-- Typography Link -->
+            <a href="./typography" class="flex w-full gap-4 py-4 pl-6 pr-4 transition hover:text-blue-500">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <circle cx="17.5" cy="15.5" r="3.5" />
+                    <path d="M3 19v-10.5a3.5 3.5 0 0 1 7 0v10.5" />
+                    <path d="M3 13h7" />
+                    <path d="M21 12v7" />
+                </svg>
+                <p class="text-sm font-semibold">Typography</p>
+            </a>
+            
+            <!-- Forms Link -->
+            <a href="./forms" class="flex w-full gap-4 py-4 pl-6 pr-4 transition hover:text-blue-500">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2" />
+                    <rect x="9" y="3" width="6" height="4" rx="2" />
+                    <line x1="9" y1="12" x2="9.01" y2="12" />
+                    <line x1="13" y1="12" x2="15" y2="12" />
+                    <line x1="9" y1="16" x2="9.01" y2="16" />
+                    <line x1="13" y1="16" x2="15" y2="16" />
+                </svg>
+                <p class="text-sm font-semibold">Forms</p>
+            </a>
+
+            <!-- Buttons Link -->
+            <a href="./buttons" class="flex w-full gap-4 py-4 pl-6 pr-4 transition hover:text-blue-500">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <line x1="3" y1="12" x2="6" y2="12" />
+                    <line x1="12" y1="3" x2="12" y2="6" />
+                    <line x1="7.8" y1="7.8" x2="5.6" y2="5.6" />
+                    <line x1="16.2" y1="7.8" x2="18.4" y2="5.6" />
+                    <line x1="7.8" y1="16.2" x2="5.6" y2="18.4" />
+                    <path d="M12 12l9 3l-4 2l-2 4l-3 -9" />
+                </svg>
+                <p class="text-sm font-semibold">Buttons</p>
+            </a>
+
+            <!-- Components Button -->
+            <button data-target="componentCollapse" data-toggle="collapse" class="flex justify-between w-full py-4 pl-6 pr-4 transition hover:text-blue-500">
+                <span class="flex gap-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <rect x="4" y="4" width="6" height="6" rx="1" />
+                        <rect x="14" y="4" width="6" height="6" rx="1" />
+                        <rect x="4" y="14" width="6" height="6" rx="1" />
+                        <rect x="14" y="14" width="6" height="6" rx="1" />
+                    </svg>
+                    <p class="text-sm font-semibold">Components</p>
+                </span>
+                <div data-icon="componentCollapse" class="transition-transform">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                </div>
+            </button>
+
+            <!-- Components Collapse -->
+            <div id="componentCollapse" class="h-0 overflow-hidden transition-all bg-gray-100 dark:bg-gray-700">
+                <!-- Alerts Link -->
+                <a href="./alerts" class="flex w-full gap-4 py-3 pl-8 pr-4 transition hover:text-blue-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M10 6h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3" />
+                        <circle cx="17" cy="7" r="3" />
+                    </svg>
+                    <p class="text-sm font-semibold">Alerts</p>
+                </a>
+
+                <!-- Collapse Link -->
+                <a href="./collapse" class="flex w-full gap-4 py-3 pl-8 pr-4 transition hover:text-blue-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <rect x="4" y="4" width="16" height="16" rx="2" />
+                        <line x1="4" y1="12" x2="20" y2="12" />
+                    </svg>
+                    <p class="text-sm font-semibold">Collapse</p>
+                </a>
+
+                <!-- Dropdowns Link -->
+                <a href="./dropdowns" class="flex w-full gap-4 py-3 pl-8 pr-4 transition hover:text-blue-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <rect x="4" y="4" width="16" height="6" rx="2" />
+                        <rect x="4" y="14" width="16" height="6" rx="2" />
+                    </svg>
+                    <p class="text-sm font-semibold">Dropdowns</p>
+                </a>
+
+                <!-- Modals Link -->
+                <a href="./modals" class="flex w-full gap-4 py-3 pl-8 pr-4 transition hover:text-blue-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <rect x="7" y="3" width="14" height="14" rx="2" />
+                        <path d="M17 17v2a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h2" />
+                    </svg>
+                    <p class="text-sm font-semibold">Modals</p>
+                </a>
+
+                <!-- Sidebars Link -->
+                <a href="./sidebars" class="flex w-full gap-4 py-3 pl-8 pr-4 transition hover:text-blue-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <rect x="4" y="4" width="16" height="16" rx="2" />
+                        <line x1="9" y1="4" x2="9" y2="20" />
+                    </svg>
+                    <p class="text-sm font-semibold">Sidebars</p>
+                </a>
+            </div>
+
+            <!-- Pages Button -->
+            <button data-target="pageCollapse" data-toggle="collapse" class="flex justify-between w-full py-4 pl-6 pr-4 transition hover:text-blue-500">
+                <span class="flex gap-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <rect x="4" y="4" width="16" height="16" rx="2" />
+                        <path d="M4 9h8" />
+                        <path d="M12 15h8" />
+                        <path d="M12 4v16" />
+                    </svg>
+                    <p class="text-sm font-semibold">Pages</p>
+                </span>
+                <div data-icon="pageCollapse" class="transition-transform rotate-180">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                </div>
+            </button>
+
+            <!-- Page Collapse -->
+            <div id="pageCollapse" class="overflow-hidden transition-all bg-gray-100 dark:bg-gray-700">
+
+                <!-- Login Link -->
+                <a href="./login" class="flex w-full gap-4 py-3 pl-8 pr-4 transition hover:text-blue-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />
+                        <path d="M20 12h-13l3 -3m0 6l-3 -3" />
+                    </svg>
+                    <p class="text-sm font-semibold">Login</p>
+                </a>
+
+                <!-- Register Link -->
+                <a href="./register" class="flex w-full gap-4 py-3 pl-8 pr-4 transition hover:text-blue-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                        <path d="M16 11h6m-3 -3v6" />
+                    </svg>
+                    <p class="text-sm font-semibold">Register</p>
+                </a>
+
+                <!-- Forgot Password Link -->
+                <a href="./forgot-password" class="flex w-full gap-4 py-3 pl-8 pr-4 transition hover:text-blue-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <line x1="3" y1="3" x2="21" y2="21" />
+                        <path d="M19 19a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-6a2 2 0 0 1 2 -2h4m4 0h2a2 2 0 0 1 2 2v2" />
+                        <circle cx="12" cy="16" r="1" />
+                        <path d="M8 11v-3m.712 -3.278a4 4 0 0 1 7.288 2.278v4" />
+                    </svg>
+                    <p class="text-sm font-semibold">Forgot Password</p>
+                </a>
+
+                <!-- 404 Link -->
+                <a href="./404" class="flex w-full gap-4 py-3 pl-8 pr-4 transition hover:text-blue-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M12 9v2m0 4v.01" />
+                        <path d="M5 19h14a2 2 0 0 0 1.84 -2.75l-7.1 -12.25a2 2 0 0 0 -3.5 0l-7.1 12.25a2 2 0 0 0 1.75 2.75" />
+                    </svg>
+                    <p class="text-sm font-semibold">404</p>
+                </a>
+
+                <!-- Blank Link -->
+                <a href="./blank" class="flex w-full gap-4 py-3 pl-8 pr-4 text-blue-600 transition dark:text-blue-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <rect x="4" y="4" width="16" height="16" rx="2" />
+                    </svg>
+                    <p class="text-sm font-semibold">Blank</p>
+                </a>
+            </div>
+        </div>
+    </aside>
+
+    <div class="flex-auto w-full">
+
+        <!-- Nav -->
+        <nav class="sticky top-0 z-10 flex justify-between w-full p-4 bg-white shadow lg:pr-6 items-between dark:bg-gray-800">
+            <div class="flex items-center">
+
+                <!-- Dashboard Show Button -->
+                <button type="button" data-target="dashboard" data-toggle="sidebar" class="lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="stroke-blue-600 fill-blue-600 dark:stroke-blue-400 dark:fill-blue-400 hover:stroke-blue-500 hover:fill-blue-500 " width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <line x1="4" y1="6" x2="20" y2="6" />
+                        <line x1="4" y1="12" x2="20" y2="12" />
+                        <line x1="4" y1="18" x2="20" y2="18" />
+                    </svg>
+                </button>
+            </div>
+
+            <span class="flex items-center justify-between gap-4">
+
+                <!-- Dark mode toggle -->
+                <button type="button" data-toggle="dark-mode" class="flex items-center h-8" aria-label="Dark Mode Toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="stroke-blue-600 fill-blue-600 hover:stroke-blue-500 hover:fill-blue-500 dark:hidden" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="hidden stroke-blue-400 fill-blue-400 hover:stroke-blue-500 hover:fill-blue-500 dark:block" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <circle cx="12" cy="12" r="4" />
+                        <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
+                    </svg>
+                </button>
+
+                <!-- Notification Dropdown -->
+                <div class="relative flex items-center">
+                    <button data-target="notificationDropdown" data-toggle="dropdown" class="relative flex items-center h-8" aria-label="Notification Toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-blue-600 fill-blue-600 dark:stroke-blue-400 dark:fill-blue-400 hover:stroke-blue-500 hover:fill-blue-500 dark:hover:stroke-blue-500 dark:hover:fill-blue-500" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
+                            <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
+                        </svg>
+                        <div class="absolute right-0 w-2 h-2 bg-red-500 rounded-full top-1"></div>
+                    </button>
+                    <ul id="notificationDropdown" class="absolute right-0 z-30 py-2 overflow-y-auto transition origin-top-right scale-0 bg-white rounded-md shadow opacity-0 w-72 dark:bg-gray-800 top-16 max-h-72">
+                        <li>
+                            <a href="#" class="block px-4 py-2 hover:text-blue-500">
+                                <div class="h-8 text-xs font-light">You have received a purchase order amount of $104.85.</div>
+                                <div class="text-xs text-right"><small>30 minutes ago</small></div>
+                            </a>
+                        </li>
+                        <li><hr class="border-gray-300 dark:border-gray-700"></li>
+                        <li>
+                            <a href="#" class="block px-4 py-2 hover:text-blue-500">
+                                <div class="h-8 text-xs font-light">You have 3 new task requests by Khafizi Noh to approve.</div>
+                                <div class="text-xs text-right"><small>5 hours ago</small></div>
+                            </a>
+                        </li>
+                        <li><hr class="border-gray-300 dark:border-gray-700"></li>
+                        <li>
+                            <a href="#" class="block px-4 py-2 hover:text-blue-500">
+                                <div class="h-8 text-xs font-light">You have 99 unread messages.</div>
+                                <div class="text-xs text-right"><small>10 days ago</small></div>
+                            </a>
+                        </li>
+                        <li><hr class="border-gray-300 dark:border-gray-700"></li>
+                        <li>
+                            <a href="#" class="block px-4 py-2 hover:text-blue-500">
+                                <div class="h-8 text-xs font-light">You have a pending delivery for order #18035025.</div>
+                                <div class="text-xs text-right"><small>3 months ago</small></div>
+                            </a>
+                        </li>
+                        <li><hr class="border-gray-300 dark:border-gray-700"></li>
+                        <li>
+                            <a href="#" class="block px-4 py-2 hover:text-blue-500">
+                                <div class="h-8 text-xs font-light">You have made a new transaction amout of $308.95.</div>
+                                <div class="text-xs text-right"><small>4 years ago</small></div>
+                            </a>
+                        </li>
+                        <li><hr class="border-gray-300 dark:border-gray-700"></li>
+                        <li><a href="#" class="block pt-2 text-xs text-center hover:text-blue-500">View all notifications</a></li>
+                    </ul>
+                </div>
+
+                <!-- Account Dropdown -->
+                <div class="relative flex items-center">
+                    <button data-toggle="dropdown" data-target="menuDropdown" class="w-8 h-8 border-2 border-blue-600 rounded-full dark:border-blue-400 hover:border-blue-500 dark:hover:border-blue-500" aria-label="Toggle navbar menu">
+                        <img src="./src/img/avatar.png" width="32" height="32" class="rounded-full" alt="">
+                    </button>
+                    <ul id="menuDropdown" class="absolute right-0 z-30 w-32 py-2 overflow-y-auto transition origin-top-right scale-0 bg-white rounded-md shadow opacity-0 dark:bg-gray-800 top-16 max-h-96">
+                        <li><a href="https://mkfizi.github.io/" target="_blank" class="block px-4 py-2 text-sm font-medium hover:text-blue-500">Profile</a></li>
+                        <li><a href="#" class="block px-4 py-2 text-sm font-medium hover:text-blue-500">Settings</a></li>
+                        <li><a href="#" class="block px-4 py-2 text-sm font-medium hover:text-blue-500">Logout</a></li>
+                    </ul>
+                </div>
+            </span>
+        </nav>
+
+        <!-- Content -->
+        <main class="container p-4 mx-auto lg:px-6">
+            <section class="my-4">
+                <p class="mb-4 text-2xl font-semibold">Blank</p>
+
+                <!-- Insert content here -->
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="absolute bottom-0 w-full mb-1 text-center lg:w-auto lg:right-6">
+            <p class="text-sm"><small>Tailboard © <span id="footerCurrentYear"></span></small><p>
+            <!-- 
+                Handle footer current year.
+    
+                These codes below are called here instead of being inside app.js to 
+                avoid FOUC should app.js type is defined as a module. 
+            -------------------------------------------------------------------------->
+            <script>
+                const element = document.getElementById("footerCurrentYear");
+                element.innerHTML = new Date().getFullYear();
+            </script>
+        </footer>
+    </div>
+</body>
+</html>
