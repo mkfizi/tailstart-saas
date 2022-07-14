@@ -234,6 +234,9 @@ window.onload = () => {
         }
     }
 
+    // Event listener for dashboard when resizing from mobile to desktop.
+    window.addEventListener("resize", handleDashboard);
+
     /**
      * Handle window click event.
      * @param {object} event 
@@ -263,7 +266,4 @@ window.onload = () => {
  
     // Event listener for toggle click and outside click.
     window.addEventListener("click", handleClick);
-
-    // Event listener for dashboard when resizing from mobile to desktop.
-    window.addEventListener("resize", handleDashboard);
 }
