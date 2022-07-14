@@ -1018,6 +1018,10 @@ select {
   flex-direction: column;
 }
 
+.items-start {
+  align-items: flex-start;
+}
+
 .items-center {
   align-items: center;
 }
@@ -1138,6 +1142,11 @@ select {
   background-color: rgb(23 23 23 / var(--tw-bg-opacity));
 }
 
+.bg-blue-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
+}
+
 .fill-blue-600 {
   fill: #2563eb;
 }
@@ -1164,6 +1173,10 @@ select {
 
 .stroke-blue-500 {
   stroke: #3b82f6;
+}
+
+.stroke-white {
+  stroke: #fff;
 }
 
 .p-4 {

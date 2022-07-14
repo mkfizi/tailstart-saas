@@ -15,84 +15,19 @@ window.onload = () => {
     let activeBackdrop = null;
     
     /**
-     * Toggle dark mode.
+     * Hide alert.
      */
-    const toggleDarkMode = () => {
-        toggleTransitionNoneAll();
-        if (localStorage.theme === "light" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: light)").matches)) {
-            localStorage.theme = 'dark';
-            document.documentElement.classList.add("dark")
-        } else if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
-            localStorage.theme = 'light';
-            document.documentElement.classList.remove("dark");
-        };
-    }
-
-    /**
-     * Toggle dropdown state.
-     */
-    const toggleDropdown = () => {
+    const hideAlert = () => {
         if (currentTarget == null) return null;
 
         let element = document.getElementById(currentTarget);
-        element != null && element.classList.contains("scale-0", "opacity-0")
-            ? showDropdown(element)
-            : hideDropdown(element);
-    }
-
-    /**
-     * Show dropdown.
-     * @param {HTMLDom} element 
-     */
-    const showDropdown = element => {
-        element.classList.remove("scale-0", "opacity-0")
-    }
-
-    /**
-     * Hide dropdown.
-     * @param {HTMLDom} element 
-     */
-    const hideDropdown = element => {
-        element.classList.add("scale-0", "opacity-0")
-    }
-
-    /**
-     * Toggle sidebar state.
-     */
-    const toggleSidebar = () => {
-        if (currentTarget == null) return null;
-
-        let element = document.getElementById(currentTarget);
-        element != null && element.classList.contains("-translate-x-full")
-            ? showSidebar(element)
-            : hideSidebar(element);
-    }
-
-    /**
-     * Show sidebar.
-     * @param {HTMLDom} element 
-     */
-    const showSidebar = element => {
-        element.classList.remove("-translate-x-full");
-        activeBackdrop = document.createElement("div");
-        activeBackdrop.setAttribute("class", "fixed w-screen h-screen bg-neutral-900 opacity-50 z-20 transition top-0 left-0");
-        element.parentNode.insertBefore(activeBackdrop, element);
-    }
-
-    /**
-     * Hide sidebar.
-     * @param {HTMLDom} element 
-     */
-    const hideSidebar = element => {
-        element.classList.add("-translate-x-full");
-        activeBackdrop.remove();
-        activeBackdrop = null;
+        element.remove();
     }
 
     /**
      * Toggle collapse state.
      */
-    const toggleCollapse = () => {
+     const toggleCollapse = () => {
         if (currentTarget == null) return null;
 
         let element = document.getElementById(currentTarget);
@@ -166,6 +101,81 @@ window.onload = () => {
             }
         }
     }
+
+    /**
+     * Toggle dark mode.
+     */
+    const toggleDarkMode = () => {
+        toggleTransitionNoneAll();
+        if (localStorage.theme === "light" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: light)").matches)) {
+            localStorage.theme = 'dark';
+            document.documentElement.classList.add("dark")
+        } else if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+            localStorage.theme = 'light';
+            document.documentElement.classList.remove("dark");
+        };
+    }
+
+    /**
+     * Toggle dropdown state.
+     */
+    const toggleDropdown = () => {
+        if (currentTarget == null) return null;
+
+        let element = document.getElementById(currentTarget);
+        element != null && element.classList.contains("scale-0", "opacity-0")
+            ? showDropdown(element)
+            : hideDropdown(element);
+    }
+
+    /**
+     * Show dropdown.
+     * @param {HTMLDom} element 
+     */
+    const showDropdown = element => {
+        element.classList.remove("scale-0", "opacity-0")
+    }
+
+    /**
+     * Hide dropdown.
+     * @param {HTMLDom} element 
+     */
+    const hideDropdown = element => {
+        element.classList.add("scale-0", "opacity-0")
+    }
+
+    /**
+     * Toggle sidebar state.
+     */
+    const toggleSidebar = () => {
+        if (currentTarget == null) return null;
+
+        let element = document.getElementById(currentTarget);
+        element != null && element.classList.contains("-translate-x-full")
+            ? showSidebar(element)
+            : hideSidebar(element);
+    }
+
+    /**
+     * Show sidebar.
+     * @param {HTMLDom} element 
+     */
+    const showSidebar = element => {
+        element.classList.remove("-translate-x-full");
+        activeBackdrop = document.createElement("div");
+        activeBackdrop.setAttribute("class", "fixed w-screen h-screen bg-neutral-900 opacity-50 z-20 transition top-0 left-0");
+        element.parentNode.insertBefore(activeBackdrop, element);
+    }
+
+    /**
+     * Hide sidebar.
+     * @param {HTMLDom} element 
+     */
+    const hideSidebar = element => {
+        element.classList.add("-translate-x-full");
+        activeBackdrop.remove();
+        activeBackdrop = null;
+    }
     
     /**
      * Toggle "transition-none" class to target element.
@@ -193,6 +203,12 @@ window.onload = () => {
      */
     const toggleSwitch = toggle => {
         switch(toggle) {
+            case "alert": 
+                hideAlert();
+                break;
+            case "collapse": 
+                toggleCollapse();
+                break;
             case "dark-mode": 
                 toggleDarkMode();
                 break;
@@ -201,9 +217,6 @@ window.onload = () => {
                 break;
             case "sidebar":
                 toggleSidebar();
-                break;
-            case "collapse": 
-                toggleCollapse();
                 break;
             default:
                 console.error("Target element has null [data-toggle] value");
