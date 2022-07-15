@@ -196,7 +196,7 @@ window.onload = () => {
             setTimeout(() => { transitions[i].classList.remove("transition-none"); }, 100);
         }
     }
-
+    
     /**
      * Toggle switch cases.
      * @param {string} toggle 
@@ -226,6 +226,8 @@ window.onload = () => {
         if (activeTarget == currentTarget) {
             activeTarget = null;
             activeToggle = null;
+            currentTarget = null;
+            currentToggle = null;
         } else {
             activeTarget = currentTarget;
             activeToggle = currentToggle;
