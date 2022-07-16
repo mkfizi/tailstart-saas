@@ -143,7 +143,8 @@ window.onload = () => {
     const hideDropdown = element => {
         element.classList.add("scale-0", "opacity-0")
     }
-
+    
+    let sidebarPosition = null;
     /**
      * Toggle sidebar state.
      */
@@ -151,7 +152,13 @@ window.onload = () => {
         if (currentTarget == null) return null;
 
         let element = document.getElementById(currentTarget);
-        element != null && element.classList.contains("-translate-x-full")
+        if (element != null && element.classList.contains("-translate-x-full")) {
+            sidebarPosition = "-translate-x-full";
+        } else if (element != null && element.classList.contains("translate-x-full")) {
+            sidebarPosition = "translate-x-full";
+        }
+
+        element != null && element.classList.contains(sidebarPosition)
             ? showSidebar(element)
             : hideSidebar(element);
     }
@@ -161,10 +168,8 @@ window.onload = () => {
      * @param {HTMLDom} element 
      */
     const showSidebar = element => {
-        element.classList.remove("-translate-x-full");
-        activeBackdrop = document.createElement("div");
-        activeBackdrop.setAttribute("class", "fixed w-screen h-screen bg-neutral-900 opacity-50 z-20 transition top-0 left-0");
-        element.parentNode.insertBefore(activeBackdrop, element);
+        element.classList.remove(sidebarPosition);
+        setBackdrop(element);
     }
 
     /**
@@ -172,7 +177,25 @@ window.onload = () => {
      * @param {HTMLDom} element 
      */
     const hideSidebar = element => {
-        element.classList.add("-translate-x-full");
+        element.classList.add(sidebarPosition);
+        sidebarPosition = null;
+        hideBackdrop();
+    }
+
+    /**
+     * Show backdrop.
+     * @param {HTMLDom} element 
+     */
+    const setBackdrop = element => {
+        activeBackdrop = document.createElement("div");
+        activeBackdrop.setAttribute("class", "fixed w-screen h-screen bg-neutral-900 opacity-50 z-20 transition top-0 left-0");
+        element.parentNode.insertBefore(activeBackdrop, element);
+    }
+
+    /**
+     * Hide backdrop.
+     */
+    const hideBackdrop = () => {
         activeBackdrop.remove();
         activeBackdrop = null;
     }
