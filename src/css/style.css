@@ -886,6 +886,22 @@ select {
   margin-left: 1rem;
 }
 
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mb-16 {
+  margin-bottom: 4rem;
+}
+
+.mb-32 {
+  margin-bottom: 8rem;
+}
+
+.mb-24 {
+  margin-bottom: 6rem;
+}
+
 .block {
   display: block;
 }
@@ -976,6 +992,14 @@ select {
   width: 100vw;
 }
 
+.w-48 {
+  width: 12rem;
+}
+
+.w-80 {
+  width: 20rem;
+}
+
 .max-w-md {
   max-width: 28rem;
 }
@@ -990,6 +1014,10 @@ select {
 
 .origin-top-right {
   transform-origin: top right;
+}
+
+.origin-top-left {
+  transform-origin: top left;
 }
 
 .-translate-x-full {
