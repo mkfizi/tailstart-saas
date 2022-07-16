@@ -14,6 +14,9 @@ window.onload = () => {
     // Stores active backdrop.
     let activeBackdrop = null;
     
+    // Stores active sidebar position.
+    let sidebarPosition = null;
+
     /**
      * Hide alert.
      */
@@ -143,14 +146,13 @@ window.onload = () => {
     const hideDropdown = element => {
         element.classList.add("scale-0", "opacity-0")
     }
-    
-    let sidebarPosition = null;
+
     /**
      * Toggle sidebar state.
      */
     const toggleSidebar = () => {
         if (currentTarget == null) return null;
-
+        
         let element = document.getElementById(currentTarget);
         if (element != null && element.classList.contains("-translate-x-full")) {
             sidebarPosition = "-translate-x-full";
@@ -162,7 +164,7 @@ window.onload = () => {
             ? showSidebar(element)
             : hideSidebar(element);
     }
-
+    let activeSidebar = null;
     /**
      * Show sidebar.
      * @param {HTMLDom} element 
