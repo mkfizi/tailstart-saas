@@ -836,6 +836,14 @@ select {
   top: 3rem;
 }
 
+.right-4 {
+  right: 1rem;
+}
+
+.top-4 {
+  top: 1rem;
+}
+
 .z-30 {
   z-index: 30;
 }
@@ -846,6 +854,10 @@ select {
 
 .z-20 {
   z-index: 20;
+}
+
+.z-40 {
+  z-index: 40;
 }
 
 .mx-auto {
@@ -904,6 +916,10 @@ select {
 
 .mb-24 {
   margin-bottom: 6rem;
+}
+
+.mb-12 {
+  margin-bottom: 3rem;
 }
 
 .block {
@@ -1050,6 +1066,11 @@ select {
 
 .-translate-x-full {
   --tw-translate-x: -100%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.translate-x-full {
+  --tw-translate-x: 100%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -1365,6 +1386,18 @@ select {
 
 .pr-8 {
   padding-right: 2rem;
+}
+
+.pt-4 {
+  padding-top: 1rem;
+}
+
+.pt-12 {
+  padding-top: 3rem;
+}
+
+.pb-4 {
+  padding-bottom: 1rem;
 }
 
 .text-center {
@@ -2333,6 +2366,10 @@ body{
 
   .lg\:right-6 {
     right: 1.5rem;
+  }
+
+  .lg\:z-10 {
+    z-index: 10;
   }
 
   .lg\:mt-24 {
