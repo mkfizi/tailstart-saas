@@ -3,28 +3,45 @@
 // Execute when document DOM is loaded to make sure site contents are rendered.
 window.onload = () => {
 
-    // Stores current component for handling toggle click.
-    let currentTarget = null;
-    let currentToggle = null;
-
     // Stores active component for handling click outside.
     let activeTarget = null;
     let activeToggle = null;
 
-    // Stores active backdrop.
-    let activeBackdrop = null;
+    // Stores current component for handling toggle click.
+    let currentTarget = null;
+    let currentToggle = null;
     
     // Stores active sidebar position.
     let sidebarPosition = null;
 
     /**
+     * Toggle "transition-none" class to target element.
+     * @param {HTMLDom} element
+     */
+     const toggleTransitionNone = element => {
+        element.classList.add("transition-none");
+        setTimeout(() => { element.classList.remove("transition-none"); }, 100);       
+    }
+
+    /**
+     * Toggle "transition-none" class to all elements with transition classes.
+     */
+    const toggleTransitionNoneAll = () => {
+        let transitions = document.querySelectorAll(".transition, .transition-all, .transition-colors, .transition-opacity, .transition-shadow, .transition-transform");
+        for (let i = 0; i < transitions.length; i++) {
+            transitions[i].classList.add("transition-none");
+            setTimeout(() => { transitions[i].classList.remove("transition-none"); }, 100);
+        }
+    }
+
+    /**
      * Hide alert.
      */
-    const hideAlert = () => {
+     const hideAlert = () => {
         if (currentTarget == null) return null;
 
-        let element = document.getElementById(currentTarget);
-        element.remove();
+        let targetElement = document.getElementById(currentTarget);
+        targetElement.remove();
     }
 
     /**
@@ -33,16 +50,16 @@ window.onload = () => {
      const toggleCollapse = () => {
         if (currentTarget == null) return null;
 
-        let element = document.getElementById(currentTarget);
-        element.classList.contains("h-0")
-            ? showCollapse(element)      
-            : hideCollapse(element);
+        let targetElement = document.getElementById(currentTarget);
+        targetElement.classList.contains("h-0")
+            ? showCollapse(targetElement)      
+            : hideCollapse(targetElement);
 
         toggleIcon(currentTarget);
 
-        if (element.hasAttribute("data-accordion")) {
-            let accordionId = element.dataset.accordion;
-            toggleAccordion(accordionId, currentTarget);
+        if (targetElement.hasAttribute("data-accordion")) {
+            let accordionId = targetElement.dataset.accordion;
+            toggleAccordion(accordionId);
         }
     }
 
@@ -50,35 +67,35 @@ window.onload = () => {
      * Show collapse.
      * @param {HTMLDom} element 
      */
-    const showCollapse = element => {
-        element.classList.remove("h-0");
+    const showCollapse = targetElement => {
+        targetElement.classList.remove("h-0");
             
-        let contentHeight = element.clientHeight + "px";
+        let contentHeight = targetElement.clientHeight + "px";
 
-        element.style.height = "0";
-        setTimeout(() => element.style.height = contentHeight, 50);
-        setTimeout(() => element.removeAttribute("style"), 500);
+        targetElement.style.height = "0";
+        setTimeout(() => targetElement.style.height = contentHeight, 50);
+        setTimeout(() => targetElement.removeAttribute("style"), 500);
     }
 
     /**
      * Hide collapse.
-     * @param {HTMLDom} element 
+     * @param {HTMLDom} targetElement 
      */
-    const hideCollapse = element => {
-        let contentHeight = element.clientHeight + "px";
+    const hideCollapse = targetElement => {
+        let contentHeight = targetElement.clientHeight + "px";
 
-        element.style.height = contentHeight;
-        setTimeout(() => element.style.height = "0", 50);
-        setTimeout(() => element.removeAttribute("style"), 500);
-        element.classList.add("h-0");   
+        targetElement.style.height = contentHeight;
+        setTimeout(() => targetElement.style.height = "0", 50);
+        setTimeout(() => targetElement.removeAttribute("style"), 500);
+        targetElement.classList.add("h-0");   
     }
 
     /**
      * Toggle icon state.
-     * @param {string} target 
+     * @param {string} currentTarget 
      */
-    const toggleIcon = target => {
-        let icon = document.querySelector(`[data-icon=${target}]`)
+    const toggleIcon = currentTarget => {
+        let icon = document.querySelector(`[data-icon=${currentTarget}]`)
 
         if (icon != null) {
             icon.classList.contains("rotate-180")
@@ -89,15 +106,14 @@ window.onload = () => {
 
     /**
      * Toggle accordion state.
-     * @param {string} accordion 
-     * @param {string} target 
+     * @param {string} accordionId 
      */
-    const toggleAccordion = (accordion, target) => {
-        let accordions = document.querySelectorAll(`[data-accordion="${accordion}"]`);
+    const toggleAccordion = accordionId => {
+        let accordions = document.querySelectorAll(`[data-accordion="${accordionId}"]`);
 
         if (accordions != null) {
             for (let i = 0; i < accordions.length; i++) {
-                if (accordions[i].getAttribute("id") != target && ! accordions[i].classList.contains("h-0")) {
+                if (accordions[i].getAttribute("id") != currentTarget && ! accordions[i].classList.contains("h-0")) {
                     hideCollapse(accordions[i])
                     toggleIcon(accordions[i].getAttribute("id"));
                 }
@@ -120,37 +136,40 @@ window.onload = () => {
     }
 
     /**
-     * Toggle dropdown state.
+     * Toggle dropdown.
+     * @returns 
      */
     const toggleDropdown = () => {
         if (currentTarget == null) return null;
 
-        let element = document.getElementById(currentTarget);
-        element != null && element.classList.contains("scale-0", "opacity-0")
-            ? showDropdown(element)
-            : hideDropdown(element);
+        let targetElement = null;
+
+        targetElement = document.getElementById(currentTarget);
+        targetElement != null && targetElement.classList.contains("scale-0", "opacity-0")
+            ? showDropdown(targetElement)
+            : hideDropdown(targetElement);
     }
 
     /**
      * Show dropdown.
-     * @param {HTMLDom} element 
+     * @param {HTMLDom} targetElement 
      */
-    const showDropdown = element => {
-        element.classList.remove("scale-0", "opacity-0")
+    const showDropdown = targetElement => {
+        targetElement.classList.remove("scale-0", "opacity-0");
     }
 
     /**
      * Hide dropdown.
-     * @param {HTMLDom} element 
+     * @param {HTMLDom} targetElement 
      */
-    const hideDropdown = element => {
-        element.classList.add("scale-0", "opacity-0")
+    const hideDropdown = targetElement => {
+        targetElement.classList.add("scale-0", "opacity-0");
     }
 
     /**
      * Toggle sidebar state.
      */
-    const toggleSidebar = () => {
+     const toggleSidebar = () => {
         if (currentTarget == null) return null;
         
         let element = document.getElementById(currentTarget);
@@ -164,14 +183,14 @@ window.onload = () => {
             ? showSidebar(element)
             : hideSidebar(element);
     }
-    let activeSidebar = null;
+    
     /**
      * Show sidebar.
      * @param {HTMLDom} element 
      */
     const showSidebar = element => {
-        element.classList.remove(sidebarPosition);
-        setBackdrop(element);
+        element.classList.remove(sidebarPosition, "shadow-2xl");
+        element.parentNode.insertBefore(setBackdrop(), element);
     }
 
     /**
@@ -179,62 +198,51 @@ window.onload = () => {
      * @param {HTMLDom} element 
      */
     const hideSidebar = element => {
-        element.classList.add(sidebarPosition);
-        sidebarPosition = null;
-        hideBackdrop();
+        element.classList.add(sidebarPosition, "shadow-2xl");
+        let backdrop = document.querySelector(`[data-backdrop="${currentTarget}"]`);
+        if (backdrop != null) backdrop.remove();
     }
 
     /**
-     * Show backdrop.
-     * @param {HTMLDom} element 
+     * Set backdrop.
+     * @returns {HTMLDom} backdrop
      */
-    const setBackdrop = element => {
-        activeBackdrop = document.createElement("div");
-        activeBackdrop.setAttribute("class", "fixed w-screen h-screen bg-neutral-900 opacity-50 z-20 transition top-0 left-0");
-        element.parentNode.insertBefore(activeBackdrop, element);
+    const setBackdrop = () => {
+        let backdrop = document.createElement("div");
+        backdrop.setAttribute("class", "fixed w-screen h-screen bg-neutral-900 opacity-50 z-20 transition top-0 left-0");
+        backdrop.setAttribute("data-target", currentTarget);
+        backdrop.setAttribute("data-toggle", currentToggle);
+        backdrop.setAttribute("data-backdrop", currentTarget);
+        backdrop.addEventListener("click", handleToggle);
+        return backdrop;
     }
 
     /**
-     * Hide backdrop.
+     * Handle toggle click event.
+     * @param {object} event 
      */
-    const hideBackdrop = () => {
-        activeBackdrop.remove();
-        activeBackdrop = null;
-    }
-    
-    /**
-     * Toggle "transition-none" class to target element.
-     * @param {HTMLDom} element
-     */
-    const toggleTransitionNone = element => {
-        element.classList.add("transition-none");
-        setTimeout(() => { element.classList.remove("transition-none"); }, 100);       
-    }
+    const handleToggle = event => {
+        let toggleElement = event.currentTarget;
+        currentToggle = toggleElement.dataset.toggle;
 
-    /**
-     * Toggle "transition-none" class to all elements with transition classes.
-     */
-    const toggleTransitionNoneAll = () => {
-        let transitions = document.querySelectorAll(".transition, .transition-all, .transition-colors, .transition-opacity, .transition-shadow, .transition-transform");
-        for (let i = 0; i < transitions.length; i++) {
-            transitions[i].classList.add("transition-none");
-            setTimeout(() => { transitions[i].classList.remove("transition-none"); }, 100);
+        toggleElement.hasAttribute("data-target")
+            ? currentTarget = toggleElement.dataset.target
+            : currentTarget = null;
+
+        // Handle click outside when click on order dropdown toggle.
+        if (currentTarget != activeTarget && activeToggle == "dropdown") {
+            let targetElement = document.getElementById(activeTarget);
+            if (targetElement != null) hideDropdown(targetElement);
         }
-    }
-    
-    /**
-     * Toggle switch cases.
-     * @param {string} toggle 
-     */
-    const toggleSwitch = toggle => {
-        switch(toggle) {
+
+        switch(currentToggle) {
             case "alert": 
                 hideAlert();
                 break;
             case "collapse": 
                 toggleCollapse();
                 break;
-            case "dark-mode": 
+            case "dark-mode":
                 toggleDarkMode();
                 break;
             case "dropdown":
@@ -247,63 +255,45 @@ window.onload = () => {
                 console.error("Target element has null [data-toggle] value");
         }
 
-        // Prevents method callback when in inactive state.
-        if (activeTarget == currentTarget) {
-            activeTarget = null;
-            activeToggle = null;
-            currentTarget = null;
-            currentToggle = null;
-        } else {
-            activeTarget = currentTarget;
-            activeToggle = currentToggle;
+        activeTarget = currentTarget;
+        activeToggle = currentToggle;
+    }
+
+    // Store nodes of elements with [data-toggle] attribute.
+    let buttonToggle = document.querySelectorAll("[data-toggle]");
+
+    // Add click event to all button toggles.
+    for (let i = 0; i < buttonToggle.length; i++) {
+        buttonToggle[i].addEventListener("click", handleToggle);
+    }
+
+    // Handle click outside event for dropdowns.
+    const handleDropdownClickOutside = event => {
+        if (activeToggle == "dropdown" && ! (event.target.closest(`[data-target="${activeTarget}"]`) || event.target.closest(`#${activeTarget}`))) {
+            let targetElement = document.getElementById(activeTarget)
+            hideDropdown(targetElement);
         }
     }
+
+    // Add click event on window.
+    window.addEventListener("click", handleDropdownClickOutside);
+
 
     /**
      * Handle dashboard if sidebar is active on mobile and window is resized to desktop.
      * @param {object} event 
      */
-    const handleDashboard = event => {
-        const element = document.getElementById("dashboard");
+     const handleDashboard = event => {
+        const targetElement = document.getElementById("dashboard");
 
-        if (event.type == "resize" && element != null) {
-            toggleTransitionNone(element);
+        if (event.type == "resize" && targetElement != null) {
+            toggleTransitionNone(targetElement);
             if (window.innerWidth >= 1024 && activeTarget == "dashboard") {
-                toggleSwitch(activeToggle)
+                hideSidebar(targetElement);
             }
         }
     }
 
     // Event listener for dashboard when resizing from mobile to desktop.
     window.addEventListener("resize", handleDashboard);
-
-    /**
-     * Handle window click event.
-     * @param {object} event 
-     */
-    const handleClick = event => {
-
-        // Handle click outside.
-        const clickOutsideListener = ["dropdown", "sidebar"];
-
-        if (activeTarget != null && clickOutsideListener.includes(activeToggle)) {
-            if (! (event.target.closest(`[data-target="${activeTarget}"]`) || event.target.closest(`#${activeTarget}`))) {
-                currentTarget = activeTarget;
-                currentToggle = activeToggle;
-                toggleSwitch(currentToggle);
-            }
-        }
-
-        // Handle click on toggle.
-        let button = event.target.closest("[data-toggle");
-
-        if (button != null) {
-            if (button.hasAttribute("data-target")) currentTarget = button.dataset.target;
-            currentToggle = button.dataset.toggle;
-            toggleSwitch(currentToggle);
-        }
-    }
- 
-    // Event listener for toggle click and outside click.
-    window.addEventListener("click", handleClick);
 }
