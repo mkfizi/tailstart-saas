@@ -898,6 +898,14 @@ select {
   margin-left: 1rem;
 }
 
+.mb-32 {
+  margin-bottom: 8rem;
+}
+
+.mb-36 {
+  margin-bottom: 9rem;
+}
+
 .block {
   display: block;
 }
