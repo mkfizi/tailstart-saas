@@ -167,40 +167,80 @@ window.onload = () => {
     }
 
     /**
+     * Toggle modal.
+     */
+    const toggleModal = () => {
+        if (currentTarget == null) return null;
+        
+        let targetElement = document.getElementById(currentTarget);
+
+        targetElement != null && targetElement.classList.contains("hidden")
+            ? showModal(targetElement)
+            : hideModal(targetElement);
+    }
+
+    /**
+     * Show modal.
+     * @param {HTMLDom} targetElement 
+     */
+    const showModal = targetElement => {
+        targetElement.classList.remove("hidden", "opacity-0");
+        targetElement.classList.add("flex");
+
+        let targetModal = document.querySelector(`[data-modal="${currentTarget}"]`)
+
+        if (targetModal != null) setTimeout(() => {targetModal.classList.remove("-translate-y-24"); }, 10); 
+
+        targetElement.insertBefore(setBackdrop(), targetElement.firstChild);
+    }
+    
+    /**
+     * Hide modal.
+     * @param {HTMLDom} targetElement 
+     */
+    const hideModal = targetElement => {
+        targetElement.classList.add("hidden", "opacity-0");
+        targetElement.classList.remove("flex");
+
+
+        let targetModal = document.querySelector(`[data-modal="${currentTarget}"]`)
+
+        if (targetModal != null) targetModal.classList.add("-translate-y-24"); 
+
+        clearBackdrop();
+    }
+
+    /**
      * Toggle sidebar state.
      */
      const toggleSidebar = () => {
         if (currentTarget == null) return null;
         
-        let element = document.getElementById(currentTarget);
-        if (element != null && element.classList.contains("-translate-x-full")) {
-            sidebarPosition = "-translate-x-full";
-        } else if (element != null && element.classList.contains("translate-x-full")) {
-            sidebarPosition = "translate-x-full";
-        }
+        let targetElement = document.getElementById(currentTarget);
+        if (targetElement != null && targetElement.classList.contains("-translate-x-full")) sidebarPosition = "-translate-x-full";
+        if (targetElement != null && targetElement.classList.contains("translate-x-full")) sidebarPosition = "translate-x-full";
 
-        element != null && element.classList.contains(sidebarPosition)
-            ? showSidebar(element)
-            : hideSidebar(element);
+        targetElement != null && targetElement.classList.contains(sidebarPosition)
+            ? showSidebar(targetElement)
+            : hideSidebar(targetElement);
     }
     
     /**
      * Show sidebar.
-     * @param {HTMLDom} element 
+     * @param {HTMLDom} targetElement 
      */
-    const showSidebar = element => {
-        element.classList.remove(sidebarPosition, "shadow-2xl");
-        element.parentNode.insertBefore(setBackdrop(), element);
+    const showSidebar = targetElement => {
+        targetElement.classList.remove(sidebarPosition, "shadow-2xl");
+        targetElement.parentNode.insertBefore(setBackdrop(), targetElement);
     }
 
     /**
      * Hide sidebar.
-     * @param {HTMLDom} element 
+     * @param {HTMLDom} targetElement 
      */
-    const hideSidebar = element => {
-        element.classList.add(sidebarPosition, "shadow-2xl");
-        let backdrop = document.querySelector(`[data-backdrop="${currentTarget}"]`);
-        if (backdrop != null) backdrop.remove();
+    const hideSidebar = targetElement => {
+        targetElement.classList.add(sidebarPosition, "shadow-2xl");
+        clearBackdrop();
     }
 
     /**
@@ -215,6 +255,14 @@ window.onload = () => {
         backdrop.setAttribute("data-backdrop", currentTarget);
         backdrop.addEventListener("click", handleToggle);
         return backdrop;
+    }
+
+    /**
+     * Clear backdrop element.
+     */
+    const clearBackdrop = () => {
+        let backdrop = document.querySelector(`[data-backdrop="${currentTarget}"]`);
+        if (backdrop != null) backdrop.remove();
     }
 
     /**
@@ -247,6 +295,9 @@ window.onload = () => {
                 break;
             case "dropdown":
                 toggleDropdown();
+                break;
+            case "modal":
+                toggleModal();
                 break;
             case "sidebar":
                 toggleSidebar();
