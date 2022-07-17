@@ -15,6 +15,44 @@ window.onload = () => {
     let sidebarPosition = null;
 
     /**
+     * Set backdrop.
+     * @returns {HTMLDom} backdrop
+     */
+     const setBackdrop = () => {
+        let backdrop = document.createElement("div");
+        backdrop.setAttribute("class", "fixed w-screen h-screen bg-neutral-900 opacity-50 z-20 transition top-0 left-0");
+        backdrop.setAttribute("data-target", currentTarget);
+        backdrop.setAttribute("data-toggle", currentToggle);
+        backdrop.setAttribute("data-backdrop", currentTarget);
+        backdrop.addEventListener("click", handleToggle);
+        return backdrop;
+    }
+
+    /**
+     * Clear backdrop element.
+     */
+    const clearBackdrop = () => {
+        let backdrop = document.querySelector(`[data-backdrop="${currentTarget}"]`);
+        if (backdrop != null) backdrop.remove();
+    }
+
+    /**
+     * Enable body scroll.
+     */
+    const enableBodyScroll = () => {
+        let body = document.getElementsByTagName("BODY")[0];
+        body.classList.remove("overflow-y-hidden")
+    }
+
+    /**
+     * Disable body scroll.
+     */
+    const disableBodyScroll = () => {
+        let body = document.getElementsByTagName("BODY")[0];
+        body.classList.add("overflow-y-hidden")
+    }
+
+    /**
      * Toggle "transition-none" class to target element.
      * @param {HTMLDom} element
      */
@@ -33,6 +71,7 @@ window.onload = () => {
             setTimeout(() => { transitions[i].classList.remove("transition-none"); }, 100);
         }
     }
+
 
     /**
      * Hide alert.
@@ -192,6 +231,8 @@ window.onload = () => {
         if (targetModal != null) setTimeout(() => {targetModal.classList.remove("-translate-y-24"); }, 10); 
 
         targetElement.insertBefore(setBackdrop(), targetElement.firstChild);
+        
+        disableBodyScroll();
     }
     
     /**
@@ -202,12 +243,12 @@ window.onload = () => {
         targetElement.classList.add("hidden", "opacity-0");
         targetElement.classList.remove("flex");
 
-
         let targetModal = document.querySelector(`[data-modal="${currentTarget}"]`)
 
         if (targetModal != null) targetModal.classList.add("-translate-y-24"); 
 
         clearBackdrop();
+        enableBodyScroll();
     }
 
     /**
@@ -232,6 +273,7 @@ window.onload = () => {
     const showSidebar = targetElement => {
         targetElement.classList.remove(sidebarPosition, "shadow-2xl");
         targetElement.parentNode.insertBefore(setBackdrop(), targetElement);
+        disableBodyScroll();
     }
 
     /**
@@ -241,28 +283,7 @@ window.onload = () => {
     const hideSidebar = targetElement => {
         targetElement.classList.add(sidebarPosition, "shadow-2xl");
         clearBackdrop();
-    }
-
-    /**
-     * Set backdrop.
-     * @returns {HTMLDom} backdrop
-     */
-    const setBackdrop = () => {
-        let backdrop = document.createElement("div");
-        backdrop.setAttribute("class", "fixed w-screen h-screen bg-neutral-900 opacity-50 z-20 transition top-0 left-0");
-        backdrop.setAttribute("data-target", currentTarget);
-        backdrop.setAttribute("data-toggle", currentToggle);
-        backdrop.setAttribute("data-backdrop", currentTarget);
-        backdrop.addEventListener("click", handleToggle);
-        return backdrop;
-    }
-
-    /**
-     * Clear backdrop element.
-     */
-    const clearBackdrop = () => {
-        let backdrop = document.querySelector(`[data-backdrop="${currentTarget}"]`);
-        if (backdrop != null) backdrop.remove();
+        enableBodyScroll();
     }
 
     /**
