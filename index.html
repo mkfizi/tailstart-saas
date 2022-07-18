@@ -68,7 +68,7 @@
 <body class="relative flex min-h-screen antialiased text-gray-900 dark:text-white bg-gray-50 dark:bg-gray-900">
     
     <!-- Dashboard Menu -->
-    <aside id="dashboard" class="fixed top-0 z-30 flex flex-col w-64 h-screen overflow-y-auto transition -translate-x-full bg-white lg:z-10 dark:bg-gray-800 lg:border-r lg:border-gray-100 lg:dark:border-gray-900 lg:shadow-none lg:sticky shrink-0 lg:translate-x-0 lg:transition-none">
+    <aside id="dashboard" tabindex="-1" class="fixed top-0 z-30 flex flex-col invisible w-64 h-screen overflow-y-auto transition -translate-x-full bg-white lg:visible lg:z-10 dark:bg-gray-800 lg:border-r lg:border-gray-100 lg:dark:border-gray-900 lg:shadow-none lg:sticky shrink-0 lg:translate-x-0 lg:transition-none">
         <div class="flex items-center justify-between px-4 py-5 lg:pl-6">
 
             <!-- Title -->
@@ -170,7 +170,7 @@
             
             <!-- Components Collapse -->
             <li>
-                <ul id="componentCollapse" class="h-0 overflow-hidden transition-all bg-gray-100 dark:bg-gray-700">
+                <ul id="componentCollapse" tabindex="-1" class="invisible h-0 overflow-hidden transition-all bg-gray-100 dark:bg-gray-700">
                     <!-- Alerts Link -->
                     <li>
                         <a href="./alerts" class="flex w-full gap-4 py-3 pl-8 pr-4 transition hover:text-blue-500">
@@ -257,7 +257,7 @@
 
             <!-- Page Collapse -->
             <li>
-                <ul id="pageCollapse" class="h-0 overflow-hidden transition-all bg-gray-100 dark:bg-gray-700">
+                <ul id="pageCollapse" tabindex="-1" class="invisible h-0 overflow-hidden transition-all bg-gray-100 dark:bg-gray-700">
 
                     <!-- Login Link -->
                     <li>
@@ -369,7 +369,7 @@
                         </svg>
                         <div class="absolute right-0 w-2 h-2 bg-red-500 rounded-full top-1"></div>
                     </button>
-                    <ul id="notificationDropdown" class="absolute right-0 z-30 w-64 py-2 overflow-y-auto transition origin-top-right scale-50 bg-white border border-gray-100 rounded-md shadow-md opacity-0 dark:border-gray-700 dark:bg-gray-700 top-16 max-h-80">
+                    <ul id="notificationDropdown" tabindex="-1" class="absolute right-0 z-30 invisible w-64 py-2 overflow-y-auto transition origin-top-right scale-0 bg-white border border-gray-100 rounded-md shadow-md opacity-0 dark:border-gray-700 dark:bg-gray-700 top-16 max-h-80">
                         <li>
                             <a href="#" class="block px-4 py-2 hover:text-blue-500">
                                 <div class="h-8 text-xs font-light">You have received a purchase order amount of $104.85.</div>
@@ -414,7 +414,7 @@
                     <button data-toggle="dropdown" data-target="menuDropdown" class="w-8 h-8 border-2 border-blue-600 rounded-full dark:border-blue-400 hover:border-blue-500 dark:hover:border-blue-500" aria-label="Toggle navbar menu">
                         <img src="./src/img/avatar.png" width="32" height="32" class="rounded-full" alt="">
                     </button>
-                    <ul id="menuDropdown" class="absolute right-0 z-30 w-32 py-2 overflow-y-auto transition origin-top-right scale-50 bg-white border border-gray-100 rounded-md shadow-md opacity-0 dark:border-gray-700 dark:bg-gray-700 top-16 max-h-80">
+                    <ul id="menuDropdown" tabindex="-1" class="absolute right-0 z-30 invisible w-32 py-2 overflow-y-auto transition origin-top-right scale-0 bg-white border border-gray-100 rounded-md shadow-md opacity-0 dark:border-gray-700 dark:bg-gray-700 top-16 max-h-80">
                         <li><a href="https://mkfizi.github.io/" target="_blank" class="block px-4 py-2 text-sm font-medium hover:text-blue-500">Profile</a></li>
                         <li><a href="#" class="block px-4 py-2 text-sm font-medium hover:text-blue-500">Settings</a></li>
                         <li><a href="#" class="block px-4 py-2 text-sm font-medium hover:text-blue-500">Logout</a></li>
