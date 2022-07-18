@@ -184,7 +184,7 @@ window.onload = () => {
         let targetElement = null;
 
         targetElement = document.getElementById(currentTarget);
-        targetElement != null && targetElement.classList.contains("scale-50", "opacity-0")
+        targetElement != null && targetElement.classList.contains("scale-0", "opacity-0")
             ? showDropdown(targetElement)
             : hideDropdown(targetElement);
     }
@@ -194,7 +194,7 @@ window.onload = () => {
      * @param {HTMLDom} targetElement 
      */
     const showDropdown = targetElement => {
-        targetElement.classList.remove("scale-50", "opacity-0");
+        targetElement.classList.remove("scale-0", "opacity-0");
     }
 
     /**
@@ -202,7 +202,7 @@ window.onload = () => {
      * @param {HTMLDom} targetElement 
      */
     const hideDropdown = targetElement => {
-        targetElement.classList.add("scale-50", "opacity-0");
+        targetElement.classList.add("scale-0", "opacity-0");
     }
 
     /**
@@ -228,7 +228,7 @@ window.onload = () => {
 
         let targetModal = document.querySelector(`[data-modal="${currentTarget}"]`)
 
-        if (targetModal != null) setTimeout(() => {targetModal.classList.remove("scale-50"); }, 10); 
+        if (targetModal != null) setTimeout(() => {targetModal.classList.remove("scale-0"); }, 10); 
 
         targetElement.insertBefore(setBackdrop(), targetElement.firstChild);
 
@@ -245,7 +245,7 @@ window.onload = () => {
 
         let targetModal = document.querySelector(`[data-modal="${currentTarget}"]`)
 
-        if (targetModal != null) targetModal.classList.add("scale-50"); 
+        if (targetModal != null) targetModal.classList.add("scale-0"); 
 
         clearBackdrop();
         enableBodyScroll();
