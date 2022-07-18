@@ -85,6 +85,7 @@ window.onload = () => {
 
         let targetElement = document.getElementById(currentTarget);
         targetElement.remove();
+        disableTab(targetElement);
     }
 
     /**
@@ -118,6 +119,7 @@ window.onload = () => {
         targetElement.style.height = "0";
         setTimeout(() => targetElement.style.height = contentHeight, 50);
         setTimeout(() => targetElement.removeAttribute("style"), 500);
+        enableTab(targetElement);
     }
 
     /**
@@ -131,6 +133,7 @@ window.onload = () => {
         setTimeout(() => targetElement.style.height = "0", 50);
         setTimeout(() => targetElement.removeAttribute("style"), 500);
         targetElement.classList.add("h-0");   
+        disableTab(targetElement);
     }
 
     /**
@@ -199,6 +202,7 @@ window.onload = () => {
      */
     const showDropdown = targetElement => {
         targetElement.classList.remove("scale-0", "opacity-0");
+        enableTab(targetElement);
     }
 
     /**
@@ -207,6 +211,7 @@ window.onload = () => {
      */
     const hideDropdown = targetElement => {
         targetElement.classList.add("scale-0", "opacity-0");
+        disableTab(targetElement);
     }
 
     /**
@@ -294,6 +299,16 @@ window.onload = () => {
         disableFocusTrap();
     }
 
+    const enableTab = targetElement => {
+        targetElement.setAttribute("tabindex", 0);
+        targetElement.classList.remove("invisible");
+    }
+
+    const disableTab = targetElement => {
+        targetElement.setAttribute("tabindex", -1);
+        targetElement.classList.add("invisible");
+    }
+
     /**
      * Enable focus trap.
      * @param {HTMLDom} targetElement 
@@ -308,18 +323,18 @@ window.onload = () => {
      * Disable focus trap.
      */
     const disableFocusTrap = () => {
-        focusTrapElements[focusTrapElements.length - 1].setAttribute("tabindex", -1);
+        disableTab(focusTrapElements[focusTrapElements.length - 1]);
         focusTrapElements[focusTrapElements.length - 1].removeEventListener("keydown", handleFocusTrap);
         focusTrapElements.pop();
 
-        if (focusTrapElements != null) setFocusOnFocusTrapElement();
+        if (focusTrapElements.length != 0) setFocusOnFocusTrapElement();
     }
 
     /**
      * Set focus on focust trap element.
      */
     const setFocusOnFocusTrapElement = () => {
-        focusTrapElements[focusTrapElements.length - 1].setAttribute("tabindex", 0);
+        enableTab(focusTrapElements[focusTrapElements.length - 1]);
         focusTrapElements[focusTrapElements.length - 1].focus();
         setTimeout(() => { focusTrapElements[focusTrapElements.length - 1].removeAttribute("tabindex"); }, 50);
     }
@@ -338,7 +353,7 @@ window.onload = () => {
                 filterFocusableElements.push(focusableElements[i])
             }
         }
-        
+
         let firstElement = filterFocusableElements[0];
         let lastElement = filterFocusableElements[filterFocusableElements.length - 1];
 
@@ -428,16 +443,22 @@ window.onload = () => {
     const handleDashboard = event => {
         const targetElement = document.getElementById("dashboard");
 
-        if (event.type == "resize" && targetElement != null) {
+        if (targetElement != null) {
             toggleTransitionNone(targetElement);
             if (window.innerWidth >= 1024 && activeTarget == "dashboard") {
                 hideSidebar(targetElement);
+                enableTab(targetElement);
+            } else {
+                if (targetElement.classList.contains("-translate-x-full") || targetElement.classList.contains("translate-x-full")) disableTab(targetElement);
             }
         }
     }
 
     // Event listener for dashboard when resizing from mobile to desktop.
     window.addEventListener("resize", handleDashboard);
+
+    // Trigger handle dashboard when first time load.
+    handleDashboard();
 
     /**
      * Viewport fix for mobile browser.
