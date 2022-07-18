@@ -231,7 +231,7 @@ window.onload = () => {
         if (targetModal != null) setTimeout(() => {targetModal.classList.remove("-translate-y-24"); }, 10); 
 
         targetElement.insertBefore(setBackdrop(), targetElement.firstChild);
-        
+
         disableBodyScroll();
     }
     
@@ -355,7 +355,7 @@ window.onload = () => {
      * Handle dashboard if sidebar is active on mobile and window is resized to desktop.
      * @param {object} event 
      */
-     const handleDashboard = event => {
+    const handleDashboard = event => {
         const targetElement = document.getElementById("dashboard");
 
         if (event.type == "resize" && targetElement != null) {
@@ -368,4 +368,17 @@ window.onload = () => {
 
     // Event listener for dashboard when resizing from mobile to desktop.
     window.addEventListener("resize", handleDashboard);
+
+    /**
+     * Viewport fix for mobile browser.
+     */
+    const handleViewport = () => {
+        document.documentElement.style.setProperty("--vh", (window.innerHeight * 0.01) + "px");
+    }
+
+    // Event listener for viewport fix when resizing from mobile to desktop.
+    window.addEventListener("resize", handleViewport);
+
+    // Trigger viewport fix when first time load.
+    handleViewport();
 }
