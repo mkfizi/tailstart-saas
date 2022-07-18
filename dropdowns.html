@@ -68,7 +68,7 @@
 <body class="relative flex min-h-screen antialiased text-gray-900 dark:text-white bg-gray-50 dark:bg-gray-900">
     
     <!-- Dashboard Menu -->
-    <aside id="dashboard" class="fixed top-0 z-30 flex flex-col w-64 h-screen overflow-y-auto transition -translate-x-full bg-white lg:z-10 dark:bg-gray-800 lg:border-r lg:border-gray-100 lg:dark:border-gray-900 lg:shadow-none lg:sticky shrink-0 lg:translate-x-0 lg:transition-none">
+    <aside id="dashboard" tabindex="-1" class="fixed top-0 z-30 flex flex-col invisible w-64 h-screen overflow-y-auto transition -translate-x-full bg-white lg:visible lg:z-10 dark:bg-gray-800 lg:border-r lg:border-gray-100 lg:dark:border-gray-900 lg:shadow-none lg:sticky shrink-0 lg:translate-x-0 lg:transition-none">
         <div class="flex items-center justify-between px-4 py-5 lg:pl-6">
 
             <!-- Title -->
@@ -170,7 +170,7 @@
             
             <!-- Components Collapse -->
             <li>
-                <ul id="componentCollapse" class="overflow-hidden transition-all bg-gray-100 dark:bg-gray-700">
+                <ul id="componentCollapse" tabindex="0" class="overflow-hidden transition-all bg-gray-100 dark:bg-gray-700">
                     <!-- Alerts Link -->
                     <li>
                         <a href="./alerts" class="flex w-full gap-4 py-3 pl-8 pr-4 transition hover:text-blue-500">
@@ -257,7 +257,7 @@
 
             <!-- Page Collapse -->
             <li>
-                <ul id="pageCollapse" class="h-0 overflow-hidden transition-all bg-gray-100 dark:bg-gray-700">
+                <ul id="pageCollapse" tabindex="-1" class="invisible h-0 overflow-hidden transition-all bg-gray-100 dark:bg-gray-700">
 
                     <!-- Login Link -->
                     <li>
@@ -359,8 +359,8 @@
                     </svg>
                 </button>
 
-                <!-- Notification Dropdown -->
-                <div class="relative flex items-center">
+                 <!-- Notification Dropdown -->
+                 <div class="relative flex items-center">
                     <button data-target="notificationDropdown" data-toggle="dropdown" class="relative flex items-center h-8" aria-label="Notification Toggle">
                         <svg xmlns="http://www.w3.org/2000/svg" class="stroke-blue-600 fill-blue-600 dark:stroke-blue-400 dark:fill-blue-400 hover:stroke-blue-500 hover:fill-blue-500 dark:hover:stroke-blue-500 dark:hover:fill-blue-500" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -369,7 +369,7 @@
                         </svg>
                         <div class="absolute right-0 w-2 h-2 bg-red-500 rounded-full top-1"></div>
                     </button>
-                    <ul id="notificationDropdown" class="absolute right-0 z-30 w-64 py-2 overflow-y-auto transition origin-top-right scale-0 bg-white border border-gray-100 rounded-md shadow-md opacity-0 dark:border-gray-700 dark:bg-gray-700 top-16 max-h-80">
+                    <ul id="notificationDropdown" tabindex="-1" class="absolute right-0 z-30 invisible w-64 py-2 overflow-y-auto transition origin-top-right scale-0 bg-white border border-gray-100 rounded-md shadow-md opacity-0 dark:border-gray-700 dark:bg-gray-700 top-16 max-h-80">
                         <li>
                             <a href="#" class="block px-4 py-2 hover:text-blue-500">
                                 <div class="h-8 text-xs font-light">You have received a purchase order amount of $104.85.</div>
@@ -414,7 +414,7 @@
                     <button data-toggle="dropdown" data-target="menuDropdown" class="w-8 h-8 border-2 border-blue-600 rounded-full dark:border-blue-400 hover:border-blue-500 dark:hover:border-blue-500" aria-label="Toggle navbar menu">
                         <img src="./src/img/avatar.png" width="32" height="32" class="rounded-full" alt="">
                     </button>
-                    <ul id="menuDropdown" class="absolute right-0 z-30 w-32 py-2 overflow-y-auto transition origin-top-right scale-0 bg-white border border-gray-100 rounded-md shadow-md opacity-0 dark:border-gray-700 dark:bg-gray-700 top-16 max-h-80">
+                    <ul id="menuDropdown" tabindex="-1" class="absolute right-0 z-30 invisible w-32 py-2 overflow-y-auto transition origin-top-right scale-0 bg-white border border-gray-100 rounded-md shadow-md opacity-0 dark:border-gray-700 dark:bg-gray-700 top-16 max-h-80">
                         <li><a href="https://mkfizi.github.io/" target="_blank" class="block px-4 py-2 text-sm font-medium hover:text-blue-500">Profile</a></li>
                         <li><a href="#" class="block px-4 py-2 text-sm font-medium hover:text-blue-500">Settings</a></li>
                         <li><a href="#" class="block px-4 py-2 text-sm font-medium hover:text-blue-500">Logout</a></li>
@@ -475,7 +475,7 @@
                         <!-- Small size dropdown -->
                         <div class="relative">
                             <button type="button" data-target="dropdownSmallExample" data-toggle="dropdown" class="h-10 px-6 py-2 mb-1 text-sm font-semibold text-white align-middle transition bg-blue-700 border border-blue-700 rounded hover:bg-blue-600 hover:border-blue-600 disabled:bg-blue-400 disabled:border-blue-400 disabled:pointer-events-none">Dropdown</button>
-                            <ul id="dropdownSmallExample" class="absolute left-0 z-30 w-32 py-2 overflow-y-auto transition origin-top-left scale-0 bg-white border border-gray-100 rounded-md shadow-md opacity-0 dark:border-gray-700 dark:bg-gray-700 top-12 max-h-80">
+                            <ul id="dropdownSmallExample" tabindex="-1" class="absolute left-0 z-30 invisible w-32 py-2 overflow-y-auto transition origin-top-left scale-0 bg-white border border-gray-100 rounded-md shadow-md opacity-0 dark:border-gray-700 dark:bg-gray-700 top-12 max-h-80">
                                 <li><a href="#" class="block px-4 py-2 text-sm font-medium hover:text-blue-500">Item One</a></li>
                                 <li><a href="#" class="block px-4 py-2 text-sm font-medium hover:text-blue-500">Item Two</a></li>
                                 <li><a href="#" class="block px-4 py-2 text-sm font-medium hover:text-blue-500">Item Three</a></li>
@@ -489,7 +489,7 @@
                         <!-- Medium size dropdown -->
                         <div class="relative">
                             <button type="button" data-target="dropdownMediumExample" data-toggle="dropdown" class="h-10 px-6 py-2 mb-1 text-sm font-semibold text-white align-middle transition bg-blue-700 border border-blue-700 rounded hover:bg-blue-600 hover:border-blue-600 disabled:bg-blue-400 disabled:border-blue-400 disabled:pointer-events-none">Dropdown</button>
-                            <ul id="dropdownMediumExample" class="absolute left-0 z-30 w-48 py-2 overflow-y-auto transition origin-top-left scale-0 bg-white border border-gray-100 rounded-md shadow-md opacity-0 dark:border-gray-700 dark:bg-gray-700 top-12 max-h-80">
+                            <ul id="dropdownMediumExample" tabindex="-1" class="absolute left-0 z-30 invisible w-48 py-2 overflow-y-auto transition origin-top-left scale-0 bg-white border border-gray-100 rounded-md shadow-md opacity-0 dark:border-gray-700 dark:bg-gray-700 top-12 max-h-80">
                                 <li><a href="#" class="block px-4 py-2 text-sm font-medium hover:text-blue-500">Item One</a></li>
                                 <li><a href="#" class="block px-4 py-2 text-sm font-medium hover:text-blue-500">Item Two</a></li>
                                 <li><a href="#" class="block px-4 py-2 text-sm font-medium hover:text-blue-500">Item Three</a></li>
@@ -503,7 +503,7 @@
                         <!-- Large size dropdown -->
                         <div class="relative">
                             <button type="button" data-target="dropdownLargeExample" data-toggle="dropdown" class="h-10 px-6 py-2 mb-1 text-sm font-semibold text-white align-middle transition bg-blue-700 border border-blue-700 rounded hover:bg-blue-600 hover:border-blue-600 disabled:bg-blue-400 disabled:border-blue-400 disabled:pointer-events-none">Dropdown</button>
-                            <ul id="dropdownLargeExample" class="absolute left-0 z-30 w-64 py-2 overflow-y-auto transition origin-top-left scale-0 bg-white border border-gray-100 rounded-md shadow-md opacity-0 dark:border-gray-700 dark:bg-gray-700 top-12 max-h-80">
+                            <ul id="dropdownLargeExample" tabindex="-1" class="absolute left-0 z-30 invisible w-64 py-2 overflow-y-auto transition origin-top-left scale-0 bg-white border border-gray-100 rounded-md shadow-md opacity-0 dark:border-gray-700 dark:bg-gray-700 top-12 max-h-80">
                                 <li><a href="#" class="block px-4 py-2 text-sm font-medium hover:text-blue-500">Item One</a></li>
                                 <li><a href="#" class="block px-4 py-2 text-sm font-medium hover:text-blue-500">Item Two</a></li>
                                 <li><a href="#" class="block px-4 py-2 text-sm font-medium hover:text-blue-500">Item Three</a></li>
@@ -523,7 +523,7 @@
                             <!-- Left side dropdown -->
                             <div class="relative">
                                 <button type="button" data-target="dropdownLeftExample" data-toggle="dropdown" class="h-10 px-6 py-2 mb-1 text-sm font-semibold text-white align-middle transition bg-blue-700 border border-blue-700 rounded hover:bg-blue-600 hover:border-blue-600 disabled:bg-blue-400 disabled:border-blue-400 disabled:pointer-events-none">Dropdown</button>
-                                <ul id="dropdownLeftExample" class="absolute left-0 z-30 w-48 py-2 overflow-y-auto transition origin-top-left scale-0 bg-white border border-gray-100 rounded-md shadow-md opacity-0 dark:border-gray-700 dark:bg-gray-700 top-12 max-h-80">
+                                <ul id="dropdownLeftExample" tabindex="-1" class="absolute left-0 z-30 invisible w-48 py-2 overflow-y-auto transition origin-top-left scale-0 bg-white border border-gray-100 rounded-md shadow-md opacity-0 dark:border-gray-700 dark:bg-gray-700 top-12 max-h-80">
                                     <li><a href="#" class="block px-4 py-2 text-sm font-medium hover:text-blue-500">Item One</a></li>
                                     <li><a href="#" class="block px-4 py-2 text-sm font-medium hover:text-blue-500">Item Two</a></li>
                                     <li><a href="#" class="block px-4 py-2 text-sm font-medium hover:text-blue-500">Item Three</a></li>
@@ -537,7 +537,7 @@
                             <!-- Right side dropdown -->
                             <div class="relative flex flex-col items-end">
                                 <button type="button" data-target="dropdownRightExample" data-toggle="dropdown" class="h-10 px-6 py-2 mb-1 text-sm font-semibold text-white align-middle transition bg-blue-700 border border-blue-700 rounded hover:bg-blue-600 hover:border-blue-600 disabled:bg-blue-400 disabled:border-blue-400 disabled:pointer-events-none">Dropdown</button>
-                                <ul id="dropdownRightExample" class="absolute right-0 z-30 w-48 py-2 overflow-y-auto transition origin-top-right scale-0 bg-white border border-gray-100 rounded-md shadow-md opacity-0 dark:border-gray-700 dark:bg-gray-700 top-12 max-h-80">
+                                <ul id="dropdownRightExample" tabindex="-1" class="absolute right-0 z-30 invisible w-48 py-2 overflow-y-auto transition origin-top-right scale-0 bg-white border border-gray-100 rounded-md shadow-md opacity-0 dark:border-gray-700 dark:bg-gray-700 top-12 max-h-80">
                                     <li><a href="#" class="block px-4 py-2 text-sm font-medium hover:text-blue-500">Item One</a></li>
                                     <li><a href="#" class="block px-4 py-2 text-sm font-medium hover:text-blue-500">Item Two</a></li>
                                     <li><a href="#" class="block px-4 py-2 text-sm font-medium hover:text-blue-500">Item Three</a></li>

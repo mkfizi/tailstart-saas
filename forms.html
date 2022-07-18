@@ -68,7 +68,7 @@
 <body class="relative flex min-h-screen antialiased text-gray-900 dark:text-white bg-gray-50 dark:bg-gray-900">
     
     <!-- Dashboard Menu -->
-    <aside id="dashboard" class="fixed top-0 z-30 flex flex-col w-64 h-screen overflow-y-auto transition -translate-x-full bg-white lg:z-10 dark:bg-gray-800 lg:border-r lg:border-gray-100 lg:dark:border-gray-900 lg:shadow-none lg:sticky shrink-0 lg:translate-x-0 lg:transition-none">
+    <aside id="dashboard" tabindex="-1" class="fixed top-0 z-30 flex flex-col invisible w-64 h-screen overflow-y-auto transition -translate-x-full bg-white lg:visible lg:z-10 dark:bg-gray-800 lg:border-r lg:border-gray-100 lg:dark:border-gray-900 lg:shadow-none lg:sticky shrink-0 lg:translate-x-0 lg:transition-none">
         <div class="flex items-center justify-between px-4 py-5 lg:pl-6">
 
             <!-- Title -->
@@ -170,7 +170,7 @@
             
             <!-- Components Collapse -->
             <li>
-                <ul id="componentCollapse" class="h-0 overflow-hidden transition-all bg-gray-100 dark:bg-gray-700">
+                <ul id="componentCollapse" tabindex="-1" class="invisible h-0 overflow-hidden transition-all bg-gray-100 dark:bg-gray-700">
                     <!-- Alerts Link -->
                     <li>
                         <a href="./alerts" class="flex w-full gap-4 py-3 pl-8 pr-4 transition hover:text-blue-500">
@@ -257,7 +257,7 @@
 
             <!-- Page Collapse -->
             <li>
-                <ul id="pageCollapse" class="h-0 overflow-hidden transition-all bg-gray-100 dark:bg-gray-700">
+                <ul id="pageCollapse" tabindex="-1" class="invisible h-0 overflow-hidden transition-all bg-gray-100 dark:bg-gray-700">
 
                     <!-- Login Link -->
                     <li>
@@ -359,8 +359,8 @@
                     </svg>
                 </button>
 
-                <!-- Notification Dropdown -->
-                <div class="relative flex items-center">
+                 <!-- Notification Dropdown -->
+                 <div class="relative flex items-center">
                     <button data-target="notificationDropdown" data-toggle="dropdown" class="relative flex items-center h-8" aria-label="Notification Toggle">
                         <svg xmlns="http://www.w3.org/2000/svg" class="stroke-blue-600 fill-blue-600 dark:stroke-blue-400 dark:fill-blue-400 hover:stroke-blue-500 hover:fill-blue-500 dark:hover:stroke-blue-500 dark:hover:fill-blue-500" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -369,43 +369,43 @@
                         </svg>
                         <div class="absolute right-0 w-2 h-2 bg-red-500 rounded-full top-1"></div>
                     </button>
-                    <ul id="notificationDropdown" class="absolute right-0 z-30 py-2 overflow-y-auto transition origin-top-right scale-0 bg-white border border-gray-100 rounded-md shadow-md opacity-0 w-72 dark:border-gray-700 dark:bg-gray-700 top-16 max-h-80">
+                    <ul id="notificationDropdown" tabindex="-1" class="absolute right-0 z-30 invisible w-64 py-2 overflow-y-auto transition origin-top-right scale-0 bg-white border border-gray-100 rounded-md shadow-md opacity-0 dark:border-gray-700 dark:bg-gray-700 top-16 max-h-80">
                         <li>
                             <a href="#" class="block px-4 py-2 hover:text-blue-500">
                                 <div class="h-8 text-xs font-light">You have received a purchase order amount of $104.85.</div>
                                 <div class="text-xs text-right"><small>30 minutes ago</small></div>
                             </a>
                         </li>
-                        <li><hr class="border-gray-300 dark:border-gray-700"></li>
+                        <li><hr class="border-gray-200 dark:border-gray-600"></li>
                         <li>
                             <a href="#" class="block px-4 py-2 hover:text-blue-500">
                                 <div class="h-8 text-xs font-light">You have 3 new task requests by Khafizi Noh to approve.</div>
                                 <div class="text-xs text-right"><small>5 hours ago</small></div>
                             </a>
                         </li>
-                        <li><hr class="border-gray-300 dark:border-gray-700"></li>
+                        <li><hr class="border-gray-200 dark:border-gray-600"></li>
                         <li>
                             <a href="#" class="block px-4 py-2 hover:text-blue-500">
                                 <div class="h-8 text-xs font-light">You have 99 unread messages.</div>
                                 <div class="text-xs text-right"><small>10 days ago</small></div>
                             </a>
                         </li>
-                        <li><hr class="border-gray-300 dark:border-gray-700"></li>
+                        <li><hr class="border-gray-200 dark:border-gray-600"></li>
                         <li>
                             <a href="#" class="block px-4 py-2 hover:text-blue-500">
                                 <div class="h-8 text-xs font-light">You have a pending delivery for order #18035025.</div>
                                 <div class="text-xs text-right"><small>3 months ago</small></div>
                             </a>
                         </li>
-                        <li><hr class="border-gray-300 dark:border-gray-700"></li>
+                        <li><hr class="border-gray-200 dark:border-gray-600"></li>
                         <li>
                             <a href="#" class="block px-4 py-2 hover:text-blue-500">
                                 <div class="h-8 text-xs font-light">You have made a new transaction amout of $308.95.</div>
                                 <div class="text-xs text-right"><small>4 years ago</small></div>
                             </a>
                         </li>
-                        <li><hr class="border-gray-300 dark:border-gray-700"></li>
-                        <li><a href="#" class="block pt-2 text-xs text-center hover:text-blue-500">View all notifications</a></li>
+                        <li><hr class="border-gray-200 dark:border-gray-600"></li>
+                        <li class="text-center "><a href="#" class="inline-block pt-2 mb-1 text-xs text-blue-600 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-500">View all notifications</a></li>
                     </ul>
                 </div>
 
@@ -414,7 +414,7 @@
                     <button data-toggle="dropdown" data-target="menuDropdown" class="w-8 h-8 border-2 border-blue-600 rounded-full dark:border-blue-400 hover:border-blue-500 dark:hover:border-blue-500" aria-label="Toggle navbar menu">
                         <img src="./src/img/avatar.png" width="32" height="32" class="rounded-full" alt="">
                     </button>
-                    <ul id="menuDropdown" class="absolute right-0 z-30 w-32 py-2 overflow-y-auto transition origin-top-right scale-0 bg-white border border-gray-100 rounded-md shadow-md opacity-0 dark:border-gray-700 dark:bg-gray-700 top-16 max-h-80">
+                    <ul id="menuDropdown" tabindex="-1" class="absolute right-0 z-30 invisible w-32 py-2 overflow-y-auto transition origin-top-right scale-0 bg-white border border-gray-100 rounded-md shadow-md opacity-0 dark:border-gray-700 dark:bg-gray-700 top-16 max-h-80">
                         <li><a href="https://mkfizi.github.io/" target="_blank" class="block px-4 py-2 text-sm font-medium hover:text-blue-500">Profile</a></li>
                         <li><a href="#" class="block px-4 py-2 text-sm font-medium hover:text-blue-500">Settings</a></li>
                         <li><a href="#" class="block px-4 py-2 text-sm font-medium hover:text-blue-500">Logout</a></li>
