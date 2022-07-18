@@ -306,7 +306,7 @@ window.onload = () => {
 
     const disableTab = targetElement => {
         targetElement.setAttribute("tabindex", -1);
-        targetElement.classList.add("invisible");
+        setTimeout(() => { targetElement.classList.add("invisible"); }, 50);
     }
 
     /**
