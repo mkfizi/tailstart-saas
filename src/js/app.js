@@ -14,11 +14,15 @@ window.onload = () => {
     // Stores active sidebar position.
     let sidebarPosition = null;
 
+    // Stores elements with focus trap. This variable uses array to handle focus 
+    // trap elements that have a focus trap child elements.
+    let focusTrapElements = [];
+
     /**
      * Set backdrop.
      * @returns {HTMLDom} backdrop
      */
-     const setBackdrop = () => {
+    const setBackdrop = () => {
         let backdrop = document.createElement("div");
         backdrop.setAttribute("class", "fixed w-screen h-screen bg-neutral-900 opacity-50 z-20 transition top-0 left-0");
         backdrop.setAttribute("data-target", currentTarget);
@@ -56,7 +60,7 @@ window.onload = () => {
      * Toggle "transition-none" class to target element.
      * @param {HTMLDom} element
      */
-     const toggleTransitionNone = element => {
+    const toggleTransitionNone = element => {
         element.classList.add("transition-none");
         setTimeout(() => { element.classList.remove("transition-none"); }, 100);       
     }
@@ -76,7 +80,7 @@ window.onload = () => {
     /**
      * Hide alert.
      */
-     const hideAlert = () => {
+    const hideAlert = () => {
         if (currentTarget == null) return null;
 
         let targetElement = document.getElementById(currentTarget);
@@ -86,7 +90,7 @@ window.onload = () => {
     /**
      * Toggle collapse state.
      */
-     const toggleCollapse = () => {
+    const toggleCollapse = () => {
         if (currentTarget == null) return null;
 
         let targetElement = document.getElementById(currentTarget);
@@ -233,6 +237,7 @@ window.onload = () => {
         targetElement.insertBefore(setBackdrop(), targetElement.firstChild);
 
         disableBodyScroll();
+        enableFocusTrap(targetElement);
     }
     
     /**
@@ -249,12 +254,13 @@ window.onload = () => {
 
         clearBackdrop();
         enableBodyScroll();
+        disableFocusTrap();
     }
 
     /**
      * Toggle sidebar state.
      */
-     const toggleSidebar = () => {
+    const toggleSidebar = () => {
         if (currentTarget == null) return null;
         
         let targetElement = document.getElementById(currentTarget);
@@ -274,6 +280,7 @@ window.onload = () => {
         targetElement.classList.remove(sidebarPosition, "shadow-2xl");
         targetElement.parentNode.insertBefore(setBackdrop(), targetElement);
         disableBodyScroll();
+        enableFocusTrap(targetElement);
     }
 
     /**
@@ -284,6 +291,66 @@ window.onload = () => {
         targetElement.classList.add(sidebarPosition, "shadow-2xl");
         clearBackdrop();
         enableBodyScroll();
+        disableFocusTrap();
+    }
+
+    /**
+     * Enable focus trap.
+     * @param {HTMLDom} targetElement 
+     */
+    const enableFocusTrap = targetElement => {
+        focusTrapElements.push(targetElement);
+        setFocusOnFocusTrapElement();
+        focusTrapElements[focusTrapElements.length - 1].addEventListener("keydown", handleFocusTrap);
+    }
+
+    /**
+     * Disable focus trap.
+     */
+    const disableFocusTrap = () => {
+        focusTrapElements[focusTrapElements.length - 1].setAttribute("tabindex", -1);
+        focusTrapElements[focusTrapElements.length - 1].removeEventListener("keydown", handleFocusTrap);
+        focusTrapElements.pop();
+
+        if (focusTrapElements != null) setFocusOnFocusTrapElement();
+    }
+
+    /**
+     * Set focus on focust trap element.
+     */
+    const setFocusOnFocusTrapElement = () => {
+        focusTrapElements[focusTrapElements.length - 1].setAttribute("tabindex", 0);
+        focusTrapElements[focusTrapElements.length - 1].focus();
+        setTimeout(() => { focusTrapElements[focusTrapElements.length - 1].removeAttribute("tabindex"); }, 50);
+    }
+
+    /**
+     * Handle focus trap.
+     * @param {object} event 
+     */
+    const handleFocusTrap = event => {
+        let focusableElements = focusTrapElements[focusTrapElements.length - 1].querySelectorAll(`a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, [tabindex="0"], [contenteditable]`); 
+
+        // Filter element where parent have [tabindex="-1"].
+        let filterFocusableElements = [];
+        for (let i = 0; i < focusableElements.length; i++) {
+            if (! focusableElements[i].closest(`[tabindex="-1"]`)) {
+                filterFocusableElements.push(focusableElements[i])
+            }
+        }
+        
+        let firstElement = filterFocusableElements[0];
+        let lastElement = filterFocusableElements[filterFocusableElements.length - 1];
+
+        if (event.type === "keydown" && event.keyCode === 9) {
+            if (event.shiftKey && document.activeElement === firstElement) {
+                event.preventDefault();
+                lastElement.focus();
+            } else if (!event.shiftKey && document.activeElement === lastElement) {
+                event.preventDefault();
+                firstElement.focus();
+            }
+        }
     }
 
     /**
