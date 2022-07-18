@@ -299,11 +299,19 @@ window.onload = () => {
         disableFocusTrap();
     }
 
+    /**
+     * Enable tab on target element.
+     * @param {HTMLDom} targetElement 
+     */
     const enableTab = targetElement => {
         targetElement.setAttribute("tabindex", 0);
         targetElement.classList.remove("invisible");
     }
-
+    
+    /**
+     * Disable tab on target element.
+     * @param {HTMLDom} targetElement 
+     */
     const disableTab = targetElement => {
         targetElement.setAttribute("tabindex", -1);
         setTimeout(() => { targetElement.classList.add("invisible"); }, 50);
