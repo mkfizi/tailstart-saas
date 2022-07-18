@@ -350,6 +350,9 @@ window.onload = () => {
     // Add click event on window.
     window.addEventListener("click", handleDropdownClickOutside);
 
+    // Add click event on window for touch based screen.
+    window.addEventListener("touchstart", handleDropdownClickOutside);
+
 
     /**
      * Handle dashboard if sidebar is active on mobile and window is resized to desktop.
