@@ -2,14 +2,17 @@
 
 # Team
 
-    <name> -- <role> -- <twitter>
+    Khafizi Noh [Programmer] @mkfizi
 
 # Special Thanks
 
-    <name>
+    @estevanmaito [WindmillUI]
+    @csaba_kissi [Tabler Icons]
+    @codecalm [Tabler Icons]
+    @adamwathan [TailwindCSS]
 
 # Technology Stack
 
     HTML5
     TailwindCSS
-    Native JS
+    Vanilla Javascript
