@@ -14,8 +14,10 @@ window.onload = () => {
     // Stores active sidebar position.
     let sidebarPosition = null;
 
-    // Stores elements with focus trap. This variable uses array to handle focus 
-    // trap elements that have a focus trap child elements.
+    /** 
+     * Stores elements with focus trap. This variable uses array to handle focus 
+     * trap elements that have a focus trap child elements.
+     */
     let focusTrapElements = [];
 
     /**
@@ -57,7 +59,11 @@ window.onload = () => {
     }
 
     /**
-     * Toggle "transition-none" class to target element.
+     * Toggle "transition-none" class on target element to avoid FOUC.
+     * 
+     * NOTE: 
+     * For this to work, make sure 'transition-none' is defined after other
+     * 'transition' and 'transition-*' classes in CSS output file.
      * @param {HTMLDom} element
      */
     const toggleTransitionNone = element => {
@@ -66,7 +72,12 @@ window.onload = () => {
     }
 
     /**
-     * Toggle "transition-none" class to all elements with transition classes.
+     * Toggle "transition-none" class on all elements with transition classes
+     * to avoid FOUC.
+     * 
+     * NOTE: 
+     * For this to work, make sure 'transition-none' is defined after other
+     * 'transition' and 'transition-*' classes in CSS output file.
      */
     const toggleTransitionNoneAll = () => {
         let transitions = document.querySelectorAll(".transition, .transition-all, .transition-colors, .transition-opacity, .transition-shadow, .transition-transform");
