@@ -47,8 +47,7 @@ You may refer here for more information about Tailboard's directory structure:
 
 # Features
 
-Although Tailboard is considered as a skeleton template, we include some
-features to help quickstart your next project.
+Tailboard include some features as below.
 
 ### Built-in Components
 
@@ -61,7 +60,7 @@ implementation using vanilla Javascript. These components consist as below:
 * Modal
 * Dropdown
 
-Refer here for component usage and examples: [Tailboard Components](./COMPONENTS.md)
+You may refer here for component usage and examples: [Tailboard Components](./COMPONENTS.md)
 
 ### Built-in CLI Command
 
@@ -131,7 +130,7 @@ Please make sure to update tests as appropriate.
 ## Special Thanks
 
 This project is hugely inspired by 
-[Windmill Dashboard](https://github.com/h5bp/html5-boilerplate).
+[Windmill Dashboard](https://windmill-dashboard.vercel.app/).
 
 Icons used are from [Tabler Icons](https://tablericons.com/).
 
