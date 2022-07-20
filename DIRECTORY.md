@@ -176,31 +176,31 @@ These are files that render the views for Tailboard.
 
 This is the default error page for when the site URL is not existed.
 
-## alerts.html
+### alerts.html
 
 This is the alert page for Tailboard. It demonstrate the alert component in
 Tailboard and it's variants.
 
-## buttons.html
+### buttons.html
 
 This is the button page for Tailboard. It contains list of button related
 elements styles that are consistent with Tailboard UI designs.
 
-## collapses.html
+### collapses.html
 
 This is the collapse page for Tailboard. It demonstrate the collapse component
 in Tailboard and it's variants.
 
-## dropdown.html
+### dropdown.html
 
 This is the dropdown page for Tailboard. It demonstrate the dropdown component
 in Tailboard and it's variants.
 
-## forgot-password.html
+### forgot-password.html
 
 This is the forgot password page for Tailboard.
 
-## forms.html
+### forms.html
 
 This is the form page for Tailboard. It contains list of form related elements
 styles that are consistent with Tailboard UI designs.
@@ -209,25 +209,25 @@ styles that are consistent with Tailboard UI designs.
 
 This is the home page for Tailboard. It demonstrate cards and table.
 
-## login.html
+### login.html
 
 This is the login page for Tailboard.
 
-## modals.html
+### modals.html
 
 This is the modal page for Tailboard. It demonstrate the modals component
 in Tailboard and it's variants.
 
-## sidebars.html
+### sidebars.html
 
 This is the sidebar page for Tailboard. It demonstrate the sidebar component
 in Tailboard and it's variants.
 
-## sign-up.html
+### sign-up.html
 
 This is the sign up page for Tailboard.
 
-## typography.html
+#####typography.html
 
 This is the typography page for Tailboard. It contains list of typography 
 styles that are consistent with Tailboard UI designs.
