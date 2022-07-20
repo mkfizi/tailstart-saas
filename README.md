@@ -60,8 +60,6 @@ implementation using vanilla Javascript. These components consist as below:
 * Modal
 * Dropdown
 
-You may refer here for component usage and examples: [Tailboard Components](./COMPONENTS.md)
-
 ### Built-in CLI Command
 
 Tailboard include some built-in NPM CLI commands which purpose is to build CSS
