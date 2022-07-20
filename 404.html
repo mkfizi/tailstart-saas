@@ -21,8 +21,8 @@
     <!-- 
         Handle dark mode toggle when the page is loaded.
 
-        These codes below are called before app.js instead of being inside 
-        app.js to avoid FOUC should app.js type is defined as a module. 
+        These codes below are called before script.js instead of being inside 
+        script.js to avoid FOUC should script.js type is defined as a module. 
     -------------------------------------------------------------------------->
     <script>
         if (localStorage.theme === "light" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: light)").matches)) {
