@@ -355,7 +355,10 @@ window.onload = () => {
     const setFocusOnFocusTrapElement = () => {
         enableTab(focusTrapElements[focusTrapElements.length - 1]);
         focusTrapElements[focusTrapElements.length - 1].focus();
-        setTimeout(() => { focusTrapElements[focusTrapElements.length - 1].removeAttribute("tabindex"); }, 50);
+        setTimeout(() => { 
+            focusTrapElements[focusTrapElements.length - 1].removeAttribute("tabindex"); 
+            focusTrapElements[focusTrapElements.length - 1].blur();
+        }, 50);
     }
 
     /**
