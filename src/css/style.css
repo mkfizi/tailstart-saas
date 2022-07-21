@@ -1163,6 +1163,10 @@ select {
   overflow-y: hidden;
 }
 
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
+
 .whitespace-nowrap {
   white-space: nowrap;
 }
@@ -2396,6 +2400,10 @@ body{
 
   .lg\:w-full {
     width: 100%;
+  }
+
+  .lg\:w-80 {
+    width: 20rem;
   }
 
   .lg\:translate-x-0 {
