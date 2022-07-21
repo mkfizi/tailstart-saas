@@ -51,7 +51,7 @@ Tailboard include some features as below.
 
 ### Built-in Components
 
-Tailboard include some built-in components for rapid development using minimal
+Tailboard include some built-in components for rapid development with minimal
 implementation using vanilla Javascript. These components consist as below:
 
 * Alert
