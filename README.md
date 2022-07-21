@@ -58,7 +58,7 @@ implementation using vanilla Javascript. These components consist as below:
 * Collapse
 * Dropdown
 * Modal
-* Dropdown
+* Sidebar
 
 ### Built-in CLI Command
 
