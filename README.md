@@ -39,7 +39,7 @@ configurations for project that uses TailwindCSS.
 Tailboard does not include bundler tools such as `webpack` or `parcel` since we
 want it to be adaptable with any development stacks.
 
-Tailboard can be further customize and integrated with any frameworks according
+Tailboard can be further customized and integrated with any frameworks according
 to your project's requirement.
 
 You may refer here for more information about Tailboard's directory structure:
