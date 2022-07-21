@@ -1100,6 +1100,10 @@ select {
   flex-direction: column;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .items-end {
   align-items: flex-end;
 }
@@ -2378,6 +2382,10 @@ body{
     z-index: 10;
   }
 
+  .lg\:order-first {
+    order: -9999;
+  }
+
   .lg\:hidden {
     display: none;
   }
@@ -2393,6 +2401,10 @@ body{
   .lg\:translate-x-0 {
     --tw-translate-x: 0px;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+
+  .lg\:justify-between {
+    justify-content: space-between;
   }
 
   .lg\:border-r {
