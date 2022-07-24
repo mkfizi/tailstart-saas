@@ -1163,10 +1163,6 @@ select {
   overflow-y: hidden;
 }
 
-.overflow-y-scroll {
-  overflow-y: scroll;
-}
-
 .whitespace-nowrap {
   white-space: nowrap;
 }
@@ -2399,6 +2395,10 @@ body{
     display: none;
   }
 
+  .lg\:w-80 {
+    width: 20rem;
+  }
+
   .lg\:w-auto {
     width: auto;
   }
@@ -2407,13 +2407,13 @@ body{
     width: 100%;
   }
 
-  .lg\:w-80 {
-    width: 20rem;
-  }
-
   .lg\:translate-x-0 {
     --tw-translate-x: 0px;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+
+  .lg\:flex-row {
+    flex-direction: row;
   }
 
   .lg\:justify-between {
