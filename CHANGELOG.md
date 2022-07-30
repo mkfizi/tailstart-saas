@@ -16,6 +16,10 @@ Types of changes:
 ## [Unreleased]
 Put unreleased changes here.
 
+## [0.1.0] - 2022-07-30
+### Changed
+- Notification dropdown view.
+
 ## [0.1.0] - 2022-07-21
 ### Added
 - First release.

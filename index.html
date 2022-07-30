@@ -369,39 +369,47 @@
                         </svg>
                         <div class="absolute right-0 w-2 h-2 bg-red-500 rounded-full top-1"></div>
                     </button>
-                    <ul id="notificationDropdown" tabindex="-1" class="absolute right-0 z-30 invisible w-64 py-2 overflow-y-auto transition origin-top-right scale-0 bg-white border border-gray-100 divide-y divide-gray-200 rounded-md shadow-md opacity-0 lg:w-80 dark:divide-gray-600 dark:border-gray-700 dark:bg-gray-700 top-16 max-h-80">
-                        <li>
-                            <a href="#" class="block px-4 py-2 hover:text-blue-500">
-                                <div class="h-8 text-xs font-light">You have received a purchase order amount of $104.85.</div>
-                                <div class="text-xs text-right"><small>30 minutes ago</small></div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="block px-4 py-2 hover:text-blue-500">
-                                <div class="h-8 text-xs font-light">You have 3 new task requests by Khafizi Noh to approve.</div>
-                                <div class="text-xs text-right"><small>5 hours ago</small></div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="block px-4 py-2 hover:text-blue-500">
-                                <div class="h-8 text-xs font-light">You have 99 unread messages.</div>
-                                <div class="text-xs text-right"><small>10 days ago</small></div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="block px-4 py-2 hover:text-blue-500">
-                                <div class="h-8 text-xs font-light">You have a pending delivery for order #18035025.</div>
-                                <div class="text-xs text-right"><small>3 months ago</small></div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="block px-4 py-2 hover:text-blue-500">
-                                <div class="h-8 text-xs font-light">You have made a new transaction amout of $308.95.</div>
-                                <div class="text-xs text-right"><small>4 years ago</small></div>
-                            </a>
-                        </li>
-                        <li class="text-center "><a href="#" class="inline-block pt-2 mb-1 text-xs text-blue-600 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-500">View all notifications</a></li>
-                    </ul>
+                    <div id="notificationDropdown" tabindex="-1" class="absolute right-0 z-30 invisible w-64 py-2 transition origin-top-right scale-0 bg-white border border-gray-100 rounded-md shadow-md opacity-0 lg:w-80 dark:border-gray-700 dark:bg-gray-700 top-16">
+                        <ul class="overflow-y-auto divide-y divide-gray-200 max-h-80 dark:divide-gray-600">
+                            <li>
+                                <a href="#" class="block px-4 py-2 hover:text-blue-500">
+                                    <div class="h-8 text-xs font-light">You have received a purchase order amount of $104.85.</div>
+                                    <div class="text-xs text-right"><small>30 minutes ago</small></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="block px-4 py-2 hover:text-blue-500">
+                                    <div class="h-8 text-xs font-light">You have 3 new task requests by Khafizi Noh to approve.</div>
+                                    <div class="text-xs text-right"><small>5 hours ago</small></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="block px-4 py-2 hover:text-blue-500">
+                                    <div class="h-8 text-xs font-light">You have 99 unread messages.</div>
+                                    <div class="text-xs text-right"><small>10 days ago</small></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="block px-4 py-2 hover:text-blue-500">
+                                    <div class="h-8 text-xs font-light">You have 6 new notifications.</div>
+                                    <div class="text-xs text-right"><small>2 weeks ago</small></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="block px-4 py-2 hover:text-blue-500">
+                                    <div class="h-8 text-xs font-light">You have a pending delivery for order #18035025.</div>
+                                    <div class="text-xs text-right"><small>3 months ago</small></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="block px-4 py-2 hover:text-blue-500">
+                                    <div class="h-8 text-xs font-light">You have made a new transaction amout of $308.95.</div>
+                                    <div class="text-xs text-right"><small>4 years ago</small></div>
+                                </a>
+                            </li>
+                        </ul>
+                        <a href="#" class="inline-block w-full pt-2 mb-1 text-xs text-center text-blue-600 border-t border-gray-200 max-h-80 dark:border-gray-600 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-500">View all notifications</a>
+                    </div>
                 </div>
 
                 <!-- Account Dropdown -->
