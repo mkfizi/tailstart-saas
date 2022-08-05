@@ -2032,24 +2032,6 @@ body{
   font-family: 'Poppins', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-/* Force scroll display for macOS */
-
-::-webkit-scrollbar {
-  -webkit-appearance: none;
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-thumb {
-  border-radius: 4px;
-  background-color: rgba(0, 0, 0, .5);
-}
-
-.dark ::-webkit-scrollbar-thumb {
-  border-radius: 4px;
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
 .file\:mr-2::-webkit-file-upload-button {
   margin-right: 0.5rem;
 }
