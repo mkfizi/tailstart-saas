@@ -87,6 +87,24 @@ window.onload = () => {
         }
     }
 
+    /**
+     * Toggle aria-expanded attribute value.
+     * 
+     * NOTE:
+     * We use querySelectorAll insted of querySelector when retrieving toggle
+     * element should there are multiple toggle elements.
+     * @param {string} targetElement 
+     */
+     const toggleAriaExpanded = targetElement => {
+        let toggleElements = document.querySelectorAll(`[data-target=${targetElement}]`)
+        for (let i=0; i < toggleElements.length; i++) {
+            if (toggleElements[i].hasAttribute("aria-expanded")) {
+                toggleElements[i].getAttribute("aria-expanded") == "true"
+                    ? toggleElements[i].setAttribute("aria-expanded", "false")
+                    : toggleElements[i].setAttribute("aria-expanded", "true");
+            }
+        }
+    }
 
     /**
      * Hide alert.
@@ -163,25 +181,6 @@ window.onload = () => {
     }
 
     /**
-     * Toggle aria-expanded attribute value.
-     * 
-     * NOTE:
-     * We use querySelectorAll insted of querySelector when retrieving toggle
-     * element should there are multiple toggle elements.
-     * @param {string} targetElement 
-     */
-    const toggleAriaExpanded = targetElement => {
-        let toggleElements = document.querySelectorAll(`[data-target=${targetElement}]`)
-        for (let i=0; i < toggleElements.length; i++) {
-            if (toggleElements[i].hasAttribute("aria-expanded")) {
-                toggleElements[i].getAttribute("aria-expanded") == "true"
-                    ? toggleElements[i].setAttribute("aria-expanded", "false")
-                    : toggleElements[i].setAttribute("aria-expanded", "true");
-            }
-        }
-    }
-
-    /**
      * Toggle accordion state.
      * @param {string} accordionId 
      */
@@ -235,6 +234,7 @@ window.onload = () => {
     const showDropdown = targetElement => {
         targetElement.classList.remove("scale-0", "opacity-0");
         enableTab(targetElement);
+        toggleAriaExpanded(targetElement.getAttribute("id"));
     }
 
     /**
@@ -244,6 +244,7 @@ window.onload = () => {
     const hideDropdown = targetElement => {
         targetElement.classList.add("scale-0", "opacity-0");
         disableTab(targetElement);
+        toggleAriaExpanded(targetElement.getAttribute("id"));
     }
 
     /**
