@@ -16,6 +16,10 @@ Types of changes:
 ## [Unreleased]
 Put unreleased changes here.
 
+## [1.0.0] - 2022-08-07
+### Added
+- Accessibility attributes.
+
 ## [0.1.1] - 2022-07-30
 ### Changed
 - Notification dropdown view.
