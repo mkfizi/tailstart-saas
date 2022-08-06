@@ -111,6 +111,7 @@ window.onload = () => {
             : hideCollapse(targetElement);
 
         toggleIcon(currentTarget);
+        toggleAriaExpanded(currentTarget);
 
         if (targetElement.hasAttribute("data-accordion")) {
             let accordionId = targetElement.dataset.accordion;
@@ -149,15 +150,34 @@ window.onload = () => {
 
     /**
      * Toggle icon state.
-     * @param {string} currentTarget 
+     * @param {string} targetElement 
      */
-    const toggleIcon = currentTarget => {
-        let icon = document.querySelector(`[data-icon=${currentTarget}]`)
+    const toggleIcon = targetElement => {
+        let icon = document.querySelector(`[data-icon=${targetElement}]`)
 
         if (icon != null) {
             icon.classList.contains("rotate-180")
                 ? icon.classList.remove("rotate-180")
                 : icon.classList.add("rotate-180");
+        }
+    }
+
+    /**
+     * Toggle aria-expanded attribute value.
+     * 
+     * NOTE:
+     * We use querySelectorAll insted of querySelector when retrieving toggle
+     * element should there are multiple toggle elements.
+     * @param {string} targetElement 
+     */
+    const toggleAriaExpanded = targetElement => {
+        let toggleElements = document.querySelectorAll(`[data-target=${targetElement}]`)
+        for (let i=0; i < toggleElements.length; i++) {
+            if (toggleElements[i].hasAttribute("aria-expanded")) {
+                toggleElements[i].getAttribute("aria-expanded") == "true"
+                    ? toggleElements[i].setAttribute("aria-expanded", "false")
+                    : toggleElements[i].setAttribute("aria-expanded", "true");
+            }
         }
     }
 
@@ -173,6 +193,7 @@ window.onload = () => {
                 if (accordions[i].getAttribute("id") != currentTarget && ! accordions[i].classList.contains("h-0")) {
                     hideCollapse(accordions[i])
                     toggleIcon(accordions[i].getAttribute("id"));
+                    toggleAriaExpanded(accordions[i].getAttribute("id"));
                 }
             }
         }
