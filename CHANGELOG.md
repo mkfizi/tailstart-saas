@@ -16,7 +16,7 @@ Types of changes:
 ## [Unreleased]
 Put unreleased changes here.
 
-## [1.0.0] - 2022-08-07
+## [0.1.2] - 2022-08-07
 ### Added
 - Accessibility attributes.
 
