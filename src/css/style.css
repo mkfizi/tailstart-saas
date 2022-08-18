@@ -1377,6 +1377,16 @@ select {
   padding-bottom: 1px;
 }
 
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+.px-16 {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
 .pl-6 {
   padding-left: 1.5rem;
 }
