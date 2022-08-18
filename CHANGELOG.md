@@ -16,6 +16,10 @@ Types of changes:
 ## [Unreleased]
 Put unreleased changes here.
 
+## [0.1.3] - 2022-08-18
+### Changed
+* Wrap elements with margin properties in container when adding extra margin properties to maintain style consistencies.
+
 ## [0.1.2] - 2022-08-07
 ### Added
 - Accessibility attributes.
