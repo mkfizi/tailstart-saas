@@ -112,25 +112,37 @@ By default, Tailboard directory initially looks as below:
 ├── .gitattributes
 ├── .gitignore
 ├── 404.html
+├── alerts.html
 ├── android-chrome-192x192.png
 ├── android-chrome-512x512.png
 ├── apple-touch-icon.png
+├── blank.html
 ├── browserconfig.xml
 ├── CHANGELOG.md
+├── collapse.html
 ├── DIRECTORY.md
+├── dropdowns.html
 ├── favicon-16x16.png
 ├── favicon-32x32.png
 ├── favicon.ico
+├── forgot-password.html
+├── forms.html
 ├── humans.txt
 ├── index.html
+├── LICENSE
+├── login.html
+├── modals.html
 ├── package-lock.json
 ├── package.json
 ├── README.md
 ├── robots.txt
+├── sidebars.html
+├── sign-up.html
 ├── site.webmanifest
 ├── tailwind.config.js
 ├── tile.png
 └── tile-wide.png
+└── typography.html
 ```
 
 ## SRC Folder
