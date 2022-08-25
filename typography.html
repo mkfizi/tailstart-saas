@@ -435,44 +435,46 @@
                     </div>
 
                     <!-- View Github -->
-                    <a href="https://github.com/mkfizi/tailboard" target="_blank">
-                        <div class="flex justify-between gap-4 p-4 mb-4 text-sm text-white transition bg-blue-700 rounded hover:bg-blue-600">
-                            <span class="flex gap-2">
-                                <p>View this project on Github</p>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                    <line x1="5" y1="12" x2="19" y2="12" />
-                                    <line x1="15" y1="16" x2="19" y2="12" />
-                                    <line x1="15" y1="8" x2="19" y2="12" />
-                                </svg>
-                            </span>
-                            <div id="githubStars" class="hidden gap-2">
-                                <p id="githubStarsText"></p>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="fill-white" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                    <path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" />
-                                </svg>
+                    <div class="mb-4">
+                        <a href="https://github.com/mkfizi/tailboard" target="_blank">
+                            <div class="flex justify-between gap-4 p-4 mb-1 text-sm text-white transition bg-blue-700 rounded hover:bg-blue-600">
+                                <span class="flex gap-2">
+                                    <p>View this project on Github</p>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                        <line x1="5" y1="12" x2="19" y2="12" />
+                                        <line x1="15" y1="16" x2="19" y2="12" />
+                                        <line x1="15" y1="8" x2="19" y2="12" />
+                                    </svg>
+                                </span>
+                                <div id="githubStars" class="hidden gap-2">
+                                    <p id="githubStarsText"></p>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="fill-white" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                        <path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" />
+                                    </svg>
+                                </div>
                             </div>
-                        </div>
-                        
-                        <!-- Fetch github stars -->
-                        <script>
-                            fetch('https://api.github.com/repos/mkfizi/tailboard')
-                                .then(response =>{
-                                    if (!response.ok) {
-                                        throw new Error('Network response was not OK');
-                                    } 
-                                    return response.json();
-                                })
-                                .then(data => {
-                                    document.getElementById("githubStars").classList.remove("hidden");
-                                    document.getElementById("githubStars").classList.add("flex");
-                                    document.getElementById("githubStarsText").innerHTML = data.stargazers_count;
-                                }).catch(error => {
-                                    console.error('There has been a problem with your fetch operation:', error);
-                                });
-                        </script>
-                    </a>
+                            
+                            <!-- Fetch github stars -->
+                            <script>
+                                fetch('https://api.github.com/repos/mkfizi/tailboard')
+                                    .then(response =>{
+                                        if (!response.ok) {
+                                            throw new Error('Network response was not OK');
+                                        } 
+                                        return response.json();
+                                    })
+                                    .then(data => {
+                                        document.getElementById("githubStars").classList.remove("hidden");
+                                        document.getElementById("githubStars").classList.add("flex");
+                                        document.getElementById("githubStarsText").innerHTML = data.stargazers_count;
+                                    }).catch(error => {
+                                        console.error('There has been a problem with your fetch operation:', error);
+                                    });
+                            </script>
+                        </a>
+                    </div>
 
                     <!-- Styles -->
                     <div class="mb-4">
