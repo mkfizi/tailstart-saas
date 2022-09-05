@@ -522,18 +522,21 @@
             </main>
 
             <!-- Footer -->
-            <footer class="absolute bottom-0 w-full text-center lg:w-auto lg:right-6">
-                <p class="mb-1 text-sm"><small>Tailboard © <span id="footerCurrentYear"></span></small></p>
-                    <!-- 
-                        Handle footer current year.
-            
-                        These codes below are called here instead of being inside script.js to 
-                        avoid FOUC should script.js type is defined as a module. 
-                    -------------------------------------------------------------------------->
-                    <script>
-                        const element = document.getElementById("footerCurrentYear");
-                        element.innerHTML = new Date().getFullYear();
-                    </script>
+            <footer class="relative">
+                <div class="absolute bottom-0 w-full text-center">
+                    <p class="mb-1 text-sm"><small>Tailboard © <span id="footerCurrentYear"></span></small></p>
+                </div>
+                
+                <!-- 
+                    Handle footer current year.
+        
+                    These codes below are called here instead of being inside script.js to 
+                    avoid FOUC should script.js type is defined as a module. 
+                -------------------------------------------------------------------------->
+                <script>
+                    const element = document.getElementById("footerCurrentYear");
+                    element.innerHTML = new Date().getFullYear();
+                </script>
             </footer>
         </div>
     </div>
