@@ -16,6 +16,12 @@ Types of changes:
 ## [Unreleased]
 Put unreleased changes here.
 
+## [0.1.4] - 2022-09-05
+### Changed
+* Dashboard content width to using max width class to cater responsive table width.
+* Center footer text position on desktop size.
+* Table class.
+
 ## [0.1.3] - 2022-08-18
 ### Changed
 * Wrap elements with margin properties in container when adding extra margin properties to maintain style consistencies.
