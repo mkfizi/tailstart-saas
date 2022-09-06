@@ -16,6 +16,11 @@ Types of changes:
 ## [Unreleased]
 Put unreleased changes here.
 
+## [0.1.5] - 2022-09-06
+### Fixed
+* Select option dark mode background.
+* Footer text position bug.
+
 ## [0.1.4] - 2022-09-05
 ### Changed
 * Dashboard content width to using max width class to cater responsive table width.
