@@ -2384,10 +2384,6 @@ body{
     position: sticky;
   }
 
-  .lg\:right-6 {
-    right: 1.5rem;
-  }
-
   .lg\:z-10 {
     z-index: 10;
   }
@@ -2396,16 +2392,16 @@ body{
     order: -9999;
   }
 
+  .lg\:ml-64 {
+    margin-left: 16rem;
+  }
+
   .lg\:hidden {
     display: none;
   }
 
   .lg\:w-80 {
     width: 20rem;
-  }
-
-  .lg\:w-auto {
-    width: auto;
   }
 
   .lg\:w-full {
@@ -2427,10 +2423,6 @@ body{
 
   .lg\:justify-between {
     justify-content: space-between;
-  }
-
-  .lg\:whitespace-normal {
-    white-space: normal;
   }
 
   .lg\:border-r {
