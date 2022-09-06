@@ -133,7 +133,7 @@ This project is hugely inspired by
 Icons used are from [Tabler Icons](https://tablericons.com/).
 
 And thank you [@adamwathan](https://twitter.com/adamwathan) for creating
-TaildwindCSS!
+TailwindCSS!
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
