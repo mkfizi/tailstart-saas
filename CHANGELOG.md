@@ -16,6 +16,10 @@ Types of changes:
 ## [Unreleased]
 Put unreleased changes here.
 
+## [0.1.6] - 2022-09-15
+### Fixed
+* Form checkbox and radio label margin.
+
 ## [0.1.5] - 2022-09-06
 ### Fixed
 * Select option dark mode background.
