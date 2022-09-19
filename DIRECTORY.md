@@ -239,7 +239,7 @@ in Tailboard and it's variants.
 
 This is the sign up page for Tailboard.
 
-#####typography.html
+### typography.html
 
 This is the typography page for Tailboard. It contains list of typography 
 styles that are consistent with Tailboard UI designs.
