@@ -14,7 +14,11 @@ Types of changes:
 * `Security` in case of vulnerabilities.
 
 ## [Unreleased]
-Put unreleased changes here.
+### Removed
+* Table previous and next button.
+
+### Fixed
+* Login route typo in sign up page.
 
 ## [0.1.6] - 2022-09-15
 ### Fixed
