@@ -14,6 +14,9 @@ Types of changes:
 * `Security` in case of vulnerabilities.
 
 ## [Unreleased]
+###
+* Index page card and table status pills class from 'rounded-full' to 'rounded' for consistency.
+
 ### Removed
 * Table previous and next button.
 
