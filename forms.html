@@ -65,11 +65,11 @@
 
     <title>Tailboard | Forms</title>
 </head>
-<body class="relative min-h-screen antialiased text-gray-900 dark:text-white bg-gray-50 dark:bg-gray-900">
+<body class="relative min-h-screen antialiased text-neutral-900 dark:text-white bg-neutral-50 dark:bg-neutral-900">
     <div class="flex">
     
         <!-- Dashboard Sidebar Menu -->
-        <aside id="dashboardSidebar" role="dialog" tabindex="-1" class="fixed top-0 z-30 flex flex-col invisible w-64 h-screen overflow-y-auto transition -translate-x-full bg-white lg:visible lg:z-10 dark:bg-gray-800 lg:border-r lg:border-gray-100 lg:dark:border-gray-900 lg:shadow-none lg:sticky shrink-0 lg:translate-x-0 lg:transition-none">
+        <aside id="dashboardSidebar" role="dialog" tabindex="-1" class="fixed top-0 z-30 flex flex-col invisible w-64 h-screen overflow-y-auto transition -translate-x-full bg-white lg:visible lg:z-10 dark:bg-neutral-800 lg:border-r lg:border-neutral-100 lg:dark:border-neutral-900 lg:shadow-none lg:sticky shrink-0 lg:translate-x-0 lg:transition-none">
             <div class="flex items-center justify-between px-4 py-5 lg:pl-6">
 
                 <!-- Title -->
@@ -86,7 +86,7 @@
             </div>
 
             <!-- Dashboard Sidebar Content -->
-            <ul class="h-full overflow-y-auto text-gray-600 dark:text-gray-400">
+            <ul class="h-full overflow-y-auto text-neutral-600 dark:text-neutral-400">
 
                 <!-- Dashboard Link -->
                 <li>
@@ -171,7 +171,7 @@
                 
                 <!-- Components Collapse -->
                 <li>
-                    <ul id="componentCollapse" tabindex="-1" class="invisible h-0 overflow-hidden transition-all bg-gray-100 dark:bg-gray-700">
+                    <ul id="componentCollapse" tabindex="-1" class="invisible h-0 overflow-hidden transition-all bg-neutral-100 dark:bg-neutral-700">
                         <!-- Alerts Link -->
                         <li>
                             <a href="./alerts" class="flex w-full gap-4 py-3 pl-8 pr-4 transition hover:text-blue-500">
@@ -258,7 +258,7 @@
 
                 <!-- Page Collapse -->
                 <li>
-                    <ul id="pageCollapse" tabindex="-1" class="invisible h-0 overflow-hidden transition-all bg-gray-100 dark:bg-gray-700">
+                    <ul id="pageCollapse" tabindex="-1" class="invisible h-0 overflow-hidden transition-all bg-neutral-100 dark:bg-neutral-700">
 
                         <!-- Login Link -->
                         <li>
@@ -331,7 +331,7 @@
         <div class="flex-auto w-full">
 
             <!-- Nav -->
-            <nav class="sticky top-0 z-10 flex justify-between w-full p-4 bg-white shadow lg:pr-6 items-between dark:bg-gray-800">
+            <nav class="sticky top-0 z-10 flex justify-between w-full p-4 bg-white shadow lg:pr-6 items-between dark:bg-neutral-800">
                 <div class="flex items-center">
 
                     <!-- Dashboard Sidebar Show Button -->
@@ -370,8 +370,8 @@
                             </svg>
                             <div class="absolute right-0 w-2 h-2 bg-red-500 rounded-full top-1"></div>
                         </button>
-                        <div id="notificationDropdown" tabindex="-1" class="absolute right-0 z-30 invisible w-64 py-2 transition origin-top-right scale-0 bg-white border border-gray-100 rounded-md shadow-md opacity-0 lg:w-80 dark:border-gray-700 dark:bg-gray-700 top-16">
-                            <ul class="overflow-y-auto divide-y divide-gray-200 max-h-80 dark:divide-gray-600">
+                        <div id="notificationDropdown" tabindex="-1" class="absolute right-0 z-30 invisible w-64 py-2 transition origin-top-right scale-0 bg-white border rounded-md shadow-md opacity-0 border-neutral-100 lg:w-80 dark:border-neutral-700 dark:bg-neutral-700 top-16">
+                            <ul class="overflow-y-auto divide-y divide-neutral-200 max-h-80 dark:divide-neutral-600">
                                 <li>
                                     <a href="#" class="block px-4 py-2 hover:text-blue-500">
                                         <div class="h-8 text-xs font-light">You have received a purchase order amount of $104.85.</div>
@@ -409,7 +409,7 @@
                                     </a>
                                 </li>
                             </ul>
-                            <a href="#" class="inline-block w-full pt-2 mb-1 text-xs text-center text-blue-600 border-t border-gray-200 max-h-80 dark:border-gray-600 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-500">View all notifications</a>
+                            <a href="#" class="inline-block w-full pt-2 mb-1 text-xs text-center text-blue-600 border-t border-neutral-200 max-h-80 dark:border-neutral-600 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-500">View all notifications</a>
                         </div>
                     </div>
 
@@ -418,7 +418,7 @@
                         <button data-toggle="dropdown" data-target="menuDropdown" class="w-8 h-8 border-2 border-blue-600 rounded-full dark:border-blue-400 hover:border-blue-500 dark:hover:border-blue-500" aria-label="Toggle navbar menu" aria-expanded="false" aria-controls="menuDropdown">
                             <img src="./src/img/avatar.png" width="32" height="32" class="rounded-full" alt="">
                         </button>
-                        <ul id="menuDropdown" tabindex="-1" class="absolute right-0 z-30 invisible w-32 py-2 overflow-y-auto transition origin-top-right scale-0 bg-white border border-gray-100 rounded-md shadow-md opacity-0 dark:border-gray-700 dark:bg-gray-700 top-16 max-h-80">
+                        <ul id="menuDropdown" tabindex="-1" class="absolute right-0 z-30 invisible w-32 py-2 overflow-y-auto transition origin-top-right scale-0 bg-white border rounded-md shadow-md opacity-0 border-neutral-100 dark:border-neutral-700 dark:bg-neutral-700 top-16 max-h-80">
                             <li><a href="https://mkfizi.github.io/" target="_blank" class="block px-4 py-2 text-sm font-medium hover:text-blue-500">Profile</a></li>
                             <li><a href="#" class="block px-4 py-2 text-sm font-medium hover:text-blue-500">Settings</a></li>
                             <li><a href="#" class="block px-4 py-2 text-sm font-medium hover:text-blue-500">Logout</a></li>
@@ -480,14 +480,14 @@
                     <div class="mb-4">
                         <p class="mb-1 text-xl font-semibold">Example</p>
                     </div>
-                    <div class="p-4 mb-8 bg-white rounded-md shadow-md dark:bg-gray-800">
+                    <div class="p-4 mb-8 bg-white rounded-md shadow-md dark:bg-neutral-800">
 
                         <!-- Input Text -->
                         <div class="mb-4">
                             <div class="mb-2">
                                 <label for="input-example" class="mb-1 text-sm font-semibold">Input</label>
                             </div>
-                            <input type="text" id="input-example" name="input_example" placeholder="Input example" class="w-full h-10 px-2 mb-1 text-sm bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none">
+                            <input type="text" id="input-example" name="input_example" placeholder="Input example" class="w-full h-10 px-2 mb-1 text-sm bg-transparent border rounded appearance-none border-neutral-400 disabled:bg-neutral-100 dark:disabled:bg-neutral-700 focus:border-blue-500 dark:border-neutral-600 focus:ring-blue-500 focus:outline-none">
                         </div>
 
                         <!-- Select -->
@@ -495,7 +495,7 @@
                             <div class="mb-2">
                                 <label for="select-example" class="mb-1 text-sm font-semibold">Select</label>
                             </div>
-                            <select name="select_example" id="select-example" class="w-full h-10 px-2 mb-1 text-sm bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none dark:bg-gray-800">
+                            <select name="select_example" id="select-example" class="w-full h-10 px-2 mb-1 text-sm bg-transparent border rounded appearance-none border-neutral-400 disabled:bg-neutral-100 dark:disabled:bg-neutral-700 focus:border-blue-500 dark:border-neutral-600 focus:ring-blue-500 focus:outline-none dark:bg-neutral-800">
                                 <option value="" selected>Select example</option>
                                 <option value="Option 1">Option 1</option>
                                 <option value="Option 2">Option 2</option>
@@ -508,7 +508,7 @@
                             <div class="mb-2">
                                 <label for="text-area-example" class="mb-1 text-sm font-semibold">Text Area</label>
                             </div>
-                            <textarea id="text-area-example" name="text_area_example" placeholder="Text area example" class="w-full px-2 mb-1 text-sm bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none"></textarea>
+                            <textarea id="text-area-example" name="text_area_example" placeholder="Text area example" class="w-full px-2 mb-1 text-sm bg-transparent border rounded appearance-none border-neutral-400 disabled:bg-neutral-100 dark:disabled:bg-neutral-700 focus:border-blue-500 dark:border-neutral-600 focus:ring-blue-500 focus:outline-none"></textarea>
                         </div>
 
                         <!-- Input Checkbox -->
@@ -517,7 +517,7 @@
                                 <p class="mb-1 text-sm font-semibold">Checkbox</p>
                             </div>
                             <div class="flex items-center gap-2">
-                                <input type="checkbox" id="checkbox-example" name="checkbox_example" value="Checkbox Example" class="mb-1 text-blue-500 bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none">
+                                <input type="checkbox" id="checkbox-example" name="checkbox_example" value="Checkbox Example" class="mb-1 text-blue-500 bg-transparent border rounded appearance-none border-neutral-400 disabled:bg-neutral-100 dark:disabled:bg-neutral-700 focus:border-blue-500 dark:border-neutral-600 focus:ring-blue-500 focus:outline-none">
                                 <label for="checkbox-example" class="mb-1 text-sm">Checkbox item</label>
                             </div>
                         </div>
@@ -529,11 +529,11 @@
                             </div>
                             <div class="flex gap-4">
                                 <span class="flex items-center gap-2">
-                                    <input type="radio" id="radio-example-1" name="radio_example" value="Radio Example 1" class="mb-1 text-blue-500 bg-transparent border border-gray-400 appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none">
+                                    <input type="radio" id="radio-example-1" name="radio_example" value="Radio Example 1" class="mb-1 text-blue-500 bg-transparent border appearance-none border-neutral-400 disabled:bg-neutral-100 dark:disabled:bg-neutral-700 focus:border-blue-500 dark:border-neutral-600 focus:ring-blue-500 focus:outline-none">
                                     <label for="radio-example-1" class="mb-1 text-sm">Radio item 1</label>
                                 </span>
                                 <span class="flex items-center gap-2">
-                                    <input type="radio" id="radio-example-2" name="radio_example" value="Radio Example 2" class="mb-1 text-blue-500 bg-transparent border border-gray-400 appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none">
+                                    <input type="radio" id="radio-example-2" name="radio_example" value="Radio Example 2" class="mb-1 text-blue-500 bg-transparent border appearance-none border-neutral-400 disabled:bg-neutral-100 dark:disabled:bg-neutral-700 focus:border-blue-500 dark:border-neutral-600 focus:ring-blue-500 focus:outline-none">
                                     <label for="radio-example-2" class="mb-1 text-sm">Radio item 2</label>
                                 </span>
                             </div>
@@ -552,14 +552,14 @@
                     <div class="mb-4">
                         <p class="mb-1 text-xl font-semibold">Disabled</p>
                     </div>
-                    <div class="p-4 mb-8 bg-white rounded-md shadow-md dark:bg-gray-800">
+                    <div class="p-4 mb-8 bg-white rounded-md shadow-md dark:bg-neutral-800">
 
                         <!-- Input Text Disabled -->
                         <div class="mb-4">
                             <div class="mb-2">
                                 <label for="input-disabled-example" class="mb-1 text-sm font-semibold">Input</label>
                             </div>
-                            <input type="text" id="input-disabled-example" name="input_disabled_example" placeholder="Input disabled example" class="w-full h-10 px-2 mb-1 text-sm bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none" disabled>
+                            <input type="text" id="input-disabled-example" name="input_disabled_example" placeholder="Input disabled example" class="w-full h-10 px-2 mb-1 text-sm bg-transparent border rounded appearance-none border-neutral-400 disabled:bg-neutral-100 dark:disabled:bg-neutral-700 focus:border-blue-500 dark:border-neutral-600 focus:ring-blue-500 focus:outline-none" disabled>
                         </div>
 
                         <!-- Select Disabled -->
@@ -567,7 +567,7 @@
                             <div class="mb-2">
                                 <label for="select-disabled-example" class="mb-1 text-sm font-semibold">Select</label>
                             </div>
-                            <select name="select_disabled_example" id="select-disabled-example" class="w-full h-10 px-2 mb-1 text-sm bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none" disabled>
+                            <select name="select_disabled_example" id="select-disabled-example" class="w-full h-10 px-2 mb-1 text-sm bg-transparent border rounded appearance-none border-neutral-400 disabled:bg-neutral-100 dark:disabled:bg-neutral-700 focus:border-blue-500 dark:border-neutral-600 focus:ring-blue-500 focus:outline-none" disabled>
                                 <option value="" selected>Select disabled example</option>
                                 <option value="Option 1">Option 1</option>
                                 <option value="Option 2">Option 2</option>
@@ -580,7 +580,7 @@
                             <div class="mb-2">
                                 <label for="text-area-disabled-example" class="mb-1 text-sm font-semibold">Text Area</label>
                             </div>
-                            <textarea id="text-area-disabled-example" name="text_area_disabled_example" placeholder="Text area disabled example" class="w-full px-2 mb-1 text-sm bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none" disabled></textarea>
+                            <textarea id="text-area-disabled-example" name="text_area_disabled_example" placeholder="Text area disabled example" class="w-full px-2 mb-1 text-sm bg-transparent border rounded appearance-none border-neutral-400 disabled:bg-neutral-100 dark:disabled:bg-neutral-700 focus:border-blue-500 dark:border-neutral-600 focus:ring-blue-500 focus:outline-none" disabled></textarea>
                         </div>
 
                         <!-- Input Checkbox Disabled -->
@@ -589,7 +589,7 @@
                                 <p class="mb-1 text-sm font-semibold">Checkbox</p>
                             </div>
                             <div class="flex items-center gap-2">
-                                <input type="checkbox" id="checkbox-disabled-example" name="checkbox_disabled_example" value="Checkbox Disabled Example" class="mb-1 text-blue-500 bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none" disabled>
+                                <input type="checkbox" id="checkbox-disabled-example" name="checkbox_disabled_example" value="Checkbox Disabled Example" class="mb-1 text-blue-500 bg-transparent border rounded appearance-none border-neutral-400 disabled:bg-neutral-100 dark:disabled:bg-neutral-700 focus:border-blue-500 dark:border-neutral-600 focus:ring-blue-500 focus:outline-none" disabled>
                                 <label for="checkbox-disabled-example" class="mb-1 text-sm">Checkbox item</label>
                             </div>
                         </div>
@@ -601,11 +601,11 @@
                             </div>
                             <div class="flex gap-4">
                                 <span class="flex items-center gap-2">
-                                    <input type="radio" id="radio-disabled-example-1" name="radio_disabled_example" value="Radio Disabled Example 1" class="mb-1 text-blue-500 bg-transparent border border-gray-400 appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none" disabled>
+                                    <input type="radio" id="radio-disabled-example-1" name="radio_disabled_example" value="Radio Disabled Example 1" class="mb-1 text-blue-500 bg-transparent border appearance-none border-neutral-400 disabled:bg-neutral-100 dark:disabled:bg-neutral-700 focus:border-blue-500 dark:border-neutral-600 focus:ring-blue-500 focus:outline-none" disabled>
                                     <label for="radio-disabled-example-1" class="mb-1 text-sm">Radio item 1</label>
                                 </span>
                                 <span class="flex items-center gap-2">
-                                    <input type="radio" id="radio-disabled-example-2" name="radio_disabled_example" value="Radio Example 2" class="mb-1 text-blue-500 bg-transparent border border-gray-400 appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none" disabled>
+                                    <input type="radio" id="radio-disabled-example-2" name="radio_disabled_example" value="Radio Example 2" class="mb-1 text-blue-500 bg-transparent border appearance-none border-neutral-400 disabled:bg-neutral-100 dark:disabled:bg-neutral-700 focus:border-blue-500 dark:border-neutral-600 focus:ring-blue-500 focus:outline-none" disabled>
                                     <label for="radio-disabled-example-2" class="mb-1 text-sm">Radio item 2</label>
                                 </span>
                             </div>
@@ -624,7 +624,7 @@
                     <div class="mb-4">
                         <p class="mb-1 text-xl font-semibold">Icons</p>
                     </div>
-                    <div class="p-4 mb-8 bg-white rounded-md shadow-md dark:bg-gray-800">
+                    <div class="p-4 mb-8 bg-white rounded-md shadow-md dark:bg-neutral-800">
 
                         <!-- Left Icon -->
                         <div class="mb-4">
@@ -632,8 +632,8 @@
                                 <label for="input-left-icon-example" class="mb-1 text-sm font-semibold">Left Icon</label>
                             </div>
                             <div class="relative">
-                                <input type="text" id="input-left-icon-example" name="input_left_icon_example" placeholder="Input example" class="w-full h-10 pl-8 pr-2 mb-1 text-sm bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-2 left-2 stroke-gray-500" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <input type="text" id="input-left-icon-example" name="input_left_icon_example" placeholder="Input example" class="w-full h-10 pl-8 pr-2 mb-1 text-sm bg-transparent border rounded appearance-none border-neutral-400 disabled:bg-neutral-100 dark:disabled:bg-neutral-700 focus:border-blue-500 dark:border-neutral-600 focus:ring-blue-500 focus:outline-none">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-2 left-2 stroke-neutral-500" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                                     <circle cx="12" cy="7" r="4" />
                                     <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
@@ -647,8 +647,8 @@
                                 <label for="input-right-icon-example" class="mb-1 text-sm font-semibold">Right Icon</label>
                             </div>
                             <div class="relative">
-                                <input type="text" id="input-right-icon-example" name="input_left_icon_example" placeholder="Input example" class="w-full h-10 pl-2 pr-8 mb-1 text-sm bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-2 right-2 stroke-gray-500" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <input type="text" id="input-right-icon-example" name="input_left_icon_example" placeholder="Input example" class="w-full h-10 pl-2 pr-8 mb-1 text-sm bg-transparent border rounded appearance-none border-neutral-400 disabled:bg-neutral-100 dark:disabled:bg-neutral-700 focus:border-blue-500 dark:border-neutral-600 focus:ring-blue-500 focus:outline-none">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-2 right-2 stroke-neutral-500" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                                     <circle cx="12" cy="7" r="4" />
                                     <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
@@ -661,14 +661,14 @@
                     <div class="mb-4">
                         <p class="mb-1 text-xl font-semibold">Text Validation</p>
                     </div>
-                    <div class="p-4 mb-8 bg-white rounded-md shadow-md dark:bg-gray-800">
+                    <div class="p-4 mb-8 bg-white rounded-md shadow-md dark:bg-neutral-800">
 
                         <!-- Valid Input -->
                         <div class="mb-4">
                             <div class="mb-2">
                                 <label for="input-valid-example" class="mb-1 text-sm font-semibold">Valid Input</label>
                             </div>
-                            <input type="text" id="input-valid-example" name="input_valid_example" placeholder="Input valid example" class="w-full h-10 px-2 mb-1 text-sm bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none">
+                            <input type="text" id="input-valid-example" name="input_valid_example" placeholder="Input valid example" class="w-full h-10 px-2 mb-1 text-sm bg-transparent border rounded appearance-none border-neutral-400 disabled:bg-neutral-100 dark:disabled:bg-neutral-700 focus:border-blue-500 dark:border-neutral-600 focus:ring-blue-500 focus:outline-none">
                             <p class="mb-1 text-xs text-green-700 dark:text-green-300">Input is valid.</p>
                         </div>
 
@@ -677,7 +677,7 @@
                             <div class="mb-2">
                                 <label for="input-invalid-example" class="mb-1 text-sm font-semibold">Invalid Input</label>
                             </div>
-                            <input type="text" id="input-invalid-example" name="input_valid_example" placeholder="Input invalid example" class="w-full h-10 px-2 mb-1 text-sm bg-transparent border border-gray-400 rounded appearance-none disabled:bg-gray-100 dark:disabled:bg-gray-700 focus:border-blue-500 dark:border-gray-600 focus:ring-blue-500 focus:outline-none">
+                            <input type="text" id="input-invalid-example" name="input_valid_example" placeholder="Input invalid example" class="w-full h-10 px-2 mb-1 text-sm bg-transparent border rounded appearance-none border-neutral-400 disabled:bg-neutral-100 dark:disabled:bg-neutral-700 focus:border-blue-500 dark:border-neutral-600 focus:ring-blue-500 focus:outline-none">
                             <p class="mb-1 text-xs text-red-700 dark:text-red-300">Input is invalid.</p>
                         </div>
                     </div>
