@@ -1134,11 +1134,6 @@ select {
   border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
 }
 
-.divide-gray-200 > :not([hidden]) ~ :not([hidden]) {
-  --tw-divide-opacity: 1;
-  border-color: rgb(229 231 235 / var(--tw-divide-opacity));
-}
-
 .divide-neutral-200 > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-opacity: 1;
   border-color: rgb(229 229 229 / var(--tw-divide-opacity));
@@ -1205,26 +1200,6 @@ select {
   border-color: rgb(29 78 216 / var(--tw-border-opacity));
 }
 
-.border-gray-100 {
-  --tw-border-opacity: 1;
-  border-color: rgb(243 244 246 / var(--tw-border-opacity));
-}
-
-.border-gray-200 {
-  --tw-border-opacity: 1;
-  border-color: rgb(229 231 235 / var(--tw-border-opacity));
-}
-
-.border-blue-600 {
-  --tw-border-opacity: 1;
-  border-color: rgb(37 99 235 / var(--tw-border-opacity));
-}
-
-.border-gray-400 {
-  --tw-border-opacity: 1;
-  border-color: rgb(156 163 175 / var(--tw-border-opacity));
-}
-
 .border-neutral-100 {
   --tw-border-opacity: 1;
   border-color: rgb(245 245 245 / var(--tw-border-opacity));
@@ -1235,9 +1210,9 @@ select {
   border-color: rgb(229 229 229 / var(--tw-border-opacity));
 }
 
-.border-gray-300 {
+.border-blue-600 {
   --tw-border-opacity: 1;
-  border-color: rgb(209 213 219 / var(--tw-border-opacity));
+  border-color: rgb(37 99 235 / var(--tw-border-opacity));
 }
 
 .border-neutral-400 {
@@ -1255,9 +1230,9 @@ select {
   background-color: rgb(29 78 216 / var(--tw-bg-opacity));
 }
 
-.bg-gray-50 {
+.bg-neutral-50 {
   --tw-bg-opacity: 1;
-  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+  background-color: rgb(250 250 250 / var(--tw-bg-opacity));
 }
 
 .bg-white {
@@ -1265,9 +1240,9 @@ select {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-gray-100 {
+.bg-neutral-100 {
   --tw-bg-opacity: 1;
-  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+  background-color: rgb(245 245 245 / var(--tw-bg-opacity));
 }
 
 .bg-red-500 {
@@ -1279,19 +1254,9 @@ select {
   background-color: transparent;
 }
 
-.bg-gray-300 {
+.bg-neutral-300 {
   --tw-bg-opacity: 1;
-  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
-}
-
-.bg-neutral-50 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(250 250 250 / var(--tw-bg-opacity));
-}
-
-.bg-neutral-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(245 245 245 / var(--tw-bg-opacity));
+  background-color: rgb(212 212 212 / var(--tw-bg-opacity));
 }
 
 .bg-blue-200 {
@@ -1319,11 +1284,6 @@ select {
   background-color: rgb(23 23 23 / var(--tw-bg-opacity));
 }
 
-.bg-neutral-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(212 212 212 / var(--tw-bg-opacity));
-}
-
 .fill-blue-600 {
   fill: #2563eb;
 }
@@ -1348,16 +1308,12 @@ select {
   stroke: #fff;
 }
 
-.stroke-gray-500 {
-  stroke: #6b7280;
+.stroke-neutral-500 {
+  stroke: #737373;
 }
 
 .stroke-blue-500 {
   stroke: #3b82f6;
-}
-
-.stroke-neutral-500 {
-  stroke: #737373;
 }
 
 .p-4 {
@@ -1518,9 +1474,9 @@ select {
   font-style: italic;
 }
 
-.text-gray-900 {
+.text-neutral-900 {
   --tw-text-opacity: 1;
-  color: rgb(17 24 39 / var(--tw-text-opacity));
+  color: rgb(23 23 23 / var(--tw-text-opacity));
 }
 
 .text-white {
@@ -1533,9 +1489,9 @@ select {
   color: rgb(37 99 235 / var(--tw-text-opacity));
 }
 
-.text-gray-600 {
+.text-neutral-600 {
   --tw-text-opacity: 1;
-  color: rgb(75 85 99 / var(--tw-text-opacity));
+  color: rgb(82 82 82 / var(--tw-text-opacity));
 }
 
 .text-blue-700 {
@@ -1556,16 +1512,6 @@ select {
 .text-red-700 {
   --tw-text-opacity: 1;
   color: rgb(185 28 28 / var(--tw-text-opacity));
-}
-
-.text-neutral-900 {
-  --tw-text-opacity: 1;
-  color: rgb(23 23 23 / var(--tw-text-opacity));
-}
-
-.text-neutral-600 {
-  --tw-text-opacity: 1;
-  color: rgb(82 82 82 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -1631,460 +1577,6 @@ select {
 
 .transition-none {
   transition-property: none;
-}
-
-/* poppins-100 - latin */
-
-@font-face {
-  font-family: 'Poppins';
-
-  font-style: normal;
-
-  font-weight: 100;
-
-  font-display: swap;
-
-  src: url('../fonts/poppins-v20-latin-100.eot');
-
-  /* IE9 Compat Modes */
-
-  src: local(''),
-         url('../fonts/poppins-v20-latin-100.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('../fonts/poppins-v20-latin-100.woff2') format('woff2'), /* Super Modern Browsers */
-         url('../fonts/poppins-v20-latin-100.woff') format('woff'), /* Modern Browsers */
-         url('../fonts/poppins-v20-latin-100.ttf') format('truetype'), /* Safari, Android, iOS */
-         url('../fonts/poppins-v20-latin-100.svg#Poppins') format('svg');
-
-  /* Legacy iOS */
-}
-
-/* poppins-200 - latin */
-
-@font-face {
-  font-family: 'Poppins';
-
-  font-style: normal;
-
-  font-weight: 200;
-
-  font-display: swap;
-
-  src: url('../fonts/poppins-v20-latin-200.eot');
-
-  /* IE9 Compat Modes */
-
-  src: local(''),
-         url('../fonts/poppins-v20-latin-200.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('../fonts/poppins-v20-latin-200.woff2') format('woff2'), /* Super Modern Browsers */
-         url('../fonts/poppins-v20-latin-200.woff') format('woff'), /* Modern Browsers */
-         url('../fonts/poppins-v20-latin-200.ttf') format('truetype'), /* Safari, Android, iOS */
-         url('../fonts/poppins-v20-latin-200.svg#Poppins') format('svg');
-
-  /* Legacy iOS */
-}
-
-/* poppins-300 - latin */
-
-@font-face {
-  font-family: 'Poppins';
-
-  font-style: normal;
-
-  font-weight: 300;
-
-  font-display: swap;
-
-  src: url('../fonts/poppins-v20-latin-300.eot');
-
-  /* IE9 Compat Modes */
-
-  src: local(''),
-         url('../fonts/poppins-v20-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('../fonts/poppins-v20-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
-         url('../fonts/poppins-v20-latin-300.woff') format('woff'), /* Modern Browsers */
-         url('../fonts/poppins-v20-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
-         url('../fonts/poppins-v20-latin-300.svg#Poppins') format('svg');
-
-  /* Legacy iOS */
-}
-
-/* poppins-regular - latin */
-
-@font-face {
-  font-family: 'Poppins';
-
-  font-style: normal;
-
-  font-weight: 400;
-
-  font-display: swap;
-
-  src: url('../fonts/poppins-v20-latin-regular.eot');
-
-  /* IE9 Compat Modes */
-
-  src: local(''),
-         url('../fonts/poppins-v20-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('../fonts/poppins-v20-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-         url('../fonts/poppins-v20-latin-regular.woff') format('woff'), /* Modern Browsers */
-         url('../fonts/poppins-v20-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-         url('../fonts/poppins-v20-latin-regular.svg#Poppins') format('svg');
-
-  /* Legacy iOS */
-}
-
-/* poppins-500 - latin */
-
-@font-face {
-  font-family: 'Poppins';
-
-  font-style: normal;
-
-  font-weight: 500;
-
-  font-display: swap;
-
-  src: url('../fonts/poppins-v20-latin-500.eot');
-
-  /* IE9 Compat Modes */
-
-  src: local(''),
-         url('../fonts/poppins-v20-latin-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('../fonts/poppins-v20-latin-500.woff2') format('woff2'), /* Super Modern Browsers */
-         url('../fonts/poppins-v20-latin-500.woff') format('woff'), /* Modern Browsers */
-         url('../fonts/poppins-v20-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
-         url('../fonts/poppins-v20-latin-500.svg#Poppins') format('svg');
-
-  /* Legacy iOS */
-}
-
-/* poppins-600 - latin */
-
-@font-face {
-  font-family: 'Poppins';
-
-  font-style: normal;
-
-  font-weight: 600;
-
-  font-display: swap;
-
-  src: url('../fonts/poppins-v20-latin-600.eot');
-
-  /* IE9 Compat Modes */
-
-  src: local(''),
-         url('../fonts/poppins-v20-latin-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('../fonts/poppins-v20-latin-600.woff2') format('woff2'), /* Super Modern Browsers */
-         url('../fonts/poppins-v20-latin-600.woff') format('woff'), /* Modern Browsers */
-         url('../fonts/poppins-v20-latin-600.ttf') format('truetype'), /* Safari, Android, iOS */
-         url('../fonts/poppins-v20-latin-600.svg#Poppins') format('svg');
-
-  /* Legacy iOS */
-}
-
-/* poppins-700 - latin */
-
-@font-face {
-  font-family: 'Poppins';
-
-  font-style: normal;
-
-  font-weight: 700;
-
-  font-display: swap;
-
-  src: url('../fonts/poppins-v20-latin-700.eot');
-
-  /* IE9 Compat Modes */
-
-  src: local(''),
-         url('../fonts/poppins-v20-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('../fonts/poppins-v20-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
-         url('../fonts/poppins-v20-latin-700.woff') format('woff'), /* Modern Browsers */
-         url('../fonts/poppins-v20-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
-         url('../fonts/poppins-v20-latin-700.svg#Poppins') format('svg');
-
-  /* Legacy iOS */
-}
-
-/* poppins-800 - latin */
-
-@font-face {
-  font-family: 'Poppins';
-
-  font-style: normal;
-
-  font-weight: 800;
-
-  font-display: swap;
-
-  src: url('../fonts/poppins-v20-latin-800.eot');
-
-  /* IE9 Compat Modes */
-
-  src: local(''),
-         url('../fonts/poppins-v20-latin-800.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('../fonts/poppins-v20-latin-800.woff2') format('woff2'), /* Super Modern Browsers */
-         url('../fonts/poppins-v20-latin-800.woff') format('woff'), /* Modern Browsers */
-         url('../fonts/poppins-v20-latin-800.ttf') format('truetype'), /* Safari, Android, iOS */
-         url('../fonts/poppins-v20-latin-800.svg#Poppins') format('svg');
-
-  /* Legacy iOS */
-}
-
-/* poppins-900 - latin */
-
-@font-face {
-  font-family: 'Poppins';
-
-  font-style: normal;
-
-  font-weight: 900;
-
-  font-display: swap;
-
-  src: url('../fonts/poppins-v20-latin-900.eot');
-
-  /* IE9 Compat Modes */
-
-  src: local(''),
-         url('../fonts/poppins-v20-latin-900.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('../fonts/poppins-v20-latin-900.woff2') format('woff2'), /* Super Modern Browsers */
-         url('../fonts/poppins-v20-latin-900.woff') format('woff'), /* Modern Browsers */
-         url('../fonts/poppins-v20-latin-900.ttf') format('truetype'), /* Safari, Android, iOS */
-         url('../fonts/poppins-v20-latin-900.svg#Poppins') format('svg');
-
-  /* Legacy iOS */
-}
-
-/* poppins-100italic - latin */
-
-@font-face {
-  font-family: 'Poppins';
-
-  font-style: italic;
-
-  font-weight: 100;
-
-  font-display: swap;
-
-  src: url('../fonts/poppins-v20-latin-100italic.eot');
-
-  /* IE9 Compat Modes */
-
-  src: local(''),
-         url('../fonts/poppins-v20-latin-100italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('../fonts/poppins-v20-latin-100italic.woff2') format('woff2'), /* Super Modern Browsers */
-         url('../fonts/poppins-v20-latin-100italic.woff') format('woff'), /* Modern Browsers */
-         url('../fonts/poppins-v20-latin-100italic.ttf') format('truetype'), /* Safari, Android, iOS */
-         url('../fonts/poppins-v20-latin-100italic.svg#Poppins') format('svg');
-
-  /* Legacy iOS */
-}
-
-/* poppins-200italic - latin */
-
-@font-face {
-  font-family: 'Poppins';
-
-  font-style: italic;
-
-  font-weight: 200;
-
-  font-display: swap;
-
-  src: url('../fonts/poppins-v20-latin-200italic.eot');
-
-  /* IE9 Compat Modes */
-
-  src: local(''),
-         url('../fonts/poppins-v20-latin-200italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('../fonts/poppins-v20-latin-200italic.woff2') format('woff2'), /* Super Modern Browsers */
-         url('../fonts/poppins-v20-latin-200italic.woff') format('woff'), /* Modern Browsers */
-         url('../fonts/poppins-v20-latin-200italic.ttf') format('truetype'), /* Safari, Android, iOS */
-         url('../fonts/poppins-v20-latin-200italic.svg#Poppins') format('svg');
-
-  /* Legacy iOS */
-}
-
-/* poppins-300italic - latin */
-
-@font-face {
-  font-family: 'Poppins';
-
-  font-style: italic;
-
-  font-weight: 300;
-
-  font-display: swap;
-
-  src: url('../fonts/poppins-v20-latin-300italic.eot');
-
-  /* IE9 Compat Modes */
-
-  src: local(''),
-         url('../fonts/poppins-v20-latin-300italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('../fonts/poppins-v20-latin-300italic.woff2') format('woff2'), /* Super Modern Browsers */
-         url('../fonts/poppins-v20-latin-300italic.woff') format('woff'), /* Modern Browsers */
-         url('../fonts/poppins-v20-latin-300italic.ttf') format('truetype'), /* Safari, Android, iOS */
-         url('../fonts/poppins-v20-latin-300italic.svg#Poppins') format('svg');
-
-  /* Legacy iOS */
-}
-
-/* poppins-italic - latin */
-
-@font-face {
-  font-family: 'Poppins';
-
-  font-style: italic;
-
-  font-weight: 400;
-
-  font-display: swap;
-
-  src: url('../fonts/poppins-v20-latin-italic.eot');
-
-  /* IE9 Compat Modes */
-
-  src: local(''),
-         url('../fonts/poppins-v20-latin-italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('../fonts/poppins-v20-latin-italic.woff2') format('woff2'), /* Super Modern Browsers */
-         url('../fonts/poppins-v20-latin-italic.woff') format('woff'), /* Modern Browsers */
-         url('../fonts/poppins-v20-latin-italic.ttf') format('truetype'), /* Safari, Android, iOS */
-         url('../fonts/poppins-v20-latin-italic.svg#Poppins') format('svg');
-
-  /* Legacy iOS */
-}
-
-/* poppins-500italic - latin */
-
-@font-face {
-  font-family: 'Poppins';
-
-  font-style: italic;
-
-  font-weight: 500;
-
-  font-display: swap;
-
-  src: url('../fonts/poppins-v20-latin-500italic.eot');
-
-  /* IE9 Compat Modes */
-
-  src: local(''),
-         url('../fonts/poppins-v20-latin-500italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('../fonts/poppins-v20-latin-500italic.woff2') format('woff2'), /* Super Modern Browsers */
-         url('../fonts/poppins-v20-latin-500italic.woff') format('woff'), /* Modern Browsers */
-         url('../fonts/poppins-v20-latin-500italic.ttf') format('truetype'), /* Safari, Android, iOS */
-         url('../fonts/poppins-v20-latin-500italic.svg#Poppins') format('svg');
-
-  /* Legacy iOS */
-}
-
-/* poppins-600italic - latin */
-
-@font-face {
-  font-family: 'Poppins';
-
-  font-style: italic;
-
-  font-weight: 600;
-
-  font-display: swap;
-
-  src: url('../fonts/poppins-v20-latin-600italic.eot');
-
-  /* IE9 Compat Modes */
-
-  src: local(''),
-         url('../fonts/poppins-v20-latin-600italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('../fonts/poppins-v20-latin-600italic.woff2') format('woff2'), /* Super Modern Browsers */
-         url('../fonts/poppins-v20-latin-600italic.woff') format('woff'), /* Modern Browsers */
-         url('../fonts/poppins-v20-latin-600italic.ttf') format('truetype'), /* Safari, Android, iOS */
-         url('../fonts/poppins-v20-latin-600italic.svg#Poppins') format('svg');
-
-  /* Legacy iOS */
-}
-
-/* poppins-700italic - latin */
-
-@font-face {
-  font-family: 'Poppins';
-
-  font-style: italic;
-
-  font-weight: 700;
-
-  font-display: swap;
-
-  src: url('../fonts/poppins-v20-latin-700italic.eot');
-
-  /* IE9 Compat Modes */
-
-  src: local(''),
-         url('../fonts/poppins-v20-latin-700italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('../fonts/poppins-v20-latin-700italic.woff2') format('woff2'), /* Super Modern Browsers */
-         url('../fonts/poppins-v20-latin-700italic.woff') format('woff'), /* Modern Browsers */
-         url('../fonts/poppins-v20-latin-700italic.ttf') format('truetype'), /* Safari, Android, iOS */
-         url('../fonts/poppins-v20-latin-700italic.svg#Poppins') format('svg');
-
-  /* Legacy iOS */
-}
-
-/* poppins-800italic - latin */
-
-@font-face {
-  font-family: 'Poppins';
-
-  font-style: italic;
-
-  font-weight: 800;
-
-  font-display: swap;
-
-  src: url('../fonts/poppins-v20-latin-800italic.eot');
-
-  /* IE9 Compat Modes */
-
-  src: local(''),
-         url('../fonts/poppins-v20-latin-800italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('../fonts/poppins-v20-latin-800italic.woff2') format('woff2'), /* Super Modern Browsers */
-         url('../fonts/poppins-v20-latin-800italic.woff') format('woff'), /* Modern Browsers */
-         url('../fonts/poppins-v20-latin-800italic.ttf') format('truetype'), /* Safari, Android, iOS */
-         url('../fonts/poppins-v20-latin-800italic.svg#Poppins') format('svg');
-
-  /* Legacy iOS */
-}
-
-/* poppins-900italic - latin */
-
-@font-face {
-  font-family: 'Poppins';
-
-  font-style: italic;
-
-  font-weight: 900;
-
-  font-display: swap;
-
-  src: url('../fonts/poppins-v20-latin-900italic.eot');
-
-  /* IE9 Compat Modes */
-
-  src: local(''),
-         url('../fonts/poppins-v20-latin-900italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('../fonts/poppins-v20-latin-900italic.woff2') format('woff2'), /* Super Modern Browsers */
-         url('../fonts/poppins-v20-latin-900italic.woff') format('woff'), /* Modern Browsers */
-         url('../fonts/poppins-v20-latin-900italic.ttf') format('truetype'), /* Safari, Android, iOS */
-         url('../fonts/poppins-v20-latin-900italic.svg#Poppins') format('svg');
-
-  /* Legacy iOS */
-}
-
-body{
-  font-family: 'Poppins', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .file\:mr-2::-webkit-file-upload-button {
@@ -2240,11 +1732,6 @@ body{
   background-color: rgb(96 165 250 / var(--tw-bg-opacity));
 }
 
-.disabled\:bg-gray-100:disabled {
-  --tw-bg-opacity: 1;
-  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
-}
-
 .disabled\:bg-neutral-100:disabled {
   --tw-bg-opacity: 1;
   background-color: rgb(245 245 245 / var(--tw-bg-opacity));
@@ -2273,39 +1760,9 @@ body{
   display: none;
 }
 
-.dark .dark\:divide-gray-600 > :not([hidden]) ~ :not([hidden]) {
-  --tw-divide-opacity: 1;
-  border-color: rgb(75 85 99 / var(--tw-divide-opacity));
-}
-
 .dark .dark\:divide-neutral-600 > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-opacity: 1;
   border-color: rgb(82 82 82 / var(--tw-divide-opacity));
-}
-
-.dark .dark\:border-gray-700 {
-  --tw-border-opacity: 1;
-  border-color: rgb(55 65 81 / var(--tw-border-opacity));
-}
-
-.dark .dark\:border-gray-600 {
-  --tw-border-opacity: 1;
-  border-color: rgb(75 85 99 / var(--tw-border-opacity));
-}
-
-.dark .dark\:border-blue-400 {
-  --tw-border-opacity: 1;
-  border-color: rgb(96 165 250 / var(--tw-border-opacity));
-}
-
-.dark .dark\:border-blue-500 {
-  --tw-border-opacity: 1;
-  border-color: rgb(59 130 246 / var(--tw-border-opacity));
-}
-
-.dark .dark\:border-gray-800 {
-  --tw-border-opacity: 1;
-  border-color: rgb(31 41 55 / var(--tw-border-opacity));
 }
 
 .dark .dark\:border-neutral-700 {
@@ -2318,29 +1775,19 @@ body{
   border-color: rgb(82 82 82 / var(--tw-border-opacity));
 }
 
+.dark .dark\:border-blue-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(96 165 250 / var(--tw-border-opacity));
+}
+
+.dark .dark\:border-blue-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(59 130 246 / var(--tw-border-opacity));
+}
+
 .dark .dark\:border-neutral-800 {
   --tw-border-opacity: 1;
   border-color: rgb(38 38 38 / var(--tw-border-opacity));
-}
-
-.dark .dark\:bg-gray-900 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
-}
-
-.dark .dark\:bg-gray-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
-}
-
-.dark .dark\:bg-gray-700 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
-}
-
-.dark .dark\:bg-gray-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
 }
 
 .dark .dark\:bg-neutral-900 {
@@ -2381,9 +1828,9 @@ body{
   color: rgb(96 165 250 / var(--tw-text-opacity));
 }
 
-.dark .dark\:text-gray-400 {
+.dark .dark\:text-neutral-400 {
   --tw-text-opacity: 1;
-  color: rgb(156 163 175 / var(--tw-text-opacity));
+  color: rgb(163 163 163 / var(--tw-text-opacity));
 }
 
 .dark .dark\:text-blue-500 {
@@ -2399,11 +1846,6 @@ body{
 .dark .dark\:text-red-300 {
   --tw-text-opacity: 1;
   color: rgb(252 165 165 / var(--tw-text-opacity));
-}
-
-.dark .dark\:text-neutral-400 {
-  --tw-text-opacity: 1;
-  color: rgb(163 163 163 / var(--tw-text-opacity));
 }
 
 .dark .dark\:hover\:border-blue-500:hover {
@@ -2452,11 +1894,6 @@ body{
 .dark .dark\:disabled\:border-blue-300:disabled {
   --tw-border-opacity: 1;
   border-color: rgb(147 197 253 / var(--tw-border-opacity));
-}
-
-.dark .dark\:disabled\:bg-gray-700:disabled {
-  --tw-bg-opacity: 1;
-  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
 }
 
 .dark .dark\:disabled\:bg-neutral-700:disabled {
@@ -2538,11 +1975,6 @@ body{
     border-right-width: 1px;
   }
 
-  .lg\:border-gray-100 {
-    --tw-border-opacity: 1;
-    border-color: rgb(243 244 246 / var(--tw-border-opacity));
-  }
-
   .lg\:border-neutral-100 {
     --tw-border-opacity: 1;
     border-color: rgb(245 245 245 / var(--tw-border-opacity));
@@ -2574,11 +2006,6 @@ body{
 
   .lg\:transition-none {
     transition-property: none;
-  }
-
-  .dark .lg\:dark\:border-gray-900 {
-    --tw-border-opacity: 1;
-    border-color: rgb(17 24 39 / var(--tw-border-opacity));
   }
 
   .dark .lg\:dark\:border-neutral-900 {
