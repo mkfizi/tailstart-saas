@@ -14,11 +14,30 @@ Types of changes:
 * `Security` in case of vulnerabilities.
 
 ## [Unreleased]
-###
+Put unreleased changes here.
+
+## [0.2.2] - 2022-11-14
+
+### Changed
+* NPM run scripts for building Tailwindcss classes.
+
+## [0.2.1] - 2022-11-03
+
+### Changed
+* Image subdirectory form `img` to `images`.
+
+### Removed
+* Directory notes.
+
+## [0.2.0] - 2022-10-28
+
+### Changed
 * Index page card and table status pills class from 'rounded-full' to 'rounded' for consistency.
+* Base colour from `gray` to `neutral`.
 
 ### Removed
 * Table previous and next button.
+* Poppins font.
 
 ### Fixed
 * Login route typo in sign up page.
