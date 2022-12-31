@@ -6,9 +6,10 @@
 	"author": "",
 	"license": "",
 	"scripts": {
-		"tailwind": "npx tailwindcss -i ./src/css/input.css -o ./src/css/style.css",
-		"tailwind-watch": "npx tailwindcss -i ./src/css/input.css -o ./src/css/style.css --watch",
-		"tailwind-build": "npx tailwindcss -i ./src/css/input.css -o ./src/css/style.min.css --minify"
+		"build": "npx tailwindcss -i ./src/css/input.css -o ./src/css/style.css",
+		"build:prod": "npx tailwindcss -i ./src/css/input.css -o ./src/css/style.min.css --minify",
+		"watch": "npx tailwindcss -i ./src/css/input.css -o ./src/css/style.css --watch",
+		"watch:prod": "npx tailwindcss -i ./src/css/input.css -o ./src/css/style.min.css --minify --watch"
 	},
 	"devDependencies": {
 		"@tailwindcss/forms": "^0.5.2",
